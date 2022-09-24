@@ -47,16 +47,16 @@ result = operand + operand; // the expression evaluates to 20 and result becomes
 ```
 
 ### Plus Caveats (Addition/Concatination)
- - `"strings" + "strings"` is concatination and combines the two strings together
- - `10 + 10` or _integer_ `+` _integer_ is addition
+ - `"strings" + "strings"` is concatination and combines the two strings together to become `stringsstrings`
+ - `10 + 10` or _integer_ `+` _integer_ is addition and is evaluated
 
 ### Assignment Operators
-- `price = 5` // var price is set to equal 5
- - `price += 5` // price = price + 5 (or price = 5 + 5); evaluates to 10
- - `price *= 5` // price = price * 5 (or price = 5 * 5); evaluates to 25
- - `price /= 5` // price = price / 5 (or price = 5 / 5); evaluates to 1
- - `price **= 5` // price = price ** 5 (or price = 5^5 [5 to the power of 5]); evaluates to 3125
- - `price %= 5` // price = price / 5 to get the remainder of 1 (this can be used to evaluate whether an integer is odd or even)
+- `price = 5 // var price is set to equal 5`
+ - `price += 5 // price = price + 5 (or price = 5 + 5); evaluates to 10`
+ - `price *= 5 // price = price * 5 (or price = 5 * 5); evaluates to 25`
+ - `price /= 5 // price = price / 5 (or price = 5 / 5); evaluates to 1`
+ - `price **= 5 // price = price ** 5 (or price = 5^5 [5 to the power of 5]); evaluates to 3125`
+ - `price %= 5 // price = price / 5 to get the remainder of 1 (this can be used to evaluate whether an integer is odd or even)`
 
 ### Comparison Operators (In order of precedence)
  - `<` // Less than
