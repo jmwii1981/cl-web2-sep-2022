@@ -178,7 +178,7 @@ myFunction(); // outputs true
 - in the case of `||`, if the first part of the expression (or left side of the full expression) evaluates to true, then the second part of the expression (or right side of the full expression) are *not* evaluated.
 
 ### Order of Precedence
-The order of operation precedence is as follows ...
+The order of operation precedence is as follows ... top of the stack is highest precedence, and lowest of the stack is lowest precedence ...
  - Grouping `()`
  - Not `!`
  - Multiplication `*`
@@ -197,3 +197,37 @@ The order of operation precedence is as follows ...
  - And `&&`
  - Or `||`
  - Assignment `=`  
+
+### Try, Catch, Finally
+Here's what they do ...
+ - The `try` statement defines a code block to run (to try)
+ - The `catch` statement defines a code block to handle any error
+ - The `finally` statement defines a code block to run regardless of the result
+ - The `throw` statement defines a custom error
+
+ **Example**
+ 
+ ```
+ function myFunction() {
+    let result;
+
+    try {
+        document.write(`Starting the 'try, catch, finally' code block.`);
+        result = x / 10; // an error occurs here
+        document.write(`This line won't run.`); // any line after an error in the 'try' code block will never run
+    }
+    catch(error) { // 'error' here is the JS predefined or built-in keyword 'error' that will tell you what the error is
+        document.write(`<br>The error message given is: <em>` + error.message + `</em>`); // this line will run if there was an error in the try code block
+    }
+    finally { // always runs no matter what
+        document.write(`<br>Done executing the 'try, catch, finally' code block.`); // this line of code will always run whether there is an error or not
+    }
+}
+myFunction();
+// Output is as follows ...
+// Starting the 'try, catch, finally' code block.
+// The error message given is: x is not defined.
+// Done executing the 'try, catch, finally' code block.
+}
+
+ ```

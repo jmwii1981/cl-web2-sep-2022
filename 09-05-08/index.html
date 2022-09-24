@@ -18,17 +18,33 @@
 
 
 
-function myFunction() {
-    let x = 9;
-    if (!x > 10) { // evaluates to true
-        document.write("true");
-    } else {
-        document.write("false");
-    }
+// function myFunction() {
+//     let x = 9;
+//     if (!x > 10) { // evaluates to true
+//         document.write("true");
+//     } else {
+//         document.write("false");
+//     }
     
-}
-myFunction(); // outputs true
+// }
+// myFunction(); // outputs true
 
+function myFunction() {
+    let result;
+
+    try {
+        document.write(`Starting the 'try, catch, finally' code block.`);
+        result = x / 10; // an error occurs here
+        document.write(`This line won't run.`); // any line after an error in the 'try' code block will never run
+    }
+    catch(error) { // 'error' here is the JS predefined or built-in keyword 'error' that will tell you what the error is
+        document.write(`<br>The error message given is: <em>` + error.message + `</em>`); // this line will run if there was an error in the try code block
+    }
+    finally { // always runs no matter what
+        document.write(`<br>Done executing the 'try, catch, finally' code block.`); // this line of code will always run whether there is an error or not
+    }
+}
+myFunction();
 
 
 
