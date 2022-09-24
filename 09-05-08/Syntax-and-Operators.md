@@ -233,8 +233,8 @@ myFunction();
  - The `throw` statement defines a custom error message
  - To create an effective `throw` statement, you must
     - Create an object with at least two properties, the suggested properties are
-        - name
-        - message
+        - `name`
+        - `message`
 
 **Example**
 
