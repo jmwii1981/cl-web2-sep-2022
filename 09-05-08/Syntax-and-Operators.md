@@ -38,8 +38,10 @@
  - operands are what's being "operated" on by the operator
  
  **Example**
+ ```
     let operand = 10;
     operand + operand // evaluates to 20
+```
 
 ### Plus Caveats (Addition/Concatination)
  - `"strings" + "strings"` is concatination and combines the two strings together
