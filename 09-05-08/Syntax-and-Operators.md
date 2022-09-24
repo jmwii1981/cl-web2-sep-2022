@@ -26,12 +26,12 @@
 
 ## Using Math and Comparison Operators
  - typical math operators are ...
-  - `+`
-  - `-`
-  - `*`
-  - `/`
-  - `**`
-  - `%`
+    - `+`
+    - `-`
+    - `*`
+    - `/`
+    - `**`
+    - `%`
 
 ### Operators
  - operand operator operand
@@ -51,25 +51,26 @@ result = operand + operand; // the expression evaluates to 20 and result becomes
  - `10 + 10` or _integer_ `+` _integer_ is addition and is evaluated
 
 ### Assignment Operators
-- `price = 5 // var price is set to equal 5`
- - `price += 5 // price = price + 5 (or price = 5 + 5); evaluates to 10`
- - `price *= 5 // price = price * 5 (or price = 5 * 5); evaluates to 25`
- - `price /= 5 // price = price / 5 (or price = 5 / 5); evaluates to 1`
- - `price **= 5 // price = price ** 5 (or price = 5^5 [5 to the power of 5]); evaluates to 3125`
- - `price %= 5 // price = price / 5 to get the remainder of 1 (this can be used to evaluate whether an integer is odd or even)`
+ - the below shorthand can move things a little faster
+    - `price = 5 // var price is set to equal 5`
+    - `price += 5 // price = price + 5 (or price = 5 + 5); evaluates to 10`
+    - `price *= 5 // price = price * 5 (or price = 5 * 5); evaluates to 25`
+    - `price /= 5 // price = price / 5 (or price = 5 / 5); evaluates to 1`
+    - `price **= 5 // price = price ** 5 (or price = 5^5 [5 to the power of 5]); evaluates to 3125`
+    - `price %= 5 // price = price / 5 to get the remainder of 1 (this can be used to evaluate whether an integer is odd or even)`
 
 ### Comparison Operators (In order of precedence)
- - `<` // Less than
- - `<=` // Less than or equal to
- - `>` // Greater than
- - `>=` // Greater than or equal to
- - `==` // Equal to (means only the value is considered during evaluation despite it being a string or integer)
- - `!=` // Not equal to
- - `===` // Strict equals (means value and date type are considered during evaluation)
- - `!==` // Strict not equal
+ - `< // Less than`
+ - `<= // Less than or equal to`
+ - `> // Greater than`
+ - `>= // Greater than or equal to`
+ - `== // Equal to (means only the value is considered during evaluation despite it being a string or integer)`
+ - `!= // Not equal to`
+ - `=== // Strict equals (means value and date type are considered during evaluation)`
+ - `!== // Strict not equal`
 
 ### 'use strict'
- - always make sure to use `'use strict'` (considered a best practice)
+ - always make sure to use `'use strict'`, as it's considered a best practice
 
  Rules that `'use strict'` imposes and things to note ...
  - **Note** `'use strict'` is ignored by older browsers
@@ -98,7 +99,7 @@ result = operand + operand; // the expression evaluates to 20 and result becomes
  myFunction(); // evaluates to false
  ```
 
- - rather than use an if statement, you can use the Boolean() function
+ - rather than use an if statement, you can use the Boolean() function to evaluate a var value for truthiness or falsiness
 
  **Example**
 
@@ -110,148 +111,47 @@ result = operand + operand; // the expression evaluates to 20 and result becomes
  myFunction(); // evaluates to false
  ```
 
-### And, Or Operators
-
-
-
-Notes
-
-**Example**
-```
-
-```
-
-
-
-> Section-by-section content template
-## Title
-
-Notes
+### And (`&&`), Or (`||`) Operators
+- in the case of the `&&` operator
+    - **both sides of the operator** must be `true` for the full expression to evaluate as `true`
+    - in the event that an expression on either side of the `&&` are `false`, the full expression evaluates to `false`
+- in the case of the `||` operator
+    - **either side of the operator** must be `true` for the full expression to evaluate as `true`
+    - in the event that an expression on either side of the `||` are false, then as long as one expression is `true`, then the full expression evaluates to `true`
 
 **Example**
-```
 
 ```
+function myFunction() {
+    let x = 200;
+    if (x > 10 && x < 1600) { // evaluates to true because both sides are true
+        document.write("true");
+    } else {
+        document.write("false");
+    }
+    
+}
+myFunction(); // outputs 'true'
 
+function myFunction() {
+    let x = 200;
+    if (x > 300 || x > 1600) { // evaluates to false because both sides aren't true
+        document.write("true");
+    } else {
+        document.write("false");
+    }
+    
+}
+myFunction(); // outputs false
 
-
-> Section-by-section content template
-## Title
-
-Notes
-
-**Example**
-```
-
-```
-
-
-
-> Section-by-section content template
-## Title
-
-Notes
-
-**Example**
-```
-
-```
-
-
-
-> Section-by-section content template
-## Title
-
-Notes
-
-**Example**
-```
-
-```
-
-
-
-> Section-by-section content template
-## Title
-
-Notes
-
-**Example**
-```
-
-```
-
-
-
-> Section-by-section content template
-## Title
-
-Notes
-
-**Example**
-```
-
-```
-
-
-
-> Section-by-section content template
-## Title
-
-Notes
-
-**Example**
-```
-
-```
-
-
-
-> Section-by-section content template
-## Title
-
-Notes
-
-**Example**
-```
-
-```
-
-
-
-> Section-by-section content template
-## Title
-
-Notes
-
-**Example**
-```
-
-```
-
-
-
-> Section-by-section content template
-## Title
-
-Notes
-
-**Example**
-```
-
-```
-
-
-
-> Section-by-section content template
-## Title
-
-Notes
-
-**Example**
-```
-
-```
-
-
-
+function myFunction() {
+    let x = 200;
+    if (x > 300 || x < 1600) { // evaluates to true because both sides aren't true
+        document.write("true");
+    } else {
+        document.write("false");
+    }
+    
+}
+myFunction(); // outputs true
+````
