@@ -36,13 +36,14 @@
 ### Operators
  - operand operator operand
  - operands are what's being "operated" on by the operator
+ - every operator will have an operand on both its left and right sides
  
  **Example**
  ```
-    let operand = 10;
-    let result;
-    
-    result = operand + operand; // the expression evaluates to 20 and result becomes === 20.
+let operand = 10;
+let result;
+
+result = operand + operand; // the expression evaluates to 20 and result becomes === 20.
 ```
 
 ### Plus Caveats (Addition/Concatination)
