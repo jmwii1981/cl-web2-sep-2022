@@ -40,7 +40,9 @@
  **Example**
  ```
     let operand = 10;
-    operand + operand // evaluates to 20
+    let result;
+    
+    result = operand + operand; // the expression evaluates to 20 and result becomes === 20.
 ```
 
 ### Plus Caveats (Addition/Concatination)
