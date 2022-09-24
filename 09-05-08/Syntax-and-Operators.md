@@ -203,7 +203,6 @@ Here's what they do ...
  - The `try` statement defines a code block to run (to try)
  - The `catch` statement defines a code block to handle any error
  - The `finally` statement defines a code block to run regardless of the result
- - The `throw` statement defines a custom error
 
  **Example**
  
@@ -229,5 +228,21 @@ myFunction();
 // The error message given is: x is not defined.
 // Done executing the 'try, catch, finally' code block.
 }
+```
+
+ - The `throw` statement defines a custom error message
+ - To create an effective `throw` statement, you must
+    - Create an object with at least two properties, the suggested properties are
+        - name
+        - message
+
+**Example**
+
+```
+```
+
+ **Example**
+
+ ```
 
  ```
