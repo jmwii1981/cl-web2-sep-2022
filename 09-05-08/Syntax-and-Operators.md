@@ -176,3 +176,24 @@ myFunction(); // outputs true
 ### Short Circuiting
 - in the case of `&&`, if the first part of the expression (or left side of the full expression) evaluates to false, then the second part of the expression (or right side of the full expression) are *not* evaluated.
 - in the case of `||`, if the first part of the expression (or left side of the full expression) evaluates to true, then the second part of the expression (or right side of the full expression) are *not* evaluated.
+
+### Order of Precedence
+The order of operation precedence is as follows ...
+ - Grouping `()`
+ - Not `!`
+ - Multiplication `*`
+ - Division `/`
+ - Modulus `%`
+ - Addition `+`
+ - Subtraction `-`
+ - Less than `<`
+ - Less than or equal to `<=`
+ - Greater than `>`
+ - Greater than or equal to`>=`
+ - Equal to `==`
+ - Not equal to`!=`
+ - Strict equal to `===`
+ - Strict not equal to `!==`
+ - And `&&`
+ - Or `||`
+ - Assignment `=`  
