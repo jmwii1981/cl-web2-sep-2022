@@ -146,7 +146,7 @@ myFunction(); // outputs false
 
 function myFunction() {
     let x = 200;
-    if (x > 300 || x < 1600) { // evaluates to true because both sides aren't true
+    if (x > 300 || x < 1600) { // evaluates to true because one side of the operator is true, eventhough the other if false
         document.write("true");
     } else {
         document.write("false");
@@ -155,3 +155,24 @@ function myFunction() {
 }
 myFunction(); // outputs true
 ````
+
+### Not (`!`) Operator
+- `!` must go in front of the full expression being evaluated
+
+**Example**
+
+````
+function myFunction() {
+    let x = 9;
+    if (!x > 10) { // evaluates to true
+        document.write("true");
+    } else {
+        document.write("false");
+    }
+}
+myFunction(); // outputs true
+````
+
+### Short Circuiting
+- in the case of `&&`, if the first part of the expression (or left side of the full expression) evaluates to false, then the second part of the expression (or right side of the full expression) are *not* evaluated.
+- in the case of `||`, if the first part of the expression (or left side of the full expression) evaluates to true, then the second part of the expression (or right side of the full expression) are *not* evaluated.
