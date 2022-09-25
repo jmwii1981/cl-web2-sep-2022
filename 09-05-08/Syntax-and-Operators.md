@@ -1,15 +1,3 @@
-> FORMATTING SHORT-KEY
-> # The largest heading
-> ## The second largest heading
-> ###### The smallest heading
-
-> Formatting code
-> ```
-> this
-> is
-> some code
-> ```
-
 # Syntax and Operators
 
 **Note to self** – Review all of the material in this section in the YDKJS series by Kyle Simpson. Keep in mind that the series focuses on ES 6 in some regards and note the differences.
