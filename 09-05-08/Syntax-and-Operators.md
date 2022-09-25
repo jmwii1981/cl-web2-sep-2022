@@ -102,7 +102,6 @@ result = operand + operand; // the expression evaluates to 20 and result becomes
  - rather than use an if statement, you can use the Boolean() function to evaluate a var value for truthiness or falsiness
 
  **Example**
-
  ```
  function myFunction() {
     let color = null;
@@ -120,7 +119,6 @@ result = operand + operand; // the expression evaluates to 20 and result becomes
     - in the event that an expression on either side of the `||` are false, then as long as one expression is `true`, then the full expression evaluates to `true`
 
 **Example**
-
 ```
 function myFunction() {
     let x = 200;
@@ -154,14 +152,14 @@ function myFunction() {
     
 }
 myFunction(); // outputs true
-````
+```
 
 ### Not (`!`) Operator
 - `!` must go in front of the full expression being evaluated
 
 **Example**
 
-````
+```
 function myFunction() {
     let x = 9;
     if (!x > 10) { // evaluates to true
@@ -171,7 +169,7 @@ function myFunction() {
     }
 }
 myFunction(); // outputs true
-````
+```
 
 ### Short Circuiting
 - in the case of `&&`, if the first part of the expression (or left side of the full expression) evaluates to false, then the second part of the expression (or right side of the full expression) are *not* evaluated.
@@ -179,24 +177,24 @@ myFunction(); // outputs true
 
 ### Order of Precedence
 The order of operation precedence is as follows ... top of the stack is highest precedence, and lowest of the stack is lowest precedence ...
- - Grouping `()`
- - Not `!`
- - Multiplication `*`
- - Division `/`
- - Modulus `%`
- - Addition `+`
- - Subtraction `-`
- - Less than `<`
- - Less than or equal to `<=`
- - Greater than `>`
- - Greater than or equal to`>=`
- - Equal to `==`
- - Not equal to`!=`
- - Strict equal to `===`
- - Strict not equal to `!==`
- - And `&&`
- - Or `||`
- - Assignment `=`  
+ - `()`: Grouping
+ - `!`: Not
+ - `*`: Multiplication
+ - `/`: Division
+ - `%`: Modulus
+ - `+`: Addition
+ - `-`: Subtraction
+ - `<`: Less than
+ - `<=`: Less than or equal to
+ - `>`: Greater than
+ - >=`: Greater than or equal to
+ - `==`: Equal to
+ - !=`: Not equal to
+ - `===`: Strict equal to
+ - `!==`: Strict not equal to
+ - `&&`: And
+ - `||`: Or
+ - `=`  : Assignment
 
 ### Try, Catch, Finally
 Here's what they do ...
@@ -205,7 +203,6 @@ Here's what they do ...
  - The `finally` statement defines a code block to run regardless of the result
 
  **Example**
- 
  ```
  function myFunction() {
     let result;
@@ -236,7 +233,6 @@ myFunction();
      - `message`
 
 **Example**
-
 ```
 function attemptDivision() {
     let result;
