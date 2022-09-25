@@ -11,23 +11,9 @@
 <h2>
 <script>
 'use strict'
-function spreadForFunctionArgs() {
-    // Traditional way of calling multiple method-parameters
-    multipleParams(1, 2, 3); // Params declared _and_ passed to the 'multipleParams()' function
 
-    // Using 'spread' (...) to pass parameters to a function
-    let args = [1, 2, 3]; // 'args' array declared with elements of 1, 2, 3, returning (3)[1, 2, 3] via the console
-    multipleParams(...args); // 'args' array elements are copied and then passed to the 'multipleParams()' function as individual params; (e.g. arg1, arg2, arg3)
-}
-
-function multipleParams(thing1, thing2, thing3) {
-    console.log(thing1); // Returns '1'
-    console.log(thing2); // Returns '2'
-    console.log(thing3); // Returns '3'
-    console.log(""); // Returns 'white space'
-}
-
-spreadForFunctionArgs();
+let dateFields = [2019, 12, 25];
+console.log(dateFields);
 
 </script>
 </h2>

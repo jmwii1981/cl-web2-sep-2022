@@ -580,37 +580,54 @@ function concatenateArray() {
 concatenateArray();
 ```
 
-## Using `Spread` To Pass Parameters
-**Example**
-```
-// Use with 'new'
-function spreadInConstructors() {
-    let dt = new Date(2019, 10, 15); // 15 Nov 2019
-    console.log(dt); // Returns Fri Nov 15 2019 00:00:00 GMT-0600 (Central Standard Time)
+## A Note About Parameters and Arguments within Functions
+Parameter variables are used to import arguments into functions. 
 
-    let dateFields = [2019, 11, 15]; // 15 Dec 2019; here you're creating an array of new values (to build a new date)
-    dt = new Date(...dateFields); // Here you're passing this previously made array of values into the 'new' Date object
-    console.log(dt); // Returns Sun Dec 15 2019 00:00:00 GMT-0600 (Central Standard Time)
-}
-spreadInConstructors();
-```
+Note the difference between _parameters_ and _arguments_: Function parameters are _the names listed in the function's definition_. Function arguments are _the real values passed to the function_.
 
-## Pass Parameters To A Function
  - Function parameters are the named variables listed in the function's declaration.
  - Function parameters are initialized to the values of the arguments supplied.
  - Function arguments are the real values passed to the function.
 
 **Example**
 ```
+// Parameters are the names listed in the function's definition, such as the one below
 function example(parameter) {
   console.log(parameter); // Output = foo
 }
 
+// Arguments are the real values passed to the function (above), which is then able to output 'foo'
 const argument = "foo";
 
-example(argument);
+example(argument); // Returns 'foo'
 ```
 
+## Using `Spread` To Pass Parameters To A Constructor
+**Example**
+```
+// Use with 'new' constructor instance of an object
+function spreadInConstructors() {
+
+    // Calling 'new Date()' returns a constructor instance of the Date() object ... And, we're using the following parameters: year, monthIndex, day. (e.g. new Date(year, monthIndex, day)).
+
+        // Here, we let dt = our new Date() constructor with some pre-defined Date() parameter arguments (real values) (i.e. 2019, 11, 15)
+        
+        let dt = new Date(2019, 11, 15);
+        console.log(dt); // Returns Fri Nov 15 2019 00:00:00 GMT-0600 (Central Standard Time)
+
+        // Here we create an array of new parameter arguments (real values) to build a new date with (i.e. 2019, 12, 25)
+    
+        let dateFields = [2019, 12, 25]; // Returns an array like so ... (3)[2019, 12, 25]
+        
+        // Here we're passing the previously made array of parameter arguments (real values) into the 'new' Date object
+    
+        dt = new Date(...dateFields); 
+        console.log(dt); // Returns Sun Dec 15 2019 00:00:00 GMT-0600 (Central Standard Time)
+}
+spreadInConstructors();
+```
+
+## Pass Parameters To A Function
 One of the benefits of using the spread operator is that it will create a new reference to its primitive values, copying them. As you can see, the spread operator is useful for creating new instances of arrays that do not behave unexpectedly due to old references.
 
 **Example**
