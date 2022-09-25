@@ -306,12 +306,12 @@ let prod = new Product(680, "Road Frame");
 console.log(prod instanceof Product.toString()); // above returns output of 'true'
 ```
 
-### What `this` Really Is
+### What `this` _Really_ Is
 `this` ...
  - Refers to an object; that object in which the current code is running
  - Sometimes, the object can be changed
 
-In the following example, `this` is directly inside of the *window global object* so that is what it is referencing.
+In the following example, `this` is directly inside of the _window global object_ so that is what it is referencing.
 
 **Example**
 ```
@@ -320,7 +320,7 @@ In the following example, `this` is directly inside of the *window global object
 </script>
 ```
 
-In the following example, `this` is the _object literal_ `person`. `this` will have different values based on the context of which your code is excuting. In a method/function, `this` refers to the object that *owns* the method ... or holds the method inside of it. In a function declared outside of your declared *owner* object, `this` refers to the *window global object*.
+In the following example, `this` is the _object literal_ `person`. `this` will have different values based on the context of which your code is excuting. 
 
 **Example**
 ```
@@ -332,3 +332,51 @@ person {
     },
 }
 ```
+
+In a method/function, `this` refers to the object that _owns_ the method ... or holds the method inside of it. 
+
+> **check this – doesn't seem accurate the way it's written**
+> In a function declared outside of your declared _owner_ object, `this` refers to the _window global object_.
+
+In an event (e.g. a click event), `this` refers to the HTML element that receives the event (i.e. HTML elements are considered JS objects).
+In a call() or apply() function, `this` refers to the object passed in `call(object);` or `apply(object)`.
+You can think of `this` as being affected by ...
+ - Global scope
+ - Function scope
+ - `use strict`
+
+If you use `this` within global scope whil also using `use strict`, then `this` is `undefined`.
+
+Considering `this` and object literals, or instance objects ...
+ - _Object literals_ are _"flat"_ and do not provide private scope, or a scope of their own, to themselves.
+ - An _instance object_ (or an object that is capable of having an instance of itself) has a constructor and can have new a instance of it exist with it being the _main blueprint instance_.
+ - `this` is an _object literal_.
+ - `this` inside of an object literal always refers to the _properties_ of that object literal.
+
+**Example**
+```
+function objectLiteral() {
+    let product = {
+        "listPrice": 1431.50,
+        "standardCost": 1059.31,
+        grossProfit: function() {
+            return (this.listPrice - this.standardCost).tolocaleString('en-US', {style:'currency', currency:'USD'});
+        }
+    };
+}
+console.log(product.grossProduct()); // $372.19
+```
+
+When `this` is used inside of call() or apply() functions ...
+
+**Example**
+```
+function constructorFunction() {
+    let prod1 = new Product(1059.31, 1431.50);
+    let prod2 = new Product (13.08, 34.99);
+    console.log(prod1.grossProfit); // -$372.19
+    console.log(prod2.grossProfit); // -$21.91
+}
+```
+
+### The `spread` Operator
