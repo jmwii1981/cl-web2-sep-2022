@@ -13,19 +13,17 @@
 ## Switch Statements
 
 ## Using Math and Comparison Operators
- - typical math operators are ...
-    - `+`
-    - `-`
-    - `*`
-    - `/`
-    - `**`
-    - `%`
+Typical math operators are ...
+ - `+`
+ - `-`
+ - `*`
+ - `/`
+ - `**`
+ - `%`
 
 ### Operators
- - operand operator operand
- - operands are what's being "operated" on by the operator
- - every operator will have an operand on both its left and right sides
- 
+Operands are what's being "operated" on by the operator. Every operator will have an operand on both its left and right sides (e.g. `operand operator operand`).
+
  **Example**
  ```
 let operand = 10;
@@ -34,20 +32,21 @@ let result;
 result = operand + operand; // the expression evaluates to 20 and result becomes === 20.
 ```
 
-### Plus Caveats (Addition/Concatination)
+### Plus Sign Caveats (Addition/Concatination)
  - `"strings" + "strings"` is concatination and combines the two strings together to become `stringsstrings`
  - `10 + 10` or _integer_ `+` _integer_ is addition and is evaluated
 
 ### Assignment Operators
- - the below shorthand can move things a little faster
-    - `price = 5 // var price is set to equal 5`
-    - `price += 5 // price = price + 5 (or price = 5 + 5); evaluates to 10`
-    - `price *= 5 // price = price * 5 (or price = 5 * 5); evaluates to 25`
-    - `price /= 5 // price = price / 5 (or price = 5 / 5); evaluates to 1`
-    - `price **= 5 // price = price ** 5 (or price = 5^5 [5 to the power of 5]); evaluates to 3125`
-    - `price %= 5 // price = price / 5 to get the remainder of 1 (this can be used to evaluate whether an integer is odd or even)`
+ The below shorthand can move things a little faster
+ - `price = 5 // var price is set to equal 5`
+ - `price += 5 // price = price + 5 (or price = 5 + 5); evaluates to 10`
+ - `price *= 5 // price = price * 5 (or price = 5 * 5); evaluates to 25`
+ - `price /= 5 // price = price / 5 (or price = 5 / 5); evaluates to 1`
+ - `price **= 5 // price = price ** 5 (or price = 5^5 [5 to the power of 5]); evaluates to 3125`
+ - `price %= 5 // price = price / 5 to get the remainder of 1 (this can be used to evaluate whether an integer is odd or even)`
 
-### Comparison Operators (In order of precedence)
+### Comparison Operators
+The following comparison operators are listed in order of precedence
  - `< // Less than`
  - `<= // Less than or equal to`
  - `> // Greater than`
@@ -58,9 +57,9 @@ result = operand + operand; // the expression evaluates to 20 and result becomes
  - `!== // Strict not equal`
 
 ### 'use strict'
- - always make sure to use `'use strict'`, as it's considered a best practice
+Always make sure to use `'use strict'`, as it's considered a best practice.
 
- Rules that `'use strict'` imposes and things to note ...
+Rules that `'use strict'` imposes and things to note ...
  - **Note** `'use strict'` is ignored by older browsers
  - You will be forced to declare variables first, before their use, and they will be scoped locally where declared
  - You won't be able to use "reserved" key words in JS as variable names (e.g. `eval`, `arguments`)
@@ -70,8 +69,9 @@ result = operand + operand; // the expression evaluates to 20 and result becomes
  - **If you are not using** `'use strict'`then **mis-typed variable names will be globally scoped** (declared globally)
 
 ### Truthy, Falsy
+Here's how these booleans work.
  - Any var with a value of a `"non-empty string"`, `10` (integer greater or less than a `0`, but never `0`), or the `true` boolean are considered **`true`**
- - any var with a value of `undefined`, `null`, `NaN`,`false`, or one that contains an empty string `""` evaluates to **`false`**
+ - Any var with a value of `undefined`, `null`, `NaN`,`false`, or one that contains an empty string `""` evaluates to **`false`**
 
 **Example**
  ```
@@ -86,7 +86,7 @@ result = operand + operand; // the expression evaluates to 20 and result becomes
  }
  myFunction(); // evaluates to false
  ```
-
+ 
  - rather than use an if statement, you can use the Boolean() function to evaluate a var value for truthiness or falsiness
 
  **Example**
@@ -184,8 +184,8 @@ The order of operation precedence is as follows ... top of the stack is highest 
  - `||`: Or
  - `=`  : Assignment
 
-### Try, Catch, Finally
-Here's what they do ...
+### Try, Catch, Finally, and the Throw Statement
+Here's what `try`, `catch`, and `finally` do ...
  - The `try` statement defines a code block to run (to try)
  - The `catch` statement defines a code block to handle any error
  - The `finally` statement defines a code block to run regardless of the result
@@ -215,6 +215,7 @@ myFunction();
 }
 ```
 
+Here's what the `throw` statement does ...
  - The `throw` statement defines a custom error message
  - To create an effective `throw` statement, you must create an object with at least two properties, the suggested properties are
      - `name`
@@ -243,8 +244,7 @@ function throwError() {
 }
 throwError(); // the console shows the followiing ... "In the attemptDivsion() method, the following error occurred: x is not defined - Error Type: CustomError"
 ```
-
-Types of Errors to familiarize yourself with are ...
+**Note:** Types of Errors to familiarize yourself with are ...
  - `referenceError`
  - `rangeError`
  - `typeError`
@@ -256,11 +256,11 @@ These are built-in Error objects to check for.
 
 ### Primitive Data Types
 Primitive data types are as follows ...
- - boolean: either `true`, or `false`
- - null: is described as having no value and usually represented as `null`
- - undefined: is described as a variable having been declared with no value, or an empty variable. Usually represented as `undefined`
- - number: usually represented by types of numbers such as integers, decimals, floats, etc.
- - string: an array (or series) of characters
+ - **boolean**: either `true`, or `false`
+ - **null**: is described as having no value and usually represented as `null`
+ - **undefined**: is described as a variable having been declared with no value, or an empty variable. Usually represented as `undefined`
+ - **number**: usually represented by types of numbers such as integers, decimals, floats, etc.
+ - **string**: an array (or series) of characters
 
 ### Object Data Types
  - `new Array()`: typically a collection of values
@@ -274,7 +274,7 @@ Primitive data types are as follows ...
 
 Objects take up more memory space than primitive data types. Use primitive where possible in an effort to eliminate overuse of objects.
 
-### `typeof` Operator
+### The `typeof` Operator
 The `typeof` operator returns an evaluation of an object's type when you pass that object to it.
 
 **Example**
@@ -289,23 +289,46 @@ typeof "Hello"; // evaluates to 'string'
 
 **Example**
 ```
-// Pseudo code
+// The following is pseudo code
 data_type.constructor.toString(); // will output a string value that tells us what data type 'data_type' is
 
 data_type.primitive.constructor.toString(); // will output to a string value that tell you what it is after constructor applies (assigns) a constructor property to the primitive. Meanwhile, objects _already have_ constructors
 ```
 
-### `instanceof` Operator
- - tests if an instance of an object inherits from another object (not a primitive)
- - tests for a specific type of object, or an object itself
+### The `instanceof` Operator
+The `instaceof` Operator ...
+ - Tests to see whether an instance of an object inherits from another object (not a primitive)
+ - Tests for a specific type of object, or an object itself
 
 **Example**
 ```
 let prod = new Product(680, "Road Frame");
-console.log(prod instanceof Product.toString()); // above returns output of \`true\`
+console.log(prod instanceof Product.toString()); // above returns output of 'true'
 ```
 
+### What `this` Really Is
+`this` ...
+ - Refers to an object; that object in which the current code is running
+ - Sometimes, the object can be changed
 
+In the following example, `this` is directly inside of the *window global object* so that is what it is referencing.
 
-### `this`
+**Example**
+```
+<script>
+    console.log(this.toString()); // prints [Object window]
+</script>
+```
 
+In the following example, `this` is the _object literal_ `person`. `this` will have different values based on the context of which your code is excuting. In a method/function, `this` refers to the object that *owns* the method ... or holds the method inside of it. In a function declared outside of your declared *owner* object, `this` refers to the *window global object*.
+
+**Example**
+```
+person {
+    firstName: "John",
+    lastName: "Smith",
+    fullName: function() {
+        return this.firstName + ` ` + this.lastName;
+    },
+}
+```
