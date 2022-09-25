@@ -231,14 +231,33 @@ myFunction();
 ```
 
  - The `throw` statement defines a custom error message
- - To create an effective `throw` statement, you must
-    - Create an object with at least two properties, the suggested properties are
-        - `name`
-        - `message`
+ - To create an effective `throw` statement, you must create an object with at least two properties, the suggested properties are
+     - `name`
+     - `message`
 
 **Example**
 
 ```
+function attemptDivision() {
+    let result;
+
+    try {
+        result = x / 10;
+    } catch (error) {
+        throw {
+            "message" : "In the attemptDivsion() method, the following error occurred: " + error.message,
+            "name" : "CustomError",
+        }
+    }    
+}
+function throwError() {
+    try {
+        attemptDivision();
+    } catch (error) {
+        console.log(error.message + " - Error Type: " + error.name);
+    }
+}
+throwError(); // the console shows the followiing ... "In the attemptDivsion() method, the following error occurred: x is not defined - Error Type: CustomError"
 ```
 
  **Example**
