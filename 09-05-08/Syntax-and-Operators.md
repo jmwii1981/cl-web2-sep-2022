@@ -185,6 +185,8 @@ The order of operation precedence is as follows ... top of the stack is highest 
  - `=`  : Assignment
 
 ### Try, Catch, Finally, and the Throw Statement
+A `try`, `catch`, and `finally` code block should always be wrapped around "dangerous" code, or code that might throw an error.
+
 Here's what `try`, `catch`, and `finally` do ...
  - The `try` statement defines a code block to run (to try)
  - The `catch` statement defines a code block to handle any error
@@ -244,6 +246,32 @@ function throwError() {
 }
 throwError(); // the console shows the followiing ... "In the attemptDivsion() method, the following error occurred: x is not defined - Error Type: CustomError"
 ```
+
+Custom errors can also handle errors based on the type of error using a conditional statement.
+
+**Example**
+```
+function handleError(error) {
+    switch(error.name) {
+        case 'ReferenceError';
+            console.log("Reference error: " + error.message);
+            break;
+        case 'RangeError';
+            console.log("Range error: " + error.message);
+            break;
+        case 'TypeError';
+            console.log("Type error: " + error.message);
+            break;
+        case 'URIError';
+            console.log("URI error: " + error.message);
+            break;
+        case 'SyntaxError';
+            console.log("Syntax error: " + error.message);
+            break;
+    }
+}
+```
+
 **Note:** Types of Errors to familiarize yourself with are ...
  - `referenceError`
  - `rangeError`
@@ -339,7 +367,38 @@ In a method/function, `this` refers to the object that _owns_ the method ... or 
 > In a function declared outside of your declared _owner_ object, `this` refers to the _window global object_.
 
 In an event (e.g. a click event), `this` refers to the HTML element that receives the event (i.e. HTML elements are considered JS objects).
+
 In a call() or apply() function, `this` refers to the object passed in `call(object);` or `apply(object)`.
+
+**Example**
+```
+function callAndApply() {
+    let product = {
+        "productID": 680,
+        "name": "Road Frame",
+        "standardCost": 1059.31,
+        "listPrice": 1431.50,
+        grossProfit: function() {
+            return(this.listPrice - this.standardCost).toLocaleString("en-US", {"style": "currency", "currency": "USD"});
+        }
+    };
+
+    let prod2 = {
+        "standardCost": 500,
+        "listPrice": 850
+    }
+
+    // Call using reference to 'product' properties ... here 'this' refers to the product object
+    console.log(product.grossProfit.call(product));
+    
+    // Call using reference to 'prod2' properties ... here 'this' refers to the prod2 object
+    console.log(product.grossProfit.call(prod2));
+    console.log("");
+    console.log(product.grossProfit.apply(product)); // $372.19
+    console.log(product.grossProfit.apply(prod2)); // $350.00
+}
+```
+
 You can think of `this` as being affected by ...
  - Global scope
  - Function scope
@@ -353,33 +412,34 @@ Considering `this` and object literals, or instance objects ...
  - `this` is an _object literal_.
  - `this` inside of an object literal always refers to the _properties_ of that object literal.
 
-**Example**
-```
-function objectLiteral() {
-    let product = {
-        "listPrice": 1431.50,
-        "standardCost": 1059.31,
-        grossProfit: function() {
-            return (this.listPrice - this.standardCost).tolocaleString('en-US', {style:'currency', currency:'USD'});
-        }
-    };
-}
-console.log(product.grossProduct()); // $372.19
-```
-
 When `this` is used inside of call() or apply() functions ...
 
 **Example**
 ```
+// Continued from example above ...
 function constructorFunction() {
-    let prod1 = new Product(1059.31, 1431.50);
-    let prod2 = new Product (13.08, 34.99);
-    console.log(prod1.grossProfit); // -$372.19
-    console.log(prod2.grossProfit); // -$21.91
+    let prod1 = new Product(680, "Road Frame", 1059.31, 1431.50);
+    let prod2 = new Product (707, "Helmet", 13.08, 34.99);
+    console.log(prod1.grossProfit); // $372.19
+    console.log(prod2.grossProfit); // $21.91
 }
 ```
 
 ### The `spread` Operator
 The `spread` operator ...
- - is used to expand any _"iterable"_ array such as a string or other collection of indexed data into a new array object.
- - `spread` is also used to pass multiple arguments to a method.
+ - Is used to expand any _"iterable"_ array such as a string or other collection of indexed data into a new array object
+ - Is also used to pass multiple arguments to a method
+ - Its syntax uses the ellipsis symbol `...`
+ - Is always on the right side of an equal sign
+**Note** IE and Edge (at time of writing) do not support the `spread` operator
+
+**Example**
+```
+// String to array
+function stringToArray() {
+    let productNumber = "FR-R92B-58";
+    let values = [...productNumber];
+    console.log(values);
+}
+```
+
