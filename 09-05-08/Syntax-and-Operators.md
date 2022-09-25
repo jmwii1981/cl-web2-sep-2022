@@ -21,7 +21,7 @@ Typical math operators are ...
  - `**`
  - `%`
 
-### Operators
+## Operators
 Operands are what's being "operated" on by the operator. Every operator will have an operand on both its left and right sides (e.g. `operand operator operand`).
 
  **Example**
@@ -32,11 +32,11 @@ let result;
 result = operand + operand; // the expression evaluates to 20 and result becomes === 20.
 ```
 
-### Plus Sign Caveats (Addition/Concatination)
+## Plus Sign Caveats (Addition/Concatination)
  - `"strings" + "strings"` is concatination and combines the two strings together to become `stringsstrings`
  - `10 + 10` or _integer_ `+` _integer_ is addition and is evaluated
 
-### Assignment Operators
+## Assignment Operators
  The below shorthand can move things a little faster
  - `price = 5 // var price is set to equal 5`
  - `price += 5 // price = price + 5 (or price = 5 + 5); evaluates to 10`
@@ -45,7 +45,7 @@ result = operand + operand; // the expression evaluates to 20 and result becomes
  - `price **= 5 // price = price ** 5 (or price = 5^5 [5 to the power of 5]); evaluates to 3125`
  - `price %= 5 // price = price / 5 to get the remainder of 1 (this can be used to evaluate whether an integer is odd or even)`
 
-### Comparison Operators
+## Comparison Operators
 The following comparison operators are listed in order of precedence
  - `< // Less than`
  - `<= // Less than or equal to`
@@ -56,7 +56,7 @@ The following comparison operators are listed in order of precedence
  - `=== // Strict equals (means value and date type are considered during evaluation)`
  - `!== // Strict not equal`
 
-### 'use strict'
+## 'use strict'
 Always make sure to use `'use strict'`, as it's considered a best practice.
 
 Rules that `'use strict'` imposes and things to note ...
@@ -68,7 +68,7 @@ Rules that `'use strict'` imposes and things to note ...
  - **If you are not using** '`use strict'` then **you are able to do all of the above**
  - **If you are not using** `'use strict'`then **mis-typed variable names will be globally scoped** (declared globally)
 
-### Truthy, Falsy
+## Truthy, Falsy
 Here's how these booleans work.
  - Any var with a value of a `"non-empty string"`, `10` (integer greater or less than a `0`, but never `0`), or the `true` boolean are considered **`true`**
  - Any var with a value of `undefined`, `null`, `NaN`,`false`, or one that contains an empty string `""` evaluates to **`false`**
@@ -98,7 +98,7 @@ Here's how these booleans work.
  myFunction(); // evaluates to false
  ```
 
-### And (`&&`), Or (`||`) Operators
+## And (`&&`), Or (`||`) Operators
 - in the case of the `&&` operator
     - **both sides of the operator** must be `true` for the full expression to evaluate as `true`
     - in the event that an expression on either side of the `&&` are `false`, the full expression evaluates to `false`
@@ -142,7 +142,7 @@ function myFunction() {
 myFunction(); // outputs true
 ```
 
-### Not (`!`) Operator
+## Not (`!`) Operator
 - `!` must go in front of the full expression being evaluated
 
 **Example**
@@ -159,11 +159,11 @@ function myFunction() {
 myFunction(); // outputs true
 ```
 
-### Short Circuiting
+## Short Circuiting
 - in the case of `&&`, if the first part of the expression (or left side of the full expression) evaluates to false, then the second part of the expression (or right side of the full expression) are *not* evaluated.
 - in the case of `||`, if the first part of the expression (or left side of the full expression) evaluates to true, then the second part of the expression (or right side of the full expression) are *not* evaluated.
 
-### Order of Precedence
+## Order of Precedence
 The order of operation precedence is as follows ... top of the stack is highest precedence, and lowest of the stack is lowest precedence ...
  - `()`: Grouping
  - `!`: Not
@@ -184,7 +184,7 @@ The order of operation precedence is as follows ... top of the stack is highest 
  - `||`: Or
  - `=`  : Assignment
 
-### Try, Catch, Finally, and the Throw Statement
+## Try, Catch, Finally, and the Throw Statement
 A `try`, `catch`, and `finally` code block should always be wrapped around "dangerous" code, or code that might throw an error.
 
 Here's what `try`, `catch`, and `finally` do ...
@@ -282,7 +282,7 @@ function handleError(error) {
 
 These are built-in Error objects to check for.
 
-### Primitive Data Types
+## Primitive Data Types
 Primitive data types are as follows ...
  - **boolean**: either `true`, or `false`
  - **null**: is described as having no value and usually represented as `null`
@@ -290,7 +290,7 @@ Primitive data types are as follows ...
  - **number**: usually represented by types of numbers such as integers, decimals, floats, etc.
  - **string**: an array (or series) of characters
 
-### Object Data Types
+## Object Data Types
  - `new Array()`: typically a collection of values
  - `new Error()`: contains properties of name and message
  - `new Function()`: contains a block of code to be executed when called by the function's name
@@ -302,7 +302,7 @@ Primitive data types are as follows ...
 
 Objects take up more memory space than primitive data types. Use primitive where possible in an effort to eliminate overuse of objects.
 
-### The `typeof` Operator
+## The `typeof` Operator
 The `typeof` operator returns an evaluation of an object's type when you pass that object to it.
 
 **Example**
@@ -310,7 +310,7 @@ The `typeof` operator returns an evaluation of an object's type when you pass th
 typeof "Hello"; // evaluates to 'string'
 ```
 
-### The Object Data Type's Constructor Property
+## The Object Data Type's Constructor Property
  - All object data types inherit from objects. Conversely, primitive data types do not inherit
  - All objects have a constructor property
  - The constructor property returns a reference to the object it belongs to ... this allows us to learn a few things about the object itself
@@ -323,7 +323,7 @@ data_type.constructor.toString(); // will output a string value that tells us wh
 data_type.primitive.constructor.toString(); // will output to a string value that tell you what it is after constructor applies (assigns) a constructor property to the primitive. Meanwhile, objects _already have_ constructors
 ```
 
-### The `instanceof` Operator
+## The `instanceof` Operator
 The `instaceof` Operator ...
  - Tests to see whether an instance of an object inherits from another object (not a primitive)
  - Tests for a specific type of object, or an object itself
@@ -334,7 +334,7 @@ let prod = new Product(680, "Road Frame");
 console.log(prod instanceof Product.toString()); // above returns output of 'true'
 ```
 
-### What `this` _Really_ Is
+## What `this` _Really_ Is
 `this` ...
  - Refers to an object; that object in which the current code is running
  - Sometimes, the object can be changed
@@ -425,14 +425,30 @@ function constructorFunction() {
 }
 ```
 
-### The `spread` Operator
-The `spread` operator ...
- - Is used to expand any _"iterable"_ array such as a string or other collection of indexed data into a new array object
+## The spread `...` Operator
+The spread syntax `...` is a new addition to the set of operators in JS ES6.
+
+It takes in an _iterable_ (such as an _array_) and _expands it into individual elements_. Spread is commonly used to make _shallow copies of JS objects_. Using this operator _makes the code concise_ and _enhances its readability_. 
+
+In other words, spread `...` allows an _iterable_, such as an _array_ or _string_, to be _expanded_ in places where ... 
+
+ - _zero or more arguments_ for _function calls_ are expected
+ - **or** _elements_ for _array literals_ are expected
+ 
+In an _object literal_, the spread syntax
+ - _enumerates the properties of an object_ 
+ - **and** _adds the key-value pairs to the object being created_.
+
+So, to review, the spread `...` operator ...
+ - Syntax uses the ellipsis symbol `...`
+ - Is used to expand any _iterable_ array such as a string or other collection of indexed data into a new array object
  - Is also used to pass multiple arguments to a method
- - Its syntax uses the ellipsis symbol `...`
  - Is always on the right side of an equal sign
+
 **Note** IE and Edge (at time of writing) do not support the `spread` operator
 
+
+## String to Array
 **Example**
 ```
 // String to array
@@ -443,9 +459,12 @@ function stringToArray() {
 }
 stringToArray();
 // Returns (10) ['F', 'R', '-', 'R', '9', '2', 'B', '-', '5', '8']
+```
 
-
-// Copy array (normally you would use the 'slice' method to copy an array, but for purposes of demonstration, we'll use 'spread' for the moment ...)
+## Copy An Array of Primitives
+**Example**
+```
+// Copy array (normally you would use the 'slice' method to copy an array, but for purposes of demonstration, we'll use the 'spread' operator for the moment ...)
 function copyArray() {
     let arr1 = [1, 2, 3];
     let arr2 = [...arr1];
@@ -457,5 +476,191 @@ function copyArray() {
     console.log(arr1); // Returns (3)[1, 2, 3]
     console.log(arr2); // Returns (4)[99, 2, 3, 4]
 }
+copyArray();
 ```
 
+## Copy An Array of Objects
+**Example**
+```
+let _products = [{
+        productID: 680,
+        name: "Road Frame",
+        productNumber: "FR-R92B-58",
+        color: "Black",
+        standardCost: 1059.31,
+        listPrice: 1431.50,
+    },
+    {
+        productID: 707,
+        name: "Helmet",
+        productNumber: "HL-U509-R",
+        color: "Red",
+        standardCost: 13.08,
+        listPrice: 34.99,
+    },
+    {
+        productID: 708,
+        name: "Socks",
+        productNumber: "SO-B909-M",
+        color: "White",
+        standardCost: 3.3963,
+        listPrice: 9.50,
+    }];
+
+function objectArrays() {
+    // **Careful with object arrays** – The array is copied, but the underlying objects are not copied moreso than they are just pointed to (where they are in memory) ... this means that you would be changing the actual original values of the objects being pointed to themselves if you were to make changes
+    let diff = [.._products];
+
+    // Modify a property of the new array; but ALSO modifies the property of the original ...
+    diff[0].productID = 999;
+
+    console.log(_products[0].productID); // Returns 999
+    console.log(diff[0].productID); // Returns 999
+
+    // This happens because the objects inside of the original array (above) are not copied by value, they're copied by reference
+}
+objectArrays();
+```
+
+## Concatenate Two Arrays Together
+**Example**
+```
+let _products = [{
+        productID: 680,
+        name: "Road Frame",
+        productNumber: "FR-R92B-58",
+        color: "Black",
+        standardCost: 1059.31,
+        listPrice: 1431.50,
+    },
+    {
+        productID: 707,
+        name: "Helmet",
+        productNumber: "HL-U509-R",
+        color: "Red",
+        standardCost: 13.08,
+        listPrice: 34.99,
+    },
+    {
+        productID: 708,
+        name: "Socks",
+        productNumber: "SO-B909-M",
+        color: "White",
+        standardCost: 3.3963,
+        listPrice: 9.50,
+    }];
+
+let _newProducts = [{
+        productID: 712,
+        name: "Logo Cap",
+        productNumber: "CA-1098",
+        color: "Multi",
+        standardCost: 6.9223,
+        listPrice: 8.99,
+    },
+    {
+        productID: 821,
+        name: "Front Wheel",
+        productNumber: "FW-T905",
+        color: "Black",
+        standardCost: 96.7964,
+        listPrice: 218.01,
+    }];
+
+// Concatenation
+function concatenateArray() {
+    // The original way of doing this in JS ...
+    let allProducts = _products.concat(_newProducts);
+    console.log(allProducts.length); // Returns 5; because there are now five objects
+
+    // The new way to do this with the 'spread' operator is to ...
+    let spProducts = [..._products, ..._newProducts];
+    console.log(spProducts.length); // Returns 5; because there are now five objects
+}
+concatenateArray();
+```
+
+## Using `Spread` To Pass Parameters
+**Example**
+```
+// Use with 'new'
+function spreadInConstructors() {
+    let dt = new Date(2019, 10, 15); // 15 Nov 2019
+    console.log(dt); // Returns Fri Nov 15 2019 00:00:00 GMT-0600 (Central Standard Time)
+
+    let dateFields = [2019, 11, 15]; // 15 Dec 2019; here you're creating an array of new values (to build a new date)
+    dt = new Date(...dateFields); // Here you're passing this previously made array of values into the 'new' Date object
+    console.log(dt); // Returns Sun Dec 15 2019 00:00:00 GMT-0600 (Central Standard Time)
+}
+spreadInConstructors();
+```
+
+## Pass Parameters To A Function
+ - Function parameters are the named variables listed in the function's declaration.
+ - Function parameters are initialized to the values of the arguments supplied.
+ - Function arguments are the real values passed to the function.
+
+**Example**
+```
+function example(parameter) {
+  console.log(parameter); // Output = foo
+}
+
+const argument = "foo";
+
+example(argument);
+```
+
+One of the benefits of using the spread operator is that it will create a new reference to its primitive values, copying them. As you can see, the spread operator is useful for creating new instances of arrays that do not behave unexpectedly due to old references.
+
+**Example**
+```
+// 'spreadForFunctionArgs()' is declared here and invokes 'multipleParams()' in two ways: the traditional approach, and the spread approach ...
+
+    function spreadForFunctionArgs() {
+
+        // 'multipleParams()' first invocation; The traditional way of passing multiple function/method parameters.
+
+            // The 'multipleParams()' function/method is invoked here, and elements 1, 2, and 3 are declared _and_ passed as individual arguments to the 'multipleParams()' function/method.
+            
+            multipleParams(1, 2, 3);
+
+        // 'multipleParams()' second invocation; Using 'spread' (...) to pass multiple parameters to a function/method.
+
+            // An 'args' array is declared with the elements of 1, 2, 3, returning (3)[1, 2, 3] via the console when tested. Each of these is an argument.
+            
+            let args = [1, 2, 3]; 
+
+            // Then, the 'multipleParams()' function/method is invoked here, and the 'args' array's elements (declared from above) are copied via the spread (...) operator and passed to the 'multipleParams()' function/method for reception as invidual parameters ... 1, 2, 3 within a collection. This approach functions much like the traditional approach in that it outputs the same parameters (or argument values), only it allows us to be more verbose via spread's functionality, making the code cleaner and more readable.
+            
+            multipleParams(...args); 
+    }
+
+// 'multipleParams()' is declared here with named variables thing1, thing2, and thing 3. This allows both the traditional and spread approach elements to be passed to 'multipleParams()'.
+
+    function multipleParams(thing1, thing2, thing3) {
+
+        // This evaluates to ...
+
+            // argument thing1 = parameter 1 as '1'
+            
+            console.log(thing1); // Returns '1',
+
+            // argument thing2 = parameter 2 as '2'
+            
+            console.log(thing2); // Returns '2'
+
+            // argument thing3 = parameter 3 as '3'
+            
+            console.log(thing3); // Returns '3'
+    }
+
+spreadForFunctionArgs();
+```
+
+## Shallow Copy on Object Literals
+**Example**
+```
+```
+
+# THE END

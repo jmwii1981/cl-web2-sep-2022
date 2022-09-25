@@ -1,88 +1,33 @@
-<html>
+<!DOCTYPE html><html lang="en">
 <head>
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Code Sample Accuracy Tests</title>
 </head>
+
 <body>
 
-<h1>Accuracy tests of JS code samples in notes below ...</h1>
+<h1>Accuracy tests of JS code samples from notes below ...</h1>
 <h2>
 <script>
 'use strict'
+function spreadForFunctionArgs() {
+    // Traditional way of calling multiple method-parameters
+    multipleParams(1, 2, 3); // Params declared _and_ passed to the 'multipleParams()' function
 
-
-
-
-
-
-
-
-
-
-// function myFunction() {
-//     let x = 9;
-//     if (!x > 10) { // evaluates to true
-//         document.write("true");
-//     } else {
-//         document.write("false");
-//     }
-    
-// }
-// myFunction(); // outputs true
-
-// function myFunction() {
-//     // let x = 10;
-//     let result;
-
-//     try {
-//         result = x / 10; // an error occurs here        
-//     }
-//     catch (error) {
-//         // throw new error object is generated here with two properties: name, message.
-//         // let errorMessage = {
-//         //     name: `Here's the name`,
-//         //     content: `Who fucking knows?`,
-//         // };
-//         // throw new Error(errorMessage.name, errorMessage.content);
-//         // document.write(`<br><strong>` + error.name + `:</strong> <em>` + error.message + `</em>`); // this line will run if there was an error in the try code block\
-//         document.write(Error.prototype.name.toString());
-//         document.write(Error.prototype.message.toString());
-//     }
-//     finally {}
-// }
-// myFunction();
-function attemptDivision() {
-    let result;
-
-    try {
-        result = x / 10;
-    } catch (error) {
-        throw {
-            "message" : "In the attemptDivsion() method, the following error occurred: " + error.message,
-            "name" : "CustomError",
-        }
-    }    
+    // Using 'spread' (...) to pass parameters to a function
+    let args = [1, 2, 3]; // 'args' array declared with elements of 1, 2, 3, returning (3)[1, 2, 3] via the console
+    multipleParams(...args); // 'args' array elements are copied and then passed to the 'multipleParams()' function as individual params; (e.g. arg1, arg2, arg3)
 }
-function throwError() {
-    try {
-        attemptDivision();
-    } catch (error) {
-        console.log(error.message + " - Error Type: " + error.name);
-    }
+
+function multipleParams(thing1, thing2, thing3) {
+    console.log(thing1); // Returns '1'
+    console.log(thing2); // Returns '2'
+    console.log(thing3); // Returns '3'
+    console.log(""); // Returns 'white space'
 }
-throwError(); // the console shows the followiing ... "In the attemptDivsion() method, the following error occurred: x is not defined - Error Type: CustomError"
 
-
-
-
-
-
-
-
-
-
-
-
-
+spreadForFunctionArgs();
 
 </script>
 </h2>
