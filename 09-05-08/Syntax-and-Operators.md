@@ -441,5 +441,21 @@ function stringToArray() {
     let values = [...productNumber];
     console.log(values);
 }
+stringToArray();
+// Returns (10) ['F', 'R', '-', 'R', '9', '2', 'B', '-', '5', '8']
+
+
+// Copy array (normally you would use the 'slice' method to copy an array, but for purposes of demonstration, we'll use 'spread' for the moment ...)
+function copyArray() {
+    let arr1 = [1, 2, 3];
+    let arr2 = [...arr1];
+
+    // Make changes to duplicated array
+    arr2.push(4);
+    arr2[0] = 99;
+
+    console.log(arr1); // Returns (3)[1, 2, 3]
+    console.log(arr2); // Returns (4)[99, 2, 3, 4]
+}
 ```
 
