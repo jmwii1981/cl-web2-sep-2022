@@ -661,15 +661,15 @@ One of the benefits of using the spread operator is that it will create a new re
 
         // This evaluates to ...
 
-            // 'param1' argument = parameter 1 as real value '1'
+            // 'param1's argument = parameter 1 becomes real value '1'
             
             console.log(param1); // Returns '1',
 
-            // 'param2' argument = parameter 2 as real value '2'
+            // 'param2's argument = parameter 2 becomes real value '2'
             
             console.log(param2); // Returns '2'
 
-            // 'param3' argument = parameter 3 as real value '3'
+            // 'param3's argument = parameter 3 becomes real value '3'
             
             console.log(param3); // Returns '3'
     }
@@ -680,6 +680,33 @@ spreadForFunctionArgs();
 ## Shallow Copy on Object Literals
 **Example**
 ```
+function objectliterals() {
+    // A literal object called product assigned a few different properties
+    let product = {
+        productID: 680,
+        name: "Road Frame",
+        standardCost: 1059.31,
+        listPrice: 1431.50
+    };
+
+    // The following peforms a 'shallow' copy of the object literal's properties one-by-one into a new object literal 
+    'prod2' (This functionality, in a way, is similar to Object.assign())
+    let prod2 = { ...product }
+
+    // Here we change the value of the newly copied object literal's property 'productID'
+    prod2.productID = 999;
+
+    // Here we display the objects as they are now formed, after changes and declarations, in the console
+    console.log(product);
+    // Returns product = { productID: 680, name: "Road Frame", standardCost: 1059.31, listPrice: 1431.50 }
+
+    console.log(prod2);
+    // Returns prod2 = { productID: 999, name: "Road Frame", standardCost: 1059.31, listPrice: 1431.50 } 
+
+    // Display the changed value on its own ... (for "funzzies??")
+    console.log(product.productID); // Returns 680
+    console.log(prod2.productID); // Returns 999
+}
 ```
 
 # THE END
