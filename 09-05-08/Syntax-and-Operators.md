@@ -19,12 +19,12 @@
 
 ## Using Math and Comparison Operators
 Typical math operators are ...
- - `+`
- - `-`
- - `*`
- - `/`
- - `**`
- - `%`
+ - `+`: Addition
+ - `-`: Subtraction
+ - `*`: Multiplication
+ - `/`: Division
+ - `**`: To the power of ...
+ - `%`: Modulus
 
 ## Operators
 Operands are what's being "operated" on by the operator. Every operator will have an operand on both its left and right sides (e.g. `operand operator operand`).
