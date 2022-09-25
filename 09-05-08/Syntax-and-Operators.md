@@ -261,12 +261,12 @@ throwError(); // the console shows the followiing ... "In the attemptDivsion() m
 ```
 
 Types of Errors to familiarize yourself with are ...
- - referenceError
- - rangeError
- - typeError
- - uriError
- - syntaxError
- - evalError
+ - `referenceError`
+ - `rangeError`
+ - `typeError`
+ - `uriError`
+ - `syntaxError`
+ - `evalError`
 
 These are built-in Error objects to check for.
 
@@ -279,14 +279,14 @@ Primitive data types are as follows ...
  - string: an array (or series) of characters
 
 ### Object Data Types
- - new Array(): typically a collection of values
- - new Error(): contains properties of name and message
- - new Function(): contains a block of code to be executed when called by the function's name
- - new Object(): a wrapper around any data type
- - new RegExp(): a regular expression
- - new Boolean(): an object that contains either true or false
- - new Number(): an object that contains a numeric value
- - new String(): an object that contains a series of characters
+ - `new Array()`: typically a collection of values
+ - `new Error()`: contains properties of name and message
+ - `new Function()`: contains a block of code to be executed when called by the function's name
+ - `new Object()`: a wrapper around any data type
+ - `new RegExp()`: a regular expression
+ - `new Boolean()`: an object that contains either true or false
+ - `new Number()`: an object that contains a numeric value
+ - `new String()`: an object that contains a series of characters
 
 Objects take up more memory space than primitive data types. Use primitive where possible in an effort to eliminate overuse of objects.
 
