@@ -638,38 +638,40 @@ One of the benefits of using the spread operator is that it will create a new re
 
         // 'multipleParams()' first invocation; The traditional way of passing multiple function/method parameters.
 
-            // The 'multipleParams()' function/method is invoked here, and elements 1, 2, and 3 are declared _and_ passed as individual arguments to the 'multipleParams()' function/method.
+            // The 'multipleParams()' function/method is invoked here, and argument values '1, 2, 3' are declared _and_ passed as individual arguments to the 'multipleParams()' function/method.
             
             multipleParams(1, 2, 3);
 
-        // 'multipleParams()' second invocation; Using 'spread' (...) to pass multiple parameters to a function/method.
+        // 'multipleParams()' second invocation; Using 'spread' (...) to pass multiple parameter arguments to a function/method.
 
-            // An 'args' array is declared with the elements of 1, 2, 3, returning (3)[1, 2, 3] via the console when tested. Each of these is an argument.
+            // An 'args' array is declared with the elements of 1, 2, 3, returning (3)[1, 2, 3] via the console when tested. Each of these is a parameter argument to be passed.
             
             let args = [1, 2, 3]; 
 
-            // Then, the 'multipleParams()' function/method is invoked here, and the 'args' array's elements (declared from above) are copied via the spread (...) operator and passed to the 'multipleParams()' function/method for reception as invidual parameters ... 1, 2, 3 within a collection. This approach functions much like the traditional approach in that it outputs the same parameters (or argument values), only it allows us to be more verbose via spread's functionality, making the code cleaner and more readable.
+            // Then, the 'multipleParams()' function/method is invoked here, and the 'args' array's elements (declared from above) are copied via the spread (...) operator and passed to the 'multipleParams()' function/method for reception as invidual parameter arguments ... '1, 2, 3 'within the given array collection. 
+            
+            // This approach functions much like the traditional approach in that it outputs the same parameter arguments (or real values), only it allows us to be more verbose via spread's functionality, making the code cleaner and more readable.
             
             multipleParams(...args); 
     }
 
 // 'multipleParams()' is declared here with named variables thing1, thing2, and thing 3. This allows both the traditional and spread approach elements to be passed to 'multipleParams()'.
 
-    function multipleParams(thing1, thing2, thing3) {
+    function multipleParams(param1, param2, param3) {
 
         // This evaluates to ...
 
-            // argument thing1 = parameter 1 as '1'
+            // 'param1' argument = parameter 1 as real value '1'
             
-            console.log(thing1); // Returns '1',
+            console.log(param1); // Returns '1',
 
-            // argument thing2 = parameter 2 as '2'
+            // 'param2' argument = parameter 2 as real value '2'
             
-            console.log(thing2); // Returns '2'
+            console.log(param2); // Returns '2'
 
-            // argument thing3 = parameter 3 as '3'
+            // 'param3' argument = parameter 3 as real value '3'
             
-            console.log(thing3); // Returns '3'
+            console.log(param3); // Returns '3'
     }
 
 spreadForFunctionArgs();
