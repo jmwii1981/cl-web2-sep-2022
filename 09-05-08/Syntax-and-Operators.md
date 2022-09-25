@@ -260,8 +260,68 @@ function throwError() {
 throwError(); // the console shows the followiing ... "In the attemptDivsion() method, the following error occurred: x is not defined - Error Type: CustomError"
 ```
 
- **Example**
+Types of Errors to familiarize yourself with are ...
+ - referenceError
+ - rangeError
+ - typeError
+ - uriError
+ - syntaxError
+ - evalError
 
- ```
+These are built-in Error objects to check for.
 
- ```
+### Primitive Data Types
+Primitive data types are as follows ...
+ - boolean: either `true`, or `false`
+ - null: is described as having no value and usually represented as `null`
+ - undefined: is described as a variable having been declared with no value, or an empty variable. Usually represented as `undefined`
+ - number: usually represented by types of numbers such as integers, decimals, floats, etc.
+ - string: an array (or series) of characters
+
+### Object Data Types
+ - new Array(): typically a collection of values
+ - new Error(): contains properties of name and message
+ - new Function(): contains a block of code to be executed when called by the function's name
+ - new Object(): a wrapper around any data type
+ - new RegExp(): a regular expression
+ - new Boolean(): an object that contains either true or false
+ - new Number(): an object that contains a numeric value
+ - new String(): an object that contains a series of characters
+
+Objects take up more memory space than primitive data types. Use primitive where possible in an effort to eliminate overuse of objects.
+
+### `typeof` Operator
+The `typeof` operator returns an evaluation of an object's type when you pass that object to it.
+
+**Example**
+```
+typeof "Hello"; // evaluates to 'string'
+```
+
+### The Object Data Type's Constructor Property
+ - All object data types inherit from objects. Conversely, primitive data types do not inherit
+ - All objects have a constructor property
+ - The constructor property returns a reference to the object it belongs to ... this allows us to learn a few things about the object itself
+
+**Example**
+```
+// Pseudo code
+data_type.constructor.toString(); // will output a string value that tells us what data type 'data_type' is
+
+data_type.primitive.constructor.toString(); // will output to a string value that tell you what it is after constructor applies (assigns) a constructor property to the primitive. Meanwhile, objects _already have_ constructors
+```
+
+### `instanceof` Operator
+ - tests if an instance of an object inherits from another object (not a primitive)
+ - tests for a specific type of object, or an object itself
+
+**Example**
+```
+let prod = new Product(680, "Road Frame");
+console.log(prod instanceof Product.toString()); // above returns output of \`true\`
+```
+
+
+
+### `this`
+
