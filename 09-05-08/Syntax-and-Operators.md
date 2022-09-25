@@ -1,4 +1,5 @@
 # Syntax and Operators
+From the video [JS 7 Syntax and Operators](https://app.pluralsight.com/course-player?clipId=3b2cbc2a-d4aa-401a-8f51-0cbc78d95799)
 
 **Note to self** – Review all of the material in this section in the YDKJS series by Kyle Simpson. Keep in mind that the series focuses on ES 6 in some regards and note the differences.
 
