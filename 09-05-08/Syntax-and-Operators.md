@@ -380,3 +380,6 @@ function constructorFunction() {
 ```
 
 ### The `spread` Operator
+The `spread` operator ...
+ - is used to expand any _"iterable"_ array such as a string or other collection of indexed data into a new array object.
+ - `spread` is also used to pass multiple arguments to a method.
