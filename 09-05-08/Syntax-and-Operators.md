@@ -71,13 +71,68 @@ switch(<expression value to consider>) {
 ```
 
 ## The Difference Between for/in and for/of Loops
+A for/of statement ...
+ - Iterates over various iterable objects such as values in an array, a string, etc.
+ - Returns an object for each iteration
 
+**Example**
+```
+// A nimble example for an array ...
+_products {
+    {
+        "productID": 680,
+        "color": "Black",
+    },
+    {
+        "productID": 707,
+        "color": "Red",
+    },
+    {
+        "productID": 787,
+        "color": "Purple",
+    }
+}
+
+for (const item of _products) {
+    console.log(JSON.stringify(item)); // Item references each object in the array "_products"
+}
+
+// A nimble example for a string ...
+let string = "I am a string value.";
+let letters = "";
+
+for (const char of string) {
+    letters += char;
+}
+console.log(letters); // Returns "I am a string value."
+```
 
 ## Break / Continue Statements
-> TBD
+Quick overview.
+ - `break` leaves the loop that it lives in early
+    - a `break` will skip any statements beneath it that are within the same code block
+ - `continue` moves up to the top of the loop in which it lives and move us through the next iteration of the loop
+    - similar to `break`, `continue` will skip the statements beneath it before it returns focus to the top of the loop in which it resides
 
 ## Labeled Statements ('A No-No')
-> TBD
+Quick overview.
+ - A labeled statement defines a location of reference for the focus of a runtime to go to within a given compound statement that it belongs to
+ - Not an ideal solution, should typically avoid
+
+
+ **Example**
+ ```
+function labelSample() {
+    even:
+    for (let i = 1; i <= 10; i++) {
+        if index % 2 == 1) {
+            continue even;
+        }
+        console.log(index);
+    }
+}
+ ```
+
 
 ## Using Math and Comparison Operators
 Typical math operators are ...
