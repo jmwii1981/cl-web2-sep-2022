@@ -4,13 +4,74 @@ From the video [JS 7 Syntax and Operators](https://app.pluralsight.com/course-pl
 **Note to self** – Review all of the material in this section in the YDKJS series by Kyle Simpson. Keep in mind that the series focuses on ES 6 in some regards and note the differences.
 
 ## Switch Statements
-> TBD
+Quick overview. 
+ - Switch statements compare expressions within different cases
+ - A "fall back" default statement can be used to run in the event that none of the case statements match
+ - A `break` statement can be used to "exit" out of each given case
+ - Within a given switch statement, multiple case statements that compare against the switch statement, may match
+ - The type _and_ value of the expression in both the switch statement and its case statements must match for the case to be true
+ - Switch statements might replace if / else statements in some cases
 
-## Using for/in Loops
-> TBD
+**Example**
+```
+// A typical switch statement in pseudo.
 
-## Using for/of Loops
-> TBD
+switch(<expression value to consider>) {
+    case <does expression match?>:
+        // Conditional code block.
+        break;
+    case <does expression match?>:
+        // Conditional code block.
+        break;
+    default:
+        // Fallback code block.
+        break;
+}
+
+
+// If you do not add a `break` to exit a case, then the interpreter continues to "fall through" the switch statement and compare the value of the expression in the switch statement to additional case statements. Note that the `default` statement can live anywhere in the switch statement tree
+
+switch(<expression value to consider>) {
+    case <does expression match?>:
+        // Conditional code block.
+    case <does expression match?>:
+        // Conditional code block.
+        break;
+    default:
+        // Fallback code block.
+    case <does expression match?>:
+        // Conditional code block.
+        break;
+}
+
+
+// In the event you decide to declare a variable within the case "block" of a switch statement, encapsulate the body of the case in brackets
+
+switch(<expression value to consider>) {
+    case <does expression match?>: {
+        let var;
+        // Conditional code block.
+        break;
+    }
+    case <does expression match?>: {
+        let var;
+        // Conditional code block.
+        break;
+    }
+    case <does expression match?>: {
+        let var;
+        // Conditional code block.
+        break;
+    }
+    default:{
+        // Fallback code block.
+    }
+}
+
+```
+
+## The Difference Between for/in and for/of Loops
+
 
 ## Break / Continue Statements
 > TBD
