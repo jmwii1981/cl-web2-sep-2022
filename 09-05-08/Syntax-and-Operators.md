@@ -71,13 +71,36 @@ switch(<expression value to consider>) {
 ```
 
 ## The Difference Between for/in and for/of Loops
+A for/in statement ...
+ - Iterates over elements of an object's properties and methods
+ - Returns key property and method names
+ - Returns the values associated with the keys belonging to the properties and methods of an element
+
+**Example**
+```
+// A nimble example of a for/in loop for an array ...
+let product = {
+    "productID": 680,
+    "color": "Black"
+    "standardCost": 1050,
+    "listPrice": 133,
+    calculateGrossProfit: function () {
+        return.this.listPrice - this.standardCost;
+    }
+}
+
+for (const key in product) {
+    console.log("'" + key + "'=" + product[key]); // Returns a string of the object
+}
+```
+
 A for/of statement ...
  - Iterates over various iterable objects such as values in an array, a string, etc.
  - Returns an object for each iteration
 
 **Example**
 ```
-// A nimble example for an array ...
+// A nimble example of a for/of loop for an array ...
 _products {
     {
         "productID": 680,
@@ -93,11 +116,12 @@ _products {
     }
 }
 
-for (const item of _products) {
-    console.log(JSON.stringify(item)); // Item references each object in the array "_products"
+for (const item of _products) { // 'Item' references each object in the array "_products"
+    console.log(JSON.stringify(item));  // Returns a string of the object's items
+    
 }
 
-// A nimble example for a string ...
+// A nimble example of a for/of loop for a string ...
 let string = "I am a string value.";
 let letters = "";
 
@@ -106,6 +130,7 @@ for (const char of string) {
 }
 console.log(letters); // Returns "I am a string value."
 ```
+
 
 ## Break / Continue Statements
 Quick overview.
@@ -123,10 +148,10 @@ Quick overview.
  **Example**
  ```
 function labelSample() {
-    even:
+    even: // Here is the line of reference to be returned to
     for (let i = 1; i <= 10; i++) {
         if index % 2 == 1) {
-            continue even;
+            continue even; // Here is where we leave this part of the executable block of code and return to its named reference
         }
         console.log(index);
     }
