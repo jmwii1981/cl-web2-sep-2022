@@ -111,22 +111,74 @@ let carIDs = [1, 2, 3, 4, 5, 6];
 startCars(...carIDs);
 ```
 
-## IFFE (Immediately Invoked Function Expression)
-A function that is invoked immediately after it has been declared.
+## IIFE (Immediately Invoked Function Expression)
+An IIFE is a function that is invoked immediately after it has been declared. IIFEs are a way to isolate code so that it won't interfere with other code. IIFE stands for Immediately Invoked Function Expression. 
+
+A _function expression_ means to take a function and do something with it; usually assigning it to a variable. To be immediately invoked means to immediately run a function after it has been declared.
+
 
 **Example**
 ```
 // Example 1
 
 (function () {
-    console.log("I'm an IFFE!");
-})(); // The argument call ... '()' ... invokes the function
+    console.log("I'm an IIFE!");
+})(); // The argument call ... '()' ... invokes this function
 
 // Example 2
+let app = (function() { // Everything inside of the function body gets assigned to "app"
+    let carID = 123;
+    console.log(`This is in the 'app' function`);
+    return {}; // This empthy object would typically return a group of functions () assigned to "app. This is where the value of an IIFE comes into play as it creates a "closure"
+})(); // Adding the semi-colon indicates that this function is an expression
+
+// Example 3
 let app = (function() {
     let carID = 123;
-    console.log("in function");
+    console.log(`This is in the 'app' function`);
     return {};
 })();
+console.log(app); // Returns "This is in the 'app' function"; and an empty object: "{} " ... In summary, the full return looks like this: This is in the 'app' function {}
+
+```
+
+## Closures
+When functions are invoked and run through all of their code (once they are complete) their vars, nested functions, etc. go out of scope. However, sometimes we want that function and its code setup to hang around, and that's what a closure is for.
+
+**Example**
+```
+// How we can create a closure with the IIFE pattern
+let app = (function() { // 'app' is assigned an IIFE with the code block below
+    let carID = "123"; // var 'carID' is assigned the value of "123"
+    let getID = function () { // A nested function assigned the name 'getID'
+        returns the value of the var 'carID' (assigned above)
+    };
+    return { // The var 'app' gets associated with the return value of the IIFE 'app' which all together becomes 'app.getID()'
+        getID: getID // References the 'getID()' function above and returns the value of "123" per the instructions of the 'getID()' function
+    };
+})(); // Ends 'app' immediately invoked function expression
+console.log(app.getID()); // Returns the value "123"
+```
+
+## The `this` keyword
+This is a special keyword that refers to the context of an object/function.
+
+**Example**
+```
+// Example 1 – Using this without 'use strict'
+let fn = function() {
+    console.log(this === window);
+}
+fn(); // Returns true because the 'this' keyword is referring to the global object since we're not using 'use strict'
+
+// Example 2
+// The example below is the most common use of 'this' ... as properties of functions within a given object
+let iAmAnObject = {
+    carID: 123,
+    getID: function() {
+        return this.carID; // The 'this' keyword here refers to the 'iAmAnObject' object that holds the function 'getID()' ... 
+    }
+};
+console.log(iAmAnObject.getID()); // Here, we access 'this.carID' and it returns the value of 123
 
 ```
