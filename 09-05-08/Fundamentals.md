@@ -110,3 +110,23 @@ function startCars(car1, car2, car3, ...rest) {
 let carIDs = [1, 2, 3, 4, 5, 6];
 startCars(...carIDs);
 ```
+
+## IFFE (Immediately Invoked Function Expression)
+A function that is invoked immediately after it has been declared.
+
+**Example**
+```
+// Example 1
+
+(function () {
+    console.log("I'm an IFFE!");
+})(); // The argument call ... '()' ... invokes the function
+
+// Example 2
+let app = (function() {
+    let carID = 123;
+    console.log("in function");
+    return {};
+})();
+
+```
