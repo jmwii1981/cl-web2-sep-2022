@@ -172,13 +172,91 @@ let fn = function() {
 fn(); // Returns true because the 'this' keyword is referring to the global object since we're not using 'use strict'
 
 // Example 2
-// The example below is the most common use of 'this' ... as properties of functions within a given object
-let iAmAnObject = {
-    carID: 123,
-    getID: function() {
-        return this.carID; // The 'this' keyword here refers to the 'iAmAnObject' object that holds the function 'getID()' ... 
+// The example below is the most common use of 'this': within functions that act as nested properties themselves of a parent object
+let iAmAnObject = { // The parent object 'iAmAnObject'
+    carID: 123, // The 'carID' var is assigned the value 123
+    getID: function() { // The 'getID()' function is declared here
+        return this.carID; // The 'this' keyword here refers to the 'iAmAnObject' object that holds the function 'getID()' and returns the value of the var 'carID' which is 123
     }
 };
 console.log(iAmAnObject.getID()); // Here, we access 'this.carID' and it returns the value of 123
 
+// Example 3 – Logging out the value of 'this' from the above scenario
+let iAmAnObject = {
+    carID: 123,
+    getID: function() {
+        console.log(this); // Returns carID: 123, getID() ... etc., basically the entire object ... this is how you can test what 'this' is referencing
+        return this.carID;
+    }
+};
+```
+
+## Call and Apply
+Most of the time when you call a function, you're going to specify the opening and closing parantheticals, and place any arguments there. There are two additional ways to call a function as well using the `call` or `apply` functions. The main purpose of these two functions is to change the value of `this`. That is, to change the object which is the context of the function, and `this` is important for object-oriented scenarios.
+
+**Example**
+```
+// Example of 'call'
+
+let o = {
+    cardID: 123;
+    getID: function() {
+        return: this.cardID;
+    }
+};
+let newCard = { cardID: 456 }; // Here we are creating a new object and assigning it a new 'cardID' value
+console.log( o.getID.call(newCard) ); // We can use the original object's 'getID' method along with the 'call' function AND pass the 'newCard' object; This returns the 'newCard' object's 'cardID' value of '456'
+
+
+// Example of 'apply'
+// 'apply' is similar to 'call'; the only difference is that with 'apply' you have the ability to pass arguments
+
+let o = {
+    cardID: 123;
+    getID: function(prefix) {
+        return: prefix + this.cardID;
+    }
+};
+let newCard = { cardID: 456 };
+console.log( 0.getID.apply(newCard, ['ID: ']) ); // Here 'apply' accepts an array of arguments, and returns ID: 456
+```
+
+## TITLE
+**Example**
+```
+```
+
+## TITLE
+**Example**
+```
+```
+
+## TITLE
+**Example**
+```
+```
+
+## TITLE
+**Example**
+```
+```
+
+## TITLE
+**Example**
+```
+```
+
+## TITLE
+**Example**
+```
+```
+
+## TITLE
+**Example**
+```
+```
+
+## TITLE
+**Example**
+```
 ```
