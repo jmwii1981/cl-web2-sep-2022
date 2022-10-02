@@ -1,5 +1,5 @@
 # Working With JavaScript Modules
-From the video [Title](https://a-url.com)
+From the video series [Working With JavaScript Modules](https://app.pluralsight.com/library/courses/working-javascript-modules/table-of-contents)
 
 ## TITLE
 **Example**

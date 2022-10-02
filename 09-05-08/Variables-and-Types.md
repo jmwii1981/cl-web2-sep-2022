@@ -1,4 +1,7 @@
 # JS 2018 Variables and Types Video and Class Notes
+From the video series [JS 2018 Variables and Types](https://app.pluralsight.com/library/courses/javascript-variables-types/table-of-contents)
+
+**Note** Didn't really take a lot of notes or have much interest in this particular series ... my revisit at some point.
 
 ## Block Scope
 

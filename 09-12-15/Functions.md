@@ -1,5 +1,5 @@
 # Functions
-From the video [Title](https://a-url.com)
+From the video series [Javascript: Functions](https://app.pluralsight.com/library/courses/javascript-functions/table-of-contents)
 
 ## TITLE
 **Example**

@@ -1,5 +1,5 @@
 # Arrays And Collections
-From the video [Title](https://a-url.com)
+From the video series [JavaScript Arrays and Collections](https://app.pluralsight.com/library/courses/javascript-arrays-collections/table-of-contents)
 
 ## TITLE
 **Example**
