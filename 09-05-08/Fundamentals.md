@@ -2,6 +2,13 @@
 From the video [Title](https://a-url.com)
 
 
+## Functions
+**Note** When talking about functions, it's important to note the difference between parameters, and arguments. A parameter is the variable in the declaration of the function. For instance, consider `foo function(parameter1, parameter2){ bar; }`. Meanwhile, an argument is the actual value of this variable that gets passed to the function. Usually an argument will get passed to the function from another source such as another variable, or from an element within an object, or even an object itself.
+
+**Example**
+```
+```
+
 ## Rest Parameters
 Rest parameters allow a function to store multiple arguments in a single array.
 
@@ -191,8 +198,8 @@ let iAmAnObject = {
 };
 ```
 
-## Call and Apply
-Most of the time when you call a function, you're going to specify the opening and closing parantheticals, and place any arguments there. There are two additional ways to call a function as well using the `call` or `apply` functions. The main purpose of these two functions is to change the value of `this`. That is, to change the object which is the context of the function, and `this` is important for object-oriented scenarios.
+## Using `call` and `apply`
+Most of the time when you call a function, you're going to specify the opening and closing parantheticals, and place any arguments there. There are two additional ways to call a function as well using the `call` or `apply` functions. The main purpose of these two functions is to change the value of `this`. That is, to change the object which is the context of the function, and `this` is important for object-oriented scenarios. Note that `call` and `apply` do not make a "copy" of the function, but they do "call" the function.
 
 **Example**
 ```
@@ -219,24 +226,33 @@ let o = {
 };
 let newCard = { cardID: 456 };
 console.log( 0.getID.apply(newCard, ['ID: ']) ); // Here 'apply' accepts an array of arguments, and returns ID: 456
+
 ```
 
-## TITLE
+## Using `bind`
+Unlike `call` and `apply`, we can call a `bind` on a function, and it makes a copy of that function, assigning it a new context which then applies also to `this` when `this` is used to access a value.
+
+**Example**
+```
+let o = {
+    cardID: 123,
+    getID: function() {
+        return this.cardID; // This would typically return 123
+    }
+};
+let newCard = { cardID: 456 }; // Here we create a newCard object with cardID 456
+let newFn = o.getID.bind( newCard ); // Here, rather than calling 'call' or 'apply', we make a "copy" of the 'getID' function by calling 'bind' with 'getID' allowing for a new context where we can now pass the new value per 'this'
+console.log( newFn() ); // Returns 456
+// In summary, the copy of the original function 'getID' is now stored in a variable called 'newFn'
+
+```
+
+## Arrow Functions
 **Example**
 ```
 ```
 
-## TITLE
-**Example**
-```
-```
-
-## TITLE
-**Example**
-```
-```
-
-## TITLE
+## Default Parameters
 **Example**
 ```
 ```
