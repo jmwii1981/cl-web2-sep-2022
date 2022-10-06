@@ -1,5 +1,5 @@
 # JavaScript Fundamentals
-From the video [Title](https://a-url.com)
+From the video series [JavaScript Fundamentals](https://app.pluralsight.com/library/courses/javascript-fundamentals/table-of-contents)
 
 
 ## Functions
@@ -7,6 +7,7 @@ From the video [Title](https://a-url.com)
 
 **Example**
 ```
+
 ```
 
 ## Rest Parameters
