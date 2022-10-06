@@ -1,13 +1,36 @@
 # JavaScript Fundamentals
 From the video series [JavaScript Fundamentals](https://app.pluralsight.com/library/courses/javascript-fundamentals/table-of-contents)
 
+## Object Parameters and Arguments
+**Note** When talking about object parameters and arguments, it's important to note the difference between them. A parameter is the variable in the declaration of the function. For instance, consider `foo function(parameter1, parameter2){ bar; }`. Meanwhile, an argument is the actual value of this variable that gets passed to the function. Usually an argument will get passed to the function from another source such as another variable, or from an element within an object, or even an object itself.
 
-## Functions
-**Note** When talking about functions, it's important to note the difference between parameters, and arguments. A parameter is the variable in the declaration of the function. For instance, consider `foo function(parameter1, parameter2){ bar; }`. Meanwhile, an argument is the actual value of this variable that gets passed to the function. Usually an argument will get passed to the function from another source such as another variable, or from an element within an object, or even an object itself.
+## Syntax Caveats of Controlling Loops
+In addition to the basics of controlling loops, there are some caveats to be aware of. See the examples below for an illustration of what to look out for.
+
+Variable initiatlization. Below you may see a strange syntax with an empty space before the `;` within the for loop's counter arguments. The empty space is actually ok, and the `i` var does not need to be initiatlized, but the `;` must be present. Above, you will see that this is because `i` has already been initiatlized with the zero value.
 
 **Example**
 ```
+let i = 0;
 
+for (; i<12; i++) {
+    if (i === 8) {
+        break;
+    }
+}
+console.log(i); // Returns 8
+```
+
+Using `continue`. With `continue` in the block of the loop below, you'll notice that if i is strict equals to 2, then `continue` will execute. When the `continue` keyword or command executes it will **not** execute the remaining code block that might exist below it. Rather, `continue` acts as if any code beneath it within the loop that it resides, doesn't exist, but will continue the loop, if the loop's arguments haven't been fully fulfilled.
+
+**Example**
+```
+for (let i = 0; i < 4; i++) {
+    if (i === 2) {
+        continue; // Acts as if the loop's body has finished execution, but does not 'exit' the loop's criteria for continuing to loop the way 'break' does.
+    }
+    console.log(i); // Returns 0 1 3
+}
 ```
 
 ## Rest Parameters
@@ -119,6 +142,38 @@ let carIDs = [1, 2, 3, 4, 5, 6];
 startCars(...carIDs);
 ```
 
+## Block and Function Scope
+**Block scope** refers to when a 'let' var has been declared both outside of a function and within a function at the same time. Essentially, when declared and initiatlized in both places, the function's intialized 'let' var will override the one that exists outside of it's brackets (scope). This does not apply to the 'var' keyword for declaring a variable, but only the 'let' keyword for declaring a variable.
+
+**Example**
+```
+// Block Scope
+Note: there is no such thing as 'block scope' for the 'var' keyword, this only pertains to 'let'
+let message = 'outside';
+if (conditional parameters) {
+    let message = 'inside';
+    console.log(message); // Returns 'inside'
+}
+console.log(message); // Returns 'outside'
+```
+
+**Function scope** refers to vars that are initialized within a function first. These vars cannot be _accessed_ outside of the function unless they have been _intialized_ outside of the function. If you attempt to access a var outside of a function when it is only initialized within a function, then you will receive a reference error.
+
+**Example**
+```
+// Function Scope
+if (conditional parameters) {
+    let message = 'inside';
+}
+consol.log(message); // Reference error.
+```
+
+## TITLE
+
+
+**Example**
+```
+```
 ## IIFE (Immediately Invoked Function Expression)
 An IIFE is a function that is invoked immediately after it has been declared. IIFEs are a way to isolate code so that it won't interfere with other code. IIFE stands for Immediately Invoked Function Expression. 
 
@@ -245,12 +300,15 @@ let newCard = { cardID: 456 }; // Here we create a newCard object with cardID 45
 let newFn = o.getID.bind( newCard ); // Here, rather than calling 'call' or 'apply', we make a "copy" of the 'getID' function by calling 'bind' with 'getID' allowing for a new context where we can now pass the new value per 'this'
 console.log( newFn() ); // Returns 456
 // In summary, the copy of the original function 'getID' is now stored in a variable called 'newFn'
-
 ```
 
 ## Arrow Functions
+Arrow Functions are simply a term that describes modern syntax for declaring functions.
+
 **Example**
 ```
+let getID = () => 123;
+console.log( getID() ); // Returns '123'
 ```
 
 ## Default Parameters
