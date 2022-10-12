@@ -305,11 +305,31 @@ console.log( newFn() ); // Returns 456
 ## Arrow Functions
 Arrow Functions are simply a term that describes modern syntax for declaring functions.
 
+In the below example, you will see a simple Arrow Function. The empty `()` describe the function has having no parameters listed. After the parameters list, you'll notice that there is a `=>` that indicates that this line of code is declaring an arrow function. The `123` is the return value of the function.
+
 **Example**
 ```
 let getID = () => 123;
 console.log( getID() ); // Returns '123'
 ```
+
+In the first example, below, you'll notice that the Arrow Function's parameter is the _only one_ parameter declared, and thus, does not need to be wrapped in `()`. The second example demonstrates the need for the `()` when there is _more than one_ parameter.
+
+**Example**
+```
+// A Single Parameter
+let getID = parameter => parameter + 123;
+console.log( getID('ID: ') ); // Returns 'ID: 123'
+
+// Multiple Parameters
+let getID = (parameter1, parameter2) => parameter1 + 123 + parameter2;
+console.log( getID('ID: ', '!') ); // Returns 'ID: 123!'
+```
+
+
+
+
+
 
 ## Default Parameters
 **Example**
