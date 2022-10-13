@@ -319,6 +319,27 @@ let getID = (parameter1, parameter2) => parameter1 + 123 + parameter2;
 console.log( getID('ID: ', '!') ); // Returns 'ID: 123!'
 ```
 
+## Template Literals and Interpolation
+A string literal or anonymous string is a string value in the source code of a computer program. String interpolation is replacing placeholders with values in a string literal.
+
+Normally, when you want to combine output from expressions along with a string's set of  characters or words, you'd concatenate them using the addition operator `"Hi, I'm " + name + " ."` in order to create a full expression ready for output. However, this can make code hard to read. So instead (as of ES 2015), we can now use Template Literals and String Interpolation with backtics and placeholders `` `Hi, I'm ${name}.` ``.
+
+In order to create a template literal, you must enclose a string expression with backticks `` ` `` instead of double `"` or single `'` quotes. 
+
+Placeholders are expressions delimited by a dollar sign and curly braces which are embedded within a string literal `${expressionPlaceholder}`.
+
+You can see an example of template literals below.
+
+**Example**
+```
+let trackCar = function(carID, city = 'NY') {
+    console.log(`Tracking ${carID} in ${city}.`); // Not the backticks in this example.
+}
+
+console.log(trackCar(123)); // Returns 'Tracking 123 in NY.'
+console.log(trackCar(123, 'Chicago')); // Returns 'Tracking 123 in Chicago.'
+```
+
 ## Default Parameters
 Parameters can be given default values as of ES 2015. In the example below, you can see that `city` has been set to the 'default value' of `NY`.
 
@@ -331,29 +352,6 @@ let trackCar = function(carID, city = 'NY') {
 console.log(trackCar(123)); // Returns 'Tracking 123 in NY.'
 console.log(trackCar(123, 'Chicago')); // Returns 'Tracking 123 in Chicago.'
 ```
-
-
-## Template Literals and Interpolation
-A string literal or anonymous string is a string value in the source code of a computer program.
-
-Normally, when you want to combine output from expressions along with string characters, you'd concatenate them using the addition operator `"Hi, I'm " + name + " ."`. This can make code hard to read, so instead (as of ES 2015) we can now use Template Literals and Interpolation `` `Hi, I'm ${name}.` ``.
-
-String interpolation is replacing placeholders with values in a string literal
-
-Template literals are enclosed by backtick (`) characters instead of double or single quotes. You can see an example of this below.
-
-Template literals can contain normal strings and within those strings they can contain placeholders, which are embedded expressions delimited by a dollar sign and curly braces: ${expression}.
-
-**Example**
-```
-let trackCar = function(carID, city = 'NY') {
-    console.log(`Tracking ${carID} in ${city}.`); // Not the backticks in this example.
-}
-
-console.log(trackCar(123)); // Returns 'Tracking 123 in NY.'
-console.log(trackCar(123, 'Chicago')); // Returns 'Tracking 123 in Chicago.'
-```
-
 
 ## TITLE
 Text_here
