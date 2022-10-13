@@ -328,7 +328,7 @@ In order to create a template literal, you must enclose a string expression with
 
 Placeholders are expressions delimited by a dollar sign and curly braces which are embedded within a string literal `${expressionPlaceholder}`.
 
-You can see an example of template literals below.
+You can see an example dof template literals below.
 
 **Example**
 ```
@@ -351,12 +351,36 @@ let trackCar = function(carID, city = 'NY') {
 
 console.log(trackCar(123)); // Returns 'Tracking 123 in NY.'
 console.log(trackCar(123, 'Chicago')); // Returns 'Tracking 123 in Chicago.'
-```
+``` 
 
-## TITLE
-Text_here
+## Constructor Functions
+Constructor Functions are used to instantiate new objects. While it looks a lot like a regular function, it behaves differently. 
+
+In the example below, we have a constructor function `Car()`. Notice the use of a capital 'C' in the constructor function's name. Capitalizing the first letter of a function's name is a convention reserved for constructor functions.
+
+Per the example, the `Car()` constructor function has now been created and is ready to be built.
+
 **Example**
 ```
+function Car() {
+
+}
+
+let car = new Car();
+```
+
+**Example**
+```
+function Vehicle(make, model) {
+    this.make = make;
+    this.model = model;
+    this.start = function() {
+        console.log('Start the ' + this.make + " " + this.model + '!');
+    }:
+}
+
+let car = new Vehicle(Kia, Forte);
+car.start(): // Returns 'Start the Kia Forte!'
 ```
 
 ## TITLE
