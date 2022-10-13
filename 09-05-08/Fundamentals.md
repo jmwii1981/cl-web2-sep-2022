@@ -354,7 +354,7 @@ console.log(trackCar(123, 'Chicago')); // Returns 'Tracking 123 in Chicago.'
 ``` 
 
 ## Constructor Functions
-Constructor Functions are used to instantiate new objects. While it looks a lot like a regular function, it behaves differently. 
+Constructor Functions are used to instantiate new objects. While it looks a lot like a regular function, it behaves differently in that it acts as a blueprint for its own instances.
 
 In the example below, we have a constructor function `Car()`. Notice the use of a capital 'C' in the constructor function's name. Capitalizing the first letter of a function's name is a convention reserved for constructor functions.
 
@@ -366,7 +366,7 @@ function Car() { // Car() is a new object aka constructor function
 let car = new Car();
 ```
 
-In the below example, we create an object called `Vehicle()`. This object has two properties and a function. The function is called a 'method' in this case because it's attached to the object `Vehicle()`.
+In the below example, we create an object called `Vehicle()`. This object has two properties and a function. The function is called a 'method' in this case because it's attached to the object `Vehicle()`. Further, in this particular case, the method is attached _directly_ to the object `Vehicle()`. Learn more about why this is important in the next section on 'Prototypes'.
 
 **Example**
 ```
@@ -378,20 +378,37 @@ function Vehicle(make, model) {
     };
 }
 
-let car = new Vehicle(Kia, Forte);
+let car = new Vehicle('Kia', 'Forte');
 car.start(); // Returns 'Start the Kia Forte!'
 ```
 
-## TITLE
-Text_here
+## Prototypes
+Rather than copying the method from the previous example within every instance of the `Vehicle()` object we created (i.e. `car`), we can use prototype to attach the function separately. Doing this will save memory as more and more instances of `Vehicle()` are created.
+
 **Example**
 ```
+function Vehicle(make, model) {
+    this.make = make;
+    this.model = model;
+}
+
+Vehicle.prototype.start = function() {
+    console.log('Start the ' + this.make + " " + this.model + '!');
+}
+
+let car = new Vehicle('Kia', 'Forte');
+car.start(); // Returns 'Start the Kia Forte!'
 ```
 
-## TITLE
-Text_here
+## Expanding Objects Using Prototypes
+The most common use of prototypes is to attach methods to objects. The second most common use is to expand objects by giving new functionality to all instances of an object. In the example below, we can use the built-in `String()` object and expand it with new functionality by attaching a new prototype called 'hello'.
+
 **Example**
 ```
+String.prototype.hello = function() {
+    return this.toString() + ', hello';
+};
+console.log('foo'.hello()); // Returns 'foo, hello'
 ```
 
 ## TITLE
