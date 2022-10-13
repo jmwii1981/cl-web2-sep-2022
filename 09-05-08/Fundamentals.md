@@ -358,29 +358,28 @@ Constructor Functions are used to instantiate new objects. While it looks a lot 
 
 In the example below, we have a constructor function `Car()`. Notice the use of a capital 'C' in the constructor function's name. Capitalizing the first letter of a function's name is a convention reserved for constructor functions.
 
-Per the example, the `Car()` constructor function has now been created and is ready to be built.
-
 **Example**
 ```
-function Car() {
+function Car() { // Car() is a new object aka constructor function
 
 }
-
 let car = new Car();
 ```
+
+In the below example, we create an object called `Vehicle()`. This object has two properties and a function. The function is called a 'method' in this case because it's attached to the object `Vehicle()`.
 
 **Example**
 ```
 function Vehicle(make, model) {
-    this.make = make;
-    this.model = model;
-    this.start = function() {
+    this.make = make; // property
+    this.model = model; // property
+    this.start = function() { // method
         console.log('Start the ' + this.make + " " + this.model + '!');
-    }:
+    };
 }
 
 let car = new Vehicle(Kia, Forte);
-car.start(): // Returns 'Start the Kia Forte!'
+car.start(); // Returns 'Start the Kia Forte!'
 ```
 
 ## TITLE
