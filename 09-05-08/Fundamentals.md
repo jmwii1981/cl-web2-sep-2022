@@ -411,6 +411,37 @@ String.prototype.hello = function() {
 console.log('foo'.hello()); // Returns 'foo, hello'
 ```
 
+## JavaScript Object Notation (JSON)
+The purpose of JSON is to transmit JavaScript objects over the wire. In most cases, JSON can be used to work with an API such as a RESTful API on the web. To convert JavaScript objects to JSON, you can use `JSON.stringify()`. See a few examples below.
+
+**Example**
+```
+// Convert a JS Object to JSON
+let car = {
+    id: 123,
+    style: 'convertible'
+};
+console.log( JSON.stringify(car) ); // Returns '{"id": 123, "style": "convertible"}'
+```
+
+## TITLE
+Text_here
+**Example**
+```
+```
+
+## TITLE
+Text_here
+**Example**
+```
+```
+
+## TITLE
+Text_here
+**Example**
+```
+```
+
 ## TITLE
 Text_here
 **Example**
