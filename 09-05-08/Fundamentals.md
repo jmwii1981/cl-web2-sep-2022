@@ -168,12 +168,6 @@ if (conditional parameters) {
 consol.log(message); // Reference error.
 ```
 
-## TITLE
-
-
-**Example**
-```
-```
 ## IIFE (Immediately Invoked Function Expression)
 An IIFE is a function that is invoked immediately after it has been declared. IIFEs are a way to isolate code so that it won't interfere with other code. IIFE stands for Immediately Invoked Function Expression. 
 
@@ -282,7 +276,6 @@ let o = {
 };
 let newCard = { cardID: 456 };
 console.log( 0.getID.apply(newCard, ['ID: ']) ); // Here 'apply' accepts an array of arguments, and returns ID: 456
-
 ```
 
 ## Using `bind`
@@ -326,32 +319,62 @@ let getID = (parameter1, parameter2) => parameter1 + 123 + parameter2;
 console.log( getID('ID: ', '!') ); // Returns 'ID: 123!'
 ```
 
-
-
-
-
-
 ## Default Parameters
+Parameters can be given default values as of ES 2015. In the example below, you can see that `city` has been set to the 'default value' of `NY`.
+
+**Example**
+```
+let trackCar = function(carID, city = 'NY') {
+    console.log(`Tracking ${carID} in ${city}.`);
+}
+
+console.log(trackCar(123)); // Returns 'Tracking 123 in NY.'
+console.log(trackCar(123, 'Chicago')); // Returns 'Tracking 123 in Chicago.'
+```
+
+
+## Template Literals and Interpolation
+A string literal or anonymous string is a string value in the source code of a computer program.
+
+Normally, when you want to combine output from expressions along with string characters, you'd concatenate them using the addition operator `"Hi, I'm " + name + " ."`. This can make code hard to read, so instead (as of ES 2015) we can now use Template Literals and Interpolation `` `Hi, I'm ${name}.` ``.
+
+String interpolation is replacing placeholders with values in a string literal
+
+Template literals are enclosed by backtick (`) characters instead of double or single quotes. You can see an example of this below.
+
+Template literals can contain normal strings and within those strings they can contain placeholders, which are embedded expressions delimited by a dollar sign and curly braces: ${expression}.
+
+**Example**
+```
+let trackCar = function(carID, city = 'NY') {
+    console.log(`Tracking ${carID} in ${city}.`); // Not the backticks in this example.
+}
+
+console.log(trackCar(123)); // Returns 'Tracking 123 in NY.'
+console.log(trackCar(123, 'Chicago')); // Returns 'Tracking 123 in Chicago.'
+```
+
+
+## TITLE
+Text_here
 **Example**
 ```
 ```
 
 ## TITLE
+Text_here
 **Example**
 ```
 ```
 
 ## TITLE
+Text_here
 **Example**
 ```
 ```
 
 ## TITLE
-**Example**
-```
-```
-
-## TITLE
+Text_here
 **Example**
 ```
 ```
