@@ -450,7 +450,7 @@ console.log(carIDs); // Returns ''
 ```
 
 ## Array Iteration
-There are several ways to iterate an array worth covering. You may do so using the global `Array` object's `forEach()` method, `filter()` method, or you may _BLANK_ an array.
+You may iterate an array object using either of the global `Array` object's methods: `forEach()`, `filter()`, `every`, or `find`.
 
 In the example below, the `forEach()` method is called on the `carIDs` Array object. When this runs, we use an arrow function `car => console.log(car)` to declare a parameter `car` and then log out each instance of the `car` parameter using each property of the `carIDs` array as an argument. Similarly, when passing an additional parameter `index` within our arrow function `car => console.log(car, index)` and then logging it out, we receive not only one of the `carIDs` array's properties (a car parameter object), but we also receive the numerical value of the index where that car object sits in the array.
 
@@ -469,7 +469,7 @@ carIDs.forEach(car => console.log( car ));
 carIDs.forEach((car, index) => console.log( car, index ));
 ```
 
-To filter an array so that a specific property or set of properties is returned, you would use the `filter` method by calling the `filter` method on your `carIDs` array object as is shown in the example below. Then when you log out the `convertibles` parameter with `console.log()` you'll notice that the only `carID` that was returned was `456`. That's because it's the only instance of the `carIDs` array's properties that matches the filter value `'convertible'`.
+To _filter_ an array so that a specific property or set of properties is returned, you would use the `filter` method by calling the `filter` method on your `carIDs` array object as is shown in the example below. Then when you log out the `convertibles` parameter with `console.log()` you'll notice that the only `carID` that was returned was `456`. That's because it's the only instance of the `carIDs` array's properties that matches the filter value `'convertible'`.
 
 **Example**
 ```
@@ -485,6 +485,45 @@ let convertibles = carIDs.filter(
 
 console.log(convertibles);
 ```
+
+The `every` method searches through an array with a given test condition and returns a boolean value of `true` or `false` based on how that condition is met. This test condition is applied to all array elements. In the example below, `car => car.carID > 0` is validating whether the carID exists on each element.
+
+**Example**
+```
+let carIDs = [
+    { carID: 123, style: 'sedan'},
+    { carID: 456, style: 'convertible' },
+    { carID: 789, style: 'sedan' }
+];
+
+let result = carIDs.every(
+    car => car.carID > 0
+);
+
+// Here we log 'ALL' of the car objects because the `carID` values are all greater than `0`.
+console.log(result);
+```
+
+`find` will locate a single instance of an array element that matches a given test condition.
+
+**Example**
+```
+let carIDs = [
+    { carID: 123, style: 'sedan'},
+    { carID: 456, style: 'convertible' },
+    { carID: 789, style: 'sedan' }
+];
+
+let car = carIDs.find(
+    car => car.carID > 500
+);
+
+// Here we log out the first instance of 'carID' where the value of 'carID' is greater than 500
+console.log(car);
+```
+
+
+
 
 
 ## TITLE
