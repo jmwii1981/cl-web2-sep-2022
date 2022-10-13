@@ -412,7 +412,7 @@ console.log('foo'.hello()); // Returns 'foo, hello'
 ```
 
 ## JavaScript Object Notation (JSON)
-The purpose of JSON is to transmit JavaScript objects over the wire. In most cases, JSON can be used to work with an API such as a RESTful API on the web. To convert JavaScript objects to JSON, you can use `JSON.stringify()`. See a few examples below.
+The purpose of JSON is to transmit JavaScript objects over the wire. In most cases, JSON can be used to work with an API such as a RESTful API on the web. To convert JavaScript objects to JSON, you can use the global JSON object together with the `.stringify()` method. All together ... `JSON.stringify(arguments)`.
 
 **Example**
 ```
@@ -422,13 +422,70 @@ let car = {
     style: 'convertible'
 };
 console.log( JSON.stringify(car) ); // Returns '{"id": 123, "style": "convertible"}'
+
+// Convert an Array to JSON
+let carIDs = [
+    { carID: 123 },
+    { carID: 456 },
+    { carID: 789 },
+];
+console.log( JSON.stringify(carIDs) ); // Returns '[{"carID": 123}, {"carID": 456}, {"carID": 789}]'
 ```
 
-## TITLE
-Text_here
+What if we need to accept JSON from another server and convert it into a JavaScript object for us to use? We'll need to parse the JSON string that we've received. In the example below, we create a variable called `jsonIn` which has accepted the JSON string that we've just received. Then, we use the global `JSON` object's `parse()` method to pass the jsonIn argument we've created, and in turn, the `parse()` method creates a JavaScript object for us to use within our code.
+
 **Example**
 ```
+// Parsing JSON
+let jsonIn =
+`
+    [
+        {"carID": 123},
+        {"carID": 456},
+        {"carID": 789}
+    ]
+`;
+let carIDs = JSON.parse(jsonIn);
+console.log(carIDs); // Returns ''
 ```
+
+## Array Iteration
+There are several ways to iterate an array worth covering. You may do so using the global `Array` object's `forEach()` method, `filter()` method, or you may _BLANK_ an array.
+
+In the example below, the `forEach()` method is called on the `carIDs` Array object. When this runs, we use an arrow function `car => console.log(car)` to declare a parameter `car` and then log out each instance of the `car` parameter using each property of the `carIDs` array as an argument. Similarly, when passing an additional parameter `index` within our arrow function `car => console.log(car, index)` and then logging it out, we receive not only one of the `carIDs` array's properties (a car parameter object), but we also receive the numerical value of the index where that car object sits in the array.
+
+**Example**
+```
+let carIDs = [
+    { carID: 123, style: 'sedan'},
+    { carID: 456, style: 'convertible' },
+    { carID: 789, style: 'sedan' }
+];
+
+// Logging out each of the three car objects
+carIDs.forEach(car => console.log( car ));
+
+// Logging out each of the three car objects along with the index of where it sits in the array
+carIDs.forEach((car, index) => console.log( car, index ));
+```
+
+To filter an array so that a specific property or set of properties is returned, you would use the `filter` method by calling the `filter` method on your `carIDs` array object as is shown in the example below. Then when you log out the `convertibles` parameter with `console.log()` you'll notice that the only `carID` that was returned was `456`. That's because it's the only instance of the `carIDs` array's properties that matches the filter value `'convertible'`.
+
+**Example**
+```
+let carIDs = [
+    { carID: 123, style: 'sedan'},
+    { carID: 456, style: 'convertible' },
+    { carID: 789, style: 'sedan' }
+];
+
+let convertibles = carIDs.filter(
+    car => car.style === 'convertible'
+);
+
+console.log(convertibles);
+```
+
 
 ## TITLE
 Text_here
