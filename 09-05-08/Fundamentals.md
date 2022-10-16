@@ -861,10 +861,10 @@ Here are a few things we can do to modify the `document` Object's elements after
 ```javascript
 let element = document.getElementById('elementID');
 ```
- - element.textContent = '';
- - element.setAttribute('attribute-name', 'attribute-value');
- - element.classList.add('classNameToAdd');
- - element.style.color = 'blue';
+ - `element.textContent = '';`
+ - `element.setAttribute('attribute-name', 'attribute-value');`
+ - `element.classList.add('classNameToAdd');`
+ - `element.style.color = 'blue';`
 
 ## Error Handling Using `try` and `catch`
 When running into an error in a JS application, execution will halt and an error will get thrown. This is the default behavior. However, in most cases, we don't want the entire JS application to stop executing just because a specific code block has failed. We can handle this gracefully using the `try` and `catch` keywords.
