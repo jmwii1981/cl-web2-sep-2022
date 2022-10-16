@@ -700,6 +700,66 @@ Lastly, after the above setup, remember, you'll need to use [Webpack](https://we
 
 
 ## Programming the Browser Object Model (BOM) and Document Object Model (DOM)
+Referencing different methods of the BOM and DOM can be useful for a variety of things. For instance, BOM can be used to change the URL you're pointing at, get information form the URL, etc. The DOM is equally as useful for manipulating the webpage document. 
+
+Below are some simple things to note about JS programming referencing the BOM and DOM objects and their methods.
+
+
+## The `window` Object
+`window` is the global Object in JS. Below is a list of some of the Properties, Methods, and Events attached to the `window` Object.
+
+| Properties   | Methods   | Events       |
+| :---         | :---      | :---         |
+| document     | alert()   | (not common) |
+| location     | back()    |              |
+| console      | confirm() |              |
+| innerHeight  |           |              |
+| innerWidth   |           |              |
+| pageXOffset  |           |              |
+| pageYOffset  |           |              |
+
+
+
+**Example**
+```javascript
+```
+
+## Timers
+Text_here
+
+**Example**
+```javascript
+```
+
+## The `location` Object
+Text_here
+
+**Example**
+```javascript
+```
+
+## The `document` Object
+Text_here
+
+**Example**
+```javascript
+```
+
+## Selecting DOM Objects
+Text_here
+
+**Example**
+```javascript
+```
+
+## Modifying DOM Objects
+Text_here
+
+**Example**
+```javascript
+```
+
+## TITLE
 Text_here
 
 **Example**
