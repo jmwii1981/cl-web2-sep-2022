@@ -7,7 +7,7 @@ From the video series [JavaScript Fundamentals](https://app.pluralsight.com/libr
 ## Syntax Caveats of Controlling Loops
 In addition to the basics of controlling loops, there are some caveats to be aware of. See the examples below for an illustration of what to look out for.
 
-Variable initiatlization. Below you may see a strange syntax with an empty space before the `;` within the for loop's counter arguments. The empty space is actually ok, and the `i` var does not need to be initiatlized, but the `;` must be present. Above, you will see that this is because `i` has already been initiatlized with the zero value.
+Variable initialization. Below you may see a strange syntax with an empty space before the `;` within the for loop's counter arguments. The empty space is actually ok, and the `i` var does not need to be initialized, but the `;` must be present. Above, you will see that this is because `i` has already been initialized with the zero value.
 
 **Example**
 ```javascript
@@ -645,7 +645,9 @@ console.log( car.start() ); // Returns 'Your car is a KIA Sportage.'
 ```
 
 
-## Modules, and Importing and Exporting Them
+## Modules, and Importing and Exporting Them with Webpack
+In order to use the below syntax's `import` and `export` keywords, you must install webpack within your development environment. [Learn more about Webpack](https://webpack.js.org/concepts/).
+
 Modules are used to organize JS code. Any JS code can be placed in a Module. Modules are usually organized into a folder called 'modules' within your project. Within that folder, files are placed to organize the code. Below, see an example of how a Module is created and used.
 
 **Example**
@@ -682,22 +684,7 @@ let car = new Car();
 console.log( car.start() ); // Returns 'Your car is a KIA Sportage.'
 ```
 
-Lastly, after the above setup, you'll need to reference the files correctly with the `<HEAD></HEAD>` of your HTML file. To do this, you'll need to include the `<script></script>` with the attribute `module="type"`
-**Example**
-```html
-<!DOCTYPE html>
-<HTML lang="en">
-<HEAD>
-    <meta charset="UTF-8">
-    <title>JavaScript Module Test</title>
-    <script type="module" src="./scripts/modules/vehicles.js"></script> <!-- Notice the necessary type="module" attribute-->
-    <script type="module" src="./scripts/modules/vehicles/car.js"></script> <!-- Notice the necessary type="module" attribute-->
-</HEAD>
-<BODY>
-    <h1>JavaScript Module Test</h1>
-</BODY>
-</HTML> 
-```
+Lastly, after the above setup, remember, you'll need to use [Webpack](https://webpack.js.org/concepts/) to bundle and reference the files appropriately within your project.
 
 
 
