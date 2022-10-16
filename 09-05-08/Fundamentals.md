@@ -649,7 +649,7 @@ console.log( car.start() ); // Returns 'Your car is a KIA Sportage.'
 Modules are used to organize JS code. Any JS code can be placed in a Module. Modules are usually organized into a folder called 'modules' within your project. Within that folder, files are placed to organize the code. Below, see an example of how a Module is created and used.
 
 **Example**
-In a new file called 'vehicles.js' the following code is added with the keyword 'export'
+In a new folder called 'modules' and a new file called 'vehicles.js' the following code is added with the keyword 'export'
 ```
 export class Vehicle {
     constructor() {
@@ -661,9 +661,9 @@ export class Vehicle {
 }
 ```
 
-In the 'main.js' file within your project, you add the following line of code
+Within your 'modules' folder you create a new folder called 'vehicles' and add a file called 'cars.js'. From there, you add the following line of code to the 'cars.js' file.
 ```
-import { Vehicle } from './modules/vehicles.js'
+import { Vehicle } from '../vehicles.js'
 
 class Car extends Vehicle {
     constructor() {
