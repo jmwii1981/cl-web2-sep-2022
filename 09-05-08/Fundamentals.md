@@ -1,9 +1,3 @@
-<style>
-    span {
-        background-color: "yellow";
-    }
-</style>
-
 # JavaScript (JS) Fundamentals
 From the video series [JS Fundamentals](https://app.pluralsight.com/library/courses/javascript-fundamentals/table-of-contents)
 
