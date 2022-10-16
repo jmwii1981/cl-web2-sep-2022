@@ -522,24 +522,210 @@ let car = carIDs.find(
 console.log(car);
 ```
 
+## JS Classes
+
+Below is a basic example of how to write a Class in JS.
+
+**Example**
+```
+class Car {
+
+}
+
+let car = new Car();
+```
+
+## Class Constructors, Properties and Methods
+A Constructor is a function that gets executed when a new instance of an object gets created.
+
+When working with Constructors always use the `this` keyword when creating properties of those Constructors.
+
+Below is an example of a Constructor Function within a Class.
+
+**Example**
+```
+class Car {
+    constructor(id) {
+        thid.id = id; // Here we use the 'this' keyword
+    }
+}
+
+let car = new Car(123);
+console.log(car.id); // Returns '123'
+```
+
+Methods are functions that exist on an object.
+
+**Example**
+```
+class Car {
+    constructor(id) {
+        this.id = id;
+    }
+    identify() { // Our method. Notice we don't need a 'function' keyword, we can just go right ahead and name it.
+        return `Car ID: ${this.id}`;
+    }
+}
+
+let car = new Car(123); // Instantiation of new 'car' with 'Car' class
+console.log(car.identify()); // Returns 'Car ID: 123'
+```
+
+With Methods, since we can pass arguments, you could also do this ...
+
+**Example**
+```
+class Car {
+    constructor(id) {
+        this.id = id;
+    }
+    identify(suffix) { // We add the parameter suffix
+        just go right ahead and name it.
+        return `Car ID: ${this.id}${suffix}`;
+    }
+}
+
+let car = new Car(123);
+console.log(car.identify('!!!')); // We pass the argument '!!!'; Returns 'Car ID: 123!!!'
+```
+
+## Inheritance and Classes
+One way to avoid duplicating code (keeping code DRY) is to use Inheritance. Classes make Inheritance easy.
+
+In the example below, let's say that we have a Class called `Vehicle`, and we might have several different types of vehicles with their own Classes that can be derived from the _Super Class_, `Vehicle`.
+
+**Example**
+```
+// The Super Class, 'Vehicle'
+class Vehicle {
+    constructor() {
+        this.type = 'No vehicle type declared'; // Here we set the 'type' default to 'No vehicle declared'
+    }
+    start() {
+        return `Starting: ${this.type}`;
+    }
+}
+
+// The new 'Car' class that is derived from the 'Vehicle' Class (or _extends_ the 'Vehicle' Class) and inherits the 'Vehicle' Class's properties
+class Car extends Vehicle {
+
+}
+let car = new Car();
+console.log( car.type ); // Returns 'No vehicle type declared', which is inherited from the 'Vehicle' Super Class
+```
+
+In the next example below, we want to have the `Car` Class which `extend`s the `Vehicle` class to return some additional information.
+
+**Example**
+```
+class Vehicle {
+    constructor() {
+        this.type = 'No vehicle type declared';
+    }
+    start() {
+        return `Your ${this.type}`;
+    }
+}
+
+class Car extends Vehicle {
+    constructor() {
+        super(); // MUST call 'super()' to call the constructor from the original class before you can extend this new constructor with new properties
+        this.make = 'No make declared';
+        this.model = 'No model declared';
+    }
+    start() { // This method will override the method from the Super Class
+        return `${super.start()} is a ${this.make} ${this.model}.`;
+    }
+}
+let car = new Car();
+    car.type = 'car';
+    car.make = 'KIA';
+    car.model = 'Sportage';
+console.log( car.start() ); // Returns 'Your car is a KIA Sportage.'
+```
+
+
+## Modules, and Importing and Exporting Them
+Modules are used to organize JS code. Any JS code can be placed in a Module. Modules are usually organized into a folder called 'modules' within your project. Within that folder, files are placed to organize the code. Below, see an example of how a Module is created and used.
+
+**Example**
+In a new file called 'vehicles.js' the following code is added with the keyword 'export'
+```
+export class Vehicle {
+    constructor() {
+        this.type = 'No vehicle type declared';
+    }
+    start() {
+        return `Your ${this.type}`;
+    }
+}
+```
+
+In the 'main.js' file within your project, you add the following line of code
+```
+import { Vehicle } from './modules/vehicles.js'
+
+class Car extends Vehicle {
+    constructor() {
+        super(); // MUST call 'super()' to call the constructor from the original class before you can extend this new constructor with new properties
+        this.make = 'No make declared';
+        this.model = 'No model declared';
+    }
+    start() { // This method will override the method from the Super Class
+        return `${super.start()} is a ${this.make} ${this.model}.`;
+    }
+}
+let car = new Car();
+    car.type = 'car';
+    car.make = 'KIA';
+    car.model = 'Sportage';
+console.log( car.start() ); // Returns 'Your car is a KIA Sportage.'
+
+
+```
+
 
 
 
 
 ## TITLE
 Text_here
+
 **Example**
 ```
 ```
 
 ## TITLE
 Text_here
+
 **Example**
 ```
 ```
 
 ## TITLE
 Text_here
+
+**Example**
+```
+```
+
+## TITLE
+Text_here
+
+**Example**
+```
+```
+
+## TITLE
+Text_here
+
+**Example**
+```
+```
+
+## TITLE
+Text_here
+
 **Example**
 ```
 ```
