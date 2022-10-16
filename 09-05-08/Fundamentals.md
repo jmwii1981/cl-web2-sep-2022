@@ -1,5 +1,5 @@
-# JavaScript Fundamentals
-From the video series [JavaScript Fundamentals](https://app.pluralsight.com/library/courses/javascript-fundamentals/table-of-contents)
+# JavaScript (JS) Fundamentals
+From the video series [JS Fundamentals](https://app.pluralsight.com/library/courses/javascript-fundamentals/table-of-contents)
 
 ## Object Parameters and Arguments
 **Note** When talking about object parameters and arguments, it's important to note the difference between them. A parameter is the variable in the declaration of the function. For instance, consider `foo function(parameter1, parameter2){ bar; }`. Meanwhile, an argument is the actual value of this variable that gets passed to the function. Usually an argument will get passed to the function from another source such as another variable, or from an element within an object, or even an object itself.
@@ -411,8 +411,8 @@ String.prototype.hello = function() {
 console.log('foo'.hello()); // Returns 'foo, hello'
 ```
 
-## JavaScript Object Notation (JSON)
-The purpose of JSON is to transmit JavaScript objects over the wire. In most cases, JSON can be used to work with an API such as a RESTful API on the web. To convert JavaScript objects to JSON, you can use the global JSON object together with the `.stringify()` method. All together ... `JSON.stringify(arguments)`.
+## JS Object Notation (JSON)
+The purpose of JSON is to transmit JS objects over the wire. In most cases, JSON can be used to work with an API such as a RESTful API on the web. To convert JS objects to JSON, you can use the global JSON object together with the `.stringify()` method. All together ... `JSON.stringify(arguments)`.
 
 **Example**
 ```javascript
@@ -432,7 +432,7 @@ let carIDs = [
 console.log( JSON.stringify(carIDs) ); // Returns '[{"carID": 123}, {"carID": 456}, {"carID": 789}]'
 ```
 
-What if we need to accept JSON from another server and convert it into a JavaScript object for us to use? We'll need to parse the JSON string that we've received. In the example below, we create a variable called `jsonIn` which has accepted the JSON string that we've just received. Then, we use the global `JSON` object's `parse()` method to pass the jsonIn argument we've created, and in turn, the `parse()` method creates a JavaScript object for us to use within our code.
+What if we need to accept JSON from another server and convert it into a JS object for us to use? We'll need to parse the JSON string that we've received. In the example below, we create a variable called `jsonIn` which has accepted the JSON string that we've just received. Then, we use the global `JSON` object's `parse()` method to pass the jsonIn argument we've created, and in turn, the `parse()` method creates a JS object for us to use within our code.
 
 **Example**
 ```javascript
@@ -648,10 +648,10 @@ console.log( car.start() ); // Returns 'Your car is a KIA Sportage.'
 ## Modules, and Importing and Exporting Them with Webpack
 Modules are used to organize JS code. Any JS code can be placed in a file that represents a block of code we call a Module. Conventionally, Modules are usually organized into a folder called 'modules' within your project. Within that folder, files are placed to organize the code. 
 
-**Note:** In order to use the strategy in the examples below with the JavaScript syntax's `import` and `export` keywords, you must install Webpack within your development environment to simplify file references in your HTML file via "bundling" which is a service that Webpack provides. There is not an tutorial of how to bundle files for easier reference in your HTML files below. So, read the documentation on Webpack to learn more about how this is done.
+**Note:** In order to use the strategy in the examples below with the JS syntax's `import` and `export` keywords, you must install Webpack within your development environment to simplify file references in your HTML file via "bundling" which is a service that Webpack provides. There is not a tutorial of how to bundle files for easier reference in your HTML files below. So, read the documentation on Webpack to learn more about how this is done.
 [Learn more about Webpack](https://webpack.js.org/concepts/).
 
-And, though you may use [Webpack](https://webpack.js.org/concepts/) for simplified HTML JavaScript file references via Webpack's bundling feature, as mentioned above, you may also use other solutions provided via well known and stable JavaScript package managers, frameworks, etc. These other solutions all come with their own set of concepts and implementation methods. Here are links to the documentation of some noteworthy solutions, to name a few ...
+And, though you may use [Webpack](https://webpack.js.org/concepts/) for simplified HTML JS file references via Webpack's bundling feature, as mentioned above, you may also use other solutions provided via well known and stable JS package managers, frameworks, etc. These other solutions all come with their own set of concepts and implementation methods. Here are links to the documentation of some noteworthy solutions, to name a few ...
  - [Node Package Manager (NPM)](https://www.npmjs.com/)
  - [Gulp](https://gulpjs.com/)
  - [Babel](https://babeljs.io/)
@@ -659,7 +659,7 @@ And, though you may use [Webpack](https://webpack.js.org/concepts/) for simplifi
  - [Grunt](https://gruntjs.com/)
  - [RequireJS](https://requirejs.org/)
 
-Below, see an example of how a Module is created and used in JavaScript.
+Below, see an example of how a Module is created and used in JS.
 
 **Example**
 
@@ -699,7 +699,7 @@ console.log( car.start() ); // Returns 'Your car is a KIA Sportage.'
 Lastly, after the above setup, remember, you'll need to use [Webpack](https://webpack.js.org/concepts/) to bundle and reference the files appropriately within your project.
 
 
-## TITLE
+## Programming the Browser Object Model (BOM) and Document Object Model (DOM)
 Text_here
 
 **Example**
