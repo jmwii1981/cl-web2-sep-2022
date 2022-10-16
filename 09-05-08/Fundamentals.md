@@ -739,11 +739,12 @@ let year = 1956;
 console.log(window.year); // Returns 'ReferenceError: year is not defined'
 ```
 
-**Example**
+**Example** `[check this knowledge]`
+
 In modules, a variable declared outside any function is hidden and not available to other modules unless it is explicitly 
 exported. To resolve this issue, we can use the `let` keyword to declare the `year` variable at the Module (file) level and then export it for use.
 
-In **vehicles.js**
+In **vehicles.js** `[check this knowledge]`
 ```javascript
 // module 'vehicles.js'
 
@@ -761,7 +762,7 @@ let year = 1956;
 export { Vehicle, year };
 ```
 
-Then, in **year.js**
+Then, in **year.js** `[check this knowledge]`
 ```javascript
 // file 'year.js'
 
@@ -770,14 +771,57 @@ console.log(window.year); // Returns '1956'
 ```
 
 ## Timers
-Text_here
+Timers fire asynchronously so that events can get handled and other code can execute while you're waiting for a timer to fire. Timers are used for animation, to handle things with the user interface, for video games, and lot of other uses.
+
+Some timer functions ...
+ - `setTimeout()`
+ - `setInterval()`
 
 **Example**
+
+`setTimeout()` will fire only once. The first parameter is a function that logs out a message and the second parameter is the number of milliseconds setTimeout should wait before executing its first parameter. If `clearTimeout()` is called, then it will cancel the setTimeout method all together before it fires unless you call it first. Think of this as erasing it before or after it's used. See the example below for usage.
+
 ```javascript
+let timeoutID = setTimeout(
+    function() {
+        console.log(`1 second just passed!`); // Returns '1 second just passed!' each second
+    },
+    1000 // 1,000 milliseconds equates to 1 second
+);
+
+// Cancel setTimeout()
+clearTimeout(timeoutID);
 ```
 
+**Example**
+
+`setInterval()` will fire its first parameter repeatedly based on the second parameters measurement of time until it is canceled. Below, we are passing it two arguments. One is a function that logs out a message to the console, and the other is the length in milliseconds (intervals) we wish for it wait or pause before firing.
+
+If you need to cancel the repeatedly firing `setInterval()` method, you can do so by setting it to the `intervalID` variable and then using the `clearInterval()` method like in the example below.
+
+```javascript
+let intervalID = setInterval(
+    function() {
+        console.log(`1 second just passed!`); // Returns '1 second just passed!' each second
+    },
+    1000 // 1,000 milliseconds equates to 1 second
+);
+
+// Cancel setInterval()
+clearInterval(intervalID);
+```
+
+
 ## The `location` Object
-Text_here
+The `location` object is attached to the DOM Object. Below are some properties, methods, and events that the `location` object can be used with.
+
+| Properties | Methods  | Events       |
+| :---       | :---     | :---         |
+| href       | assign() | (not common) |
+| hostname   | reload() |              |
+| port       |          |              |
+| pathname   |          |              |
+| search     |          |              |
 
 **Example**
 ```javascript
