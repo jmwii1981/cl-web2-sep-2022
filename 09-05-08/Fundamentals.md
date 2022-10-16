@@ -648,10 +648,10 @@ console.log( car.start() ); // Returns 'Your car is a KIA Sportage.'
 ## Modules, and Importing and Exporting Them with Webpack
 Modules are used to organize JS code. Any JS code can be placed in a file that represents a block of code we call a Module. Conventionally, Modules are usually organized into a folder called 'modules' within your project. Within that folder, files are placed to organize the code. 
 
-**Note:** In order to use the strategy in the examples below with the JavaScript syntax's `import` and `export` keywords, you must install Webpack within your development environment to simplify file references via "bundling" which is a service that Webpack provides. There is not example of how to do this below, so read the documentation on Webpack to learn more.
+**Note:** In order to use the strategy in the examples below with the JavaScript syntax's `import` and `export` keywords, you must install Webpack within your development environment to simplify file references in your HTML file via "bundling" which is a service that Webpack provides. There is not example in this section of how to do this below. Read the documentation on Webpack to learn more.
 [Learn more about Webpack](https://webpack.js.org/concepts/).
 
-Though you may use [Webpack](https://webpack.js.org/concepts/) for this, as mentioned above, you may also use other solutions provided via package managers, frameworks, etc. for the JavaScript language. These other solutions all come with their own set of concepts and implementation methods. Here are links to the documentation of some noteworthy solutions, to name a few ...
+And, though you may use [Webpack](https://webpack.js.org/concepts/) for simplified HTML JavaScript file references via Webpack's bundling feature, as mentioned above, you may also use other solutions provided via well known and stable JavaScript package managers, frameworks, etc. These other solutions all come with their own set of concepts and implementation methods. Here are links to the documentation of some noteworthy solutions, to name a few ...
  - [Node Package Manager (NPM)](https://www.npmjs.com/)
  - [Gulp](https://gulpjs.com/)
  - [Babel](https://babeljs.io/)
@@ -659,7 +659,7 @@ Though you may use [Webpack](https://webpack.js.org/concepts/) for this, as ment
  - [Grunt](https://gruntjs.com/)
  - [RequireJS](https://requirejs.org/)
 
-Below, see an example of how a Module is created and used.
+Below, see an example of how a Module is created and used in JavaScript.
 
 **Example**
 
@@ -697,8 +697,6 @@ console.log( car.start() ); // Returns 'Your car is a KIA Sportage.'
 ```
 
 Lastly, after the above setup, remember, you'll need to use [Webpack](https://webpack.js.org/concepts/) to bundle and reference the files appropriately within your project.
-
-
 
 
 ## TITLE
