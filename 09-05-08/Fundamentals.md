@@ -10,7 +10,7 @@ In addition to the basics of controlling loops, there are some caveats to be awa
 Variable initiatlization. Below you may see a strange syntax with an empty space before the `;` within the for loop's counter arguments. The empty space is actually ok, and the `i` var does not need to be initiatlized, but the `;` must be present. Above, you will see that this is because `i` has already been initiatlized with the zero value.
 
 **Example**
-```
+```javascript
 let i = 0;
 
 for (; i<12; i++) {
@@ -24,7 +24,7 @@ console.log(i); // Returns 8
 Using `continue`. With `continue` in the block of the loop below, you'll notice that if i is strict equals to 2, then `continue` will execute. When the `continue` keyword or command executes it will **not** execute the remaining code block that might exist below it. Rather, `continue` acts as if any code beneath it within the loop that it resides, doesn't exist, but will continue the loop, if the loop's arguments haven't been fully fulfilled.
 
 **Example**
-```
+```javascript
 for (let i = 0; i < 4; i++) {
     if (i === 2) {
         continue; // Acts as if the loop's body has finished execution, but does not 'exit' the loop's criteria for continuing to loop the way 'break' does.
@@ -37,7 +37,7 @@ for (let i = 0; i < 4; i++) {
 Rest parameters allow a function to store multiple arguments in a single array.
 
 **Example**
-```
+```javascript
 // The '...allCarIDs' is a rest parameter that will build an array called 'allCarIDs'
 
 function sendCars(...allCarIDs) {
@@ -58,7 +58,7 @@ sendCars('Monday', 100, 200, 555); // Returns "100 200 555; Monday is left out.
 We can easily assign values within an array to variables by "destructuring arrays."
 
 **Example**
-```
+```javascript
 let carIDs = [1, 2, 5];
 let [car1, car2, car3] = carIDs; // Destructuring (and restructuring) happens here ...
 
@@ -97,7 +97,7 @@ console.log(car1, car2, theRest); // Returns values 100 200; 'theRest' returns a
 Destructuring objects is a bit different from destructuring arrays. With objects, we'll use curly braces rather than square brackets. See the example below for more details.
 
 **Example**
-```
+```javascript
 // Destructuring an object, like so ...
 let car = {id: 5000, style: 'convertible' }; // The object to destructure
 let { id, style } = car; // This destructures cars into two individual vars: 'id' and 'style' which now house the values from the object itself which holds like-named keys
@@ -114,7 +114,7 @@ console.log{ id, style }; // Returns 5000 Convertible
 Spread syntax does the opposite of rest in that it pulls arrays apart, where rest puts them together ... see the example below for more details.
 
 **Example**
-```
+```javascript
 // Example 1
 function startCars(car1, car2, car3) {
     console.log(car1, car2, car3);
@@ -146,7 +146,7 @@ startCars(...carIDs);
 **Block scope** refers to when a 'let' var has been declared both outside of a function and within a function at the same time. Essentially, when declared and initiatlized in both places, the function's intialized 'let' var will override the one that exists outside of it's brackets (scope). This does not apply to the 'var' keyword for declaring a variable, but only the 'let' keyword for declaring a variable.
 
 **Example**
-```
+```javascript
 // Block Scope
 Note: there is no such thing as 'block scope' for the 'var' keyword, this only pertains to 'let'
 let message = 'outside';
@@ -160,7 +160,7 @@ console.log(message); // Returns 'outside'
 **Function scope** refers to vars that are initialized within a function first. These vars cannot be _accessed_ outside of the function unless they have been _intialized_ outside of the function. If you attempt to access a var outside of a function when it is only initialized within a function, then you will receive a reference error.
 
 **Example**
-```
+```javascript
 // Function Scope
 if (conditional parameters) {
     let message = 'inside';
@@ -175,7 +175,7 @@ A _function expression_ means to take a function and do something with it; usual
 
 
 **Example**
-```
+```javascript
 // Example 1
 
 (function () {
@@ -203,7 +203,7 @@ console.log(app); // Returns "This is in the 'app' function"; and an empty objec
 When functions are invoked and run through all of their code (once they are complete) their vars, nested functions, etc. go out of scope. However, sometimes we want that function and its code setup to hang around, and that's what a closure is for.
 
 **Example**
-```
+```javascript
 // How we can create a closure with the IIFE pattern
 let app = (function() { // 'app' is assigned an IIFE with the code block below
     let carID = "123"; // var 'carID' is assigned the value of "123"
@@ -221,7 +221,7 @@ console.log(app.getID()); // Returns the value "123"
 This is a special keyword that refers to the context of an object/function.
 
 **Example**
-```
+```javascript
 // Example 1 – Using this without 'use strict'
 let fn = function() {
     console.log(this === window);
@@ -252,7 +252,7 @@ let iAmAnObject = {
 Most of the time when you call a function, you're going to specify the opening and closing parantheticals, and place any arguments there. There are two additional ways to call a function as well using the `call` or `apply` functions. The main purpose of these two functions is to change the value of `this`. That is, to change the object which is the context of the function, and `this` is important for object-oriented scenarios. Note that `call` and `apply` do not make a "copy" of the function, but they do "call" the function.
 
 **Example**
-```
+```javascript
 // Example of 'call'
 
 let o = {
@@ -282,7 +282,7 @@ console.log( 0.getID.apply(newCard, ['ID: ']) ); // Here 'apply' accepts an arra
 Unlike `call` and `apply`, we can call a `bind` on a function, and it makes a copy of that function, assigning it a new context which then applies also to `this` when `this` is used to access a value.
 
 **Example**
-```
+```javascript
 let o = {
     cardID: 123,
     getID: function() {
@@ -301,7 +301,7 @@ Arrow Functions are simply a term that describes modern syntax for declaring fun
 In the below example, you will see a simple Arrow Function. The empty `()` describe the function has having no parameters listed. After the parameters list, you'll notice that there is a `=>` that indicates that this line of code is declaring an arrow function. The `123` is the return value of the function.
 
 **Example**
-```
+```javascript
 let getID = () => 123;
 console.log( getID() ); // Returns '123'
 ```
@@ -309,7 +309,7 @@ console.log( getID() ); // Returns '123'
 In the first example, below, you'll notice that the Arrow Function's parameter is the _only one_ parameter declared, and thus, does not need to be wrapped in `()`. The second example demonstrates the need for the `()` when there is _more than one_ parameter.
 
 **Example**
-```
+```javascript
 // A Single Parameter
 let getID = parameter => parameter + 123;
 console.log( getID('ID: ') ); // Returns 'ID: 123'
@@ -331,7 +331,7 @@ Placeholders are expressions delimited by a dollar sign and curly braces which a
 You can see an example dof template literals below.
 
 **Example**
-```
+```javascript
 let trackCar = function(carID, city = 'NY') {
     console.log(`Tracking ${carID} in ${city}.`); // Not the backticks in this example.
 }
@@ -344,7 +344,7 @@ console.log(trackCar(123, 'Chicago')); // Returns 'Tracking 123 in Chicago.'
 Parameters can be given default values as of ES 2015. In the example below, you can see that `city` has been set to the 'default value' of `NY`.
 
 **Example**
-```
+```javascript
 let trackCar = function(carID, city = 'NY') {
     console.log(`Tracking ${carID} in ${city}.`);
 }
@@ -359,7 +359,7 @@ Constructor Functions are used to instantiate new objects. While it looks a lot 
 In the example below, we have a constructor function `Car()`. Notice the use of a capital 'C' in the constructor function's name. Capitalizing the first letter of a function's name is a convention reserved for constructor functions.
 
 **Example**
-```
+```javascript
 function Car() { // Car() is a new object aka constructor function
 
 }
@@ -369,7 +369,7 @@ let car = new Car();
 In the below example, we create an object called `Vehicle()`. This object has two properties and a function. The function is called a 'method' in this case because it's attached to the object `Vehicle()`. Further, in this particular case, the method is attached _directly_ to the object `Vehicle()`. Learn more about why this is important in the next section on 'Prototypes'.
 
 **Example**
-```
+```javascript
 function Vehicle(make, model) {
     this.make = make; // property
     this.model = model; // property
@@ -386,7 +386,7 @@ car.start(); // Returns 'Start the Kia Forte!'
 Rather than copying the method from the previous example within every instance of the `Vehicle()` object we created (i.e. `car`), we can use prototype to attach the function separately. Doing this will save memory as more and more instances of `Vehicle()` are created.
 
 **Example**
-```
+```javascript
 function Vehicle(make, model) {
     this.make = make;
     this.model = model;
@@ -404,7 +404,7 @@ car.start(); // Returns 'Start the Kia Forte!'
 The most common use of prototypes is to attach methods to objects. The second most common use is to expand objects by giving new functionality to all instances of an object. In the example below, we can use the built-in `String()` object and expand it with new functionality by attaching a new prototype called 'hello'.
 
 **Example**
-```
+```javascript
 String.prototype.hello = function() {
     return this.toString() + ', hello';
 };
@@ -415,7 +415,7 @@ console.log('foo'.hello()); // Returns 'foo, hello'
 The purpose of JSON is to transmit JavaScript objects over the wire. In most cases, JSON can be used to work with an API such as a RESTful API on the web. To convert JavaScript objects to JSON, you can use the global JSON object together with the `.stringify()` method. All together ... `JSON.stringify(arguments)`.
 
 **Example**
-```
+```javascript
 // Convert a JS Object to JSON
 let car = {
     id: 123,
@@ -435,7 +435,7 @@ console.log( JSON.stringify(carIDs) ); // Returns '[{"carID": 123}, {"carID": 45
 What if we need to accept JSON from another server and convert it into a JavaScript object for us to use? We'll need to parse the JSON string that we've received. In the example below, we create a variable called `jsonIn` which has accepted the JSON string that we've just received. Then, we use the global `JSON` object's `parse()` method to pass the jsonIn argument we've created, and in turn, the `parse()` method creates a JavaScript object for us to use within our code.
 
 **Example**
-```
+```javascript
 // Parsing JSON
 let jsonIn =
 `
@@ -455,7 +455,7 @@ You may iterate an array object using either of the global `Array` object's meth
 In the example below, the `forEach()` method is called on the `carIDs` Array object. When this runs, we use an arrow function `car => console.log(car)` to declare a parameter `car` and then log out each instance of the `car` parameter using each property of the `carIDs` array as an argument. Similarly, when passing an additional parameter `index` within our arrow function `car => console.log(car, index)` and then logging it out, we receive not only one of the `carIDs` array's properties (a car parameter object), but we also receive the numerical value of the index where that car object sits in the array.
 
 **Example**
-```
+```javascript
 let carIDs = [
     { carID: 123, style: 'sedan'},
     { carID: 456, style: 'convertible' },
@@ -472,7 +472,7 @@ carIDs.forEach((car, index) => console.log( car, index ));
 To _filter_ an array so that a specific property or set of properties is returned, you would use the `filter` method by calling the `filter` method on your `carIDs` array object as is shown in the example below. Then when you log out the `convertibles` parameter with `console.log()` you'll notice that the only `carID` that was returned was `456`. That's because it's the only instance of the `carIDs` array's properties that matches the filter value `'convertible'`.
 
 **Example**
-```
+```javascript
 let carIDs = [
     { carID: 123, style: 'sedan'},
     { carID: 456, style: 'convertible' },
@@ -489,7 +489,7 @@ console.log(convertibles);
 The `every` method searches through an array with a given test condition and returns a boolean value of `true` or `false` based on how that condition is met. This test condition is applied to all array elements. In the example below, `car => car.carID > 0` is validating whether the carID exists on each element.
 
 **Example**
-```
+```javascript
 let carIDs = [
     { carID: 123, style: 'sedan'},
     { carID: 456, style: 'convertible' },
@@ -507,7 +507,7 @@ console.log(result);
 `find` will locate a single instance of an array element that matches a given test condition.
 
 **Example**
-```
+```javascript
 let carIDs = [
     { carID: 123, style: 'sedan'},
     { carID: 456, style: 'convertible' },
@@ -527,7 +527,7 @@ console.log(car);
 Below is a basic example of how to write a Class in JS.
 
 **Example**
-```
+```javascript
 class Car {
 
 }
@@ -543,7 +543,7 @@ When working with Constructors always use the `this` keyword when creating prope
 Below is an example of a Constructor Function within a Class.
 
 **Example**
-```
+```javascript
 class Car {
     constructor(id) {
         thid.id = id; // Here we use the 'this' keyword
@@ -557,7 +557,7 @@ console.log(car.id); // Returns '123'
 Methods are functions that exist on an object.
 
 **Example**
-```
+```javascript
 class Car {
     constructor(id) {
         this.id = id;
@@ -574,7 +574,7 @@ console.log(car.identify()); // Returns 'Car ID: 123'
 With Methods, since we can pass arguments, you could also do this ...
 
 **Example**
-```
+```javascript
 class Car {
     constructor(id) {
         this.id = id;
@@ -595,7 +595,7 @@ One way to avoid duplicating code (keeping code DRY) is to use Inheritance. Clas
 In the example below, let's say that we have a Class called `Vehicle`, and we might have several different types of vehicles with their own Classes that can be derived from the _Super Class_, `Vehicle`.
 
 **Example**
-```
+```javascript
 // The Super Class, 'Vehicle'
 class Vehicle {
     constructor() {
@@ -617,7 +617,7 @@ console.log( car.type ); // Returns 'No vehicle type declared', which is inherit
 In the next example below, we want to have the `Car` Class which `extend`s the `Vehicle` class to return some additional information.
 
 **Example**
-```
+```javascript
 class Vehicle {
     constructor() {
         this.type = 'No vehicle type declared';
@@ -650,7 +650,7 @@ Modules are used to organize JS code. Any JS code can be placed in a Module. Mod
 
 **Example**
 In a new folder called **'modules'** and a new file called **'vehicles.js'** the following code is added with the keyword `export`
-```
+```javascript
 export class Vehicle {
     constructor() {
         this.type = 'No vehicle type declared';
@@ -662,7 +662,7 @@ export class Vehicle {
 ```
 
 Within your **'modules'** folder you create a new folder called **'vehicles'** and add a file called **'cars.js'**. From there, you add the following line of code to the **'cars.js'** file with the `import` keyword.
-```
+```javascript
 import { Vehicle } from '../vehicles.js'
 
 class Car extends Vehicle {
@@ -692,40 +692,40 @@ console.log( car.start() ); // Returns 'Your car is a KIA Sportage.'
 Text_here
 
 **Example**
-```
-```
-
-## TITLE
-Text_here
-
-**Example**
-```
+```javascript
 ```
 
 ## TITLE
 Text_here
 
 **Example**
-```
-```
-
-## TITLE
-Text_here
-
-**Example**
-```
+```javascript
 ```
 
 ## TITLE
 Text_here
 
 **Example**
-```
+```javascript
 ```
 
 ## TITLE
 Text_here
 
 **Example**
+```javascript
 ```
+
+## TITLE
+Text_here
+
+**Example**
+```javascript
+```
+
+## TITLE
+Text_here
+
+**Example**
+```javascript
 ```
