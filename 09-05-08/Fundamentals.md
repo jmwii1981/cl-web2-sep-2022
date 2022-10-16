@@ -680,10 +680,24 @@ let car = new Car();
     car.make = 'KIA';
     car.model = 'Sportage';
 console.log( car.start() ); // Returns 'Your car is a KIA Sportage.'
-
-
 ```
 
+Lastly, after the above setup, you'll need to reference the files correctly with the `<HEAD></HEAD>` of your HTML file. To do this, you'll need to include the `<script></script>` with the attribute `module="type"`
+**Example**
+```html
+<!DOCTYPE html>
+<HTML lang="en">
+<HEAD>
+    <meta charset="UTF-8">
+    <title>JavaScript Module Test</title>
+    <script type="module" src="./scripts/modules/vehicles.js"></script> <!-- Notice the necessary type="module" attribute-->
+    <script type="module" src="./scripts/modules/vehicles/car.js"></script> <!-- Notice the necessary type="module" attribute-->
+</HEAD>
+<BODY>
+    <h1>JavaScript Module Test</h1>
+</BODY>
+</HTML> 
+```
 
 
 
