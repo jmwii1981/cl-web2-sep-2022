@@ -1,3 +1,7 @@
+<style>
+.highlight { background-color: yellow; }
+</style>
+
 # JavaScript (JS) Fundamentals
 From the video series [JS Fundamentals](https://app.pluralsight.com/library/courses/javascript-fundamentals/table-of-contents)
 
@@ -729,7 +733,7 @@ console.log(window.year); // Returns '1956'
 ```
 **Example**
 
-Here we use a Module, and as you can see, a `ReferenceError` is returned. You must declare variables when working with Modules because those variables will not be placed on the `window` object. To resolve this issue, we can use the `let` keyword to declare the `year` variable at the ==Module== level.
+Here we use a Module, and as you can see, a `ReferenceError` is returned. You must declare variables when working with Modules because those variables will not be placed on the `window` object. To resolve this issue, we can use the `let` keyword to declare the `year` variable at the <span class="highlight">Module</span> level.
 ```javascript
 import { Vehicle } from '../vehicles.js'
 let year = 1956;
