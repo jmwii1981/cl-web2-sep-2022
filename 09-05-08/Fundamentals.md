@@ -143,6 +143,8 @@ startCars(...carIDs);
 ```
 
 ## Block and Function Scope
+Below, we cover Block and Function Scope. To read about other types of scope such as module scope, lexical scope and global scope read [An introduction to scope in JavaScript, by Cristian Salcescu](https://www.freecodecamp.org/news/an-introduction-to-scope-in-javascript-cbd957022652/)
+
 **Block scope** refers to when a 'let' var has been declared both outside of a function and within a function at the same time. Essentially, when declared and initiatlized in both places, the function's intialized 'let' var will override the one that exists outside of it's brackets (scope). This does not apply to the 'var' keyword for declaring a variable, but only the 'let' keyword for declaring a variable.
 
 **Example**
@@ -727,16 +729,45 @@ Here we create a variable `year` and then reference it as part of the `window` O
 let year = 1956;
 console.log(window.year); // Returns '1956'
 ```
+
 **Example**
 
-Here we use a Module, and as you can see, a `ReferenceError` is returned. You must declare variables when working with Modules because those variables will not be placed on the `window` object. To resolve this issue, we can use the `let` keyword to declare the `year` variable at the <span>Module</span> level.
+Here we use a Module, and as you can see, a `ReferenceError` is returned. You must declare variables when working with Modules because those variables will not be placed on the `window` object the way they are when a Module isn't being imported.
 ```javascript
 import { Vehicle } from '../vehicles.js'
 let year = 1956;
 console.log(window.year); // Returns 'ReferenceError: year is not defined'
 ```
 
+**Example**
+In modules, a variable declared outside any function is hidden and not available to other modules unless it is explicitly 
+exported. To resolve this issue, we can use the `let` keyword to declare the `year` variable at the Module (file) level and then export it for use.
 
+In **vehicles.js**
+```javascript
+// module 'vehicles.js'
+
+class Vehicle {
+    constructor() {
+        this.type = 'No vehicle type declared';
+    }
+    start() {
+        return `Your ${this.type}`;
+    }
+}
+
+let year = 1956;
+
+export { Vehicle, year };
+```
+
+Then, in **year.js**
+```javascript
+// file 'year.js'
+
+import { year, Vehicle } from '../vehicles.js'
+console.log(window.year); // Returns '1956'
+```
 
 ## Timers
 Text_here
