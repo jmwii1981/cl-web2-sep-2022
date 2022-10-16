@@ -813,7 +813,7 @@ clearInterval(intervalID);
 
 
 ## The `location` Object
-The `location` object is attached to the DOM Object. Below are some properties, methods, and events that the `location` object can be used with.
+The `location` object is attached to the DOM Object. The `location` Object gives us information on the URL that the browser is pointing to. Below are some properties, methods, and events that the `location` object can be used with.
 
 | Properties | Methods  | Events       |
 | :---       | :---     | :---         |
@@ -823,33 +823,53 @@ The `location` object is attached to the DOM Object. Below are some properties, 
 | pathname   |          |              |
 | search     |          |              |
 
+Below, we'll log out the `location` object's `href` property on both the global `window` Object and the `document` Object.
+
 **Example**
 ```javascript
+// location property on 'window' Object
+console.log(location.href); // Returns '://the-url-in-your-browsers-address-bar.net'
+
+// similarly ...
+console.log(window.location.href); // Returns '://the-url-in-your-browsers-address-bar.net'
+
+// location property on 'document' Object
+console.log(document.location.href); // Returns '://the-url-in-your-browsers-address-bar.net'
 ```
 
 ## The `document` Object
-Text_here
+Common properties, methods, and events used with the `document` Object are ...
 
-**Example**
-```javascript
-```
+| Properties | Methods                  | Events       |
+| :---       | :---                     | :---         |
+| body       | createElement()          | onload       |
+| forms      | createEvent()            | onclick      |
+| links      | getElementById()         | onkeypress   |
+|            | getElementsByClassName() |              |
 
 ## Selecting DOM Objects
-Text_here
-
-**Example**
-```javascript
-```
+To select the `document` Object's elements, we use the following like so...
+ - `document.getElementById('elementID');`
+ - `document.getElementsByClassName('elementsClassName');`
+ - `document.getElementsByTagName('elementsTagName');`
 
 ## Modifying DOM Objects
-Text_here
+We modify the `document` Object's elements because we conventionally wish to change their properties, set up event handlers, and modify the visual aspect of the web page any way we'd like. In order to modify a `document` Object's element, we need to select it first (see above).
 
+Here are a few things we can do to modify the `document` Object's elements after we select the element we'd like to modify ...
 **Example**
 ```javascript
+let element = document.getElementById('elementID');
 ```
+ - element.textContent = '';
+ - element.setAttribute('attribute-name', 'attribute-value');
+ - element.classList.add('classNameToAdd');
+ - element.style.color = 'blue';
 
-## TITLE
-Text_here
+## Error Handling Using `try` and `catch`
+When running into an error in a JS application, execution will halt and an error will get thrown. This is the default behavior. However, in most cases, we don't want the entire JS application to stop executing just because a specific code block has failed. We can handle this gracefully using the `try` and `catch` keywords.
+
+
 
 **Example**
 ```javascript
