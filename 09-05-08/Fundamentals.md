@@ -706,17 +706,17 @@ Below are some simple things to note about JS programming referencing the BOM an
 
 
 ## The `window` Object
-`window` is the global Object in JS. Below is a list of some of the Properties, Methods, and Events attached to the `window` Object.
+`window` is the global Object in JS. Below is a table listing of some of the Properties, Methods, and Events attached to the `window` Object.
 
-| Properties   | Methods   | Events       |
-| :---         | :---      | :---         |
-| document     | alert()   | (not common) |
-| location     | back()    |              |
-| console      | confirm() |              |
-| innerHeight  |           |              |
-| innerWidth   |           |              |
-| pageXOffset  |           |              |
-| pageYOffset  |           |              |
+| Properties                   | Methods   | Events       |
+| :---                         | :---      | :---         |
+| document _(the DOM)_         | alert()   | (not common) |
+| location _browser location_  | back()    |              |
+| console                      | confirm() |              |
+| innerHeight                  |           |              |
+| innerWidth                   |           |              |
+| pageXOffset                  |           |              |
+| pageYOffset                  |           |              |
 
 
 
