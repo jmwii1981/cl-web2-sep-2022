@@ -718,11 +718,25 @@ Below are some simple things to note about JS programming referencing the BOM an
 | pageXOffset                  |           |              |
 | pageYOffset                  |           |              |
 
-
+With `window` being the global Object, everything gets passed to `window`. However, when working with a module, you must reference `window` separately. See the examples below.
 
 **Example**
+
+Here we create a variable `year` and then reference it as part of the `window` Object.
 ```javascript
+let year = 1956;
+console.log(window.year); // Returns '1956'
 ```
+**Example**
+
+Here we use a Module, and as you can see, a `ReferenceError` is returned. You must declare variables when working with Modules because those variables will not be placed on the `window` object. To resolve this issue, we can use the `let` keyword to declare the `year` variable at the Module level.
+```javascript
+import { Vehicle } from '../vehicles.js'
+let year = 1956;
+console.log(window.year); // Returns 'ReferenceError: year is not defined'
+```
+
+
 
 ## Timers
 Text_here
