@@ -867,14 +867,69 @@ let element = document.getElementById('elementID');
  - `element.style.color = 'blue';`
 
 
-## TITLE
+## Forms
 Text_here
 
 **Example**
 ```javascript
 ```
 
-## TITLE
+## Preventing Form Submission
+See the below example to learn how to prevent a `submit` event.
+
+**Example**
+
+The **JavaScript** code.
+```javascript
+let form = document.getElementById('user-form');
+
+form.addEventListener('submit', event => { // 'submit' is the event that we've selected
+    event.preventDefault(); // This prevents the 'submit' event
+});
+```
+
+The **HTML** code.
+```html
+<html>
+    <head>
+    </head>
+    <body>
+        <h3>JavaScript Fundamentals</h3>
+        <form action="/somepath" method="post" id="user-form">
+            <input name="user" placeholder="User Name" />
+            <span id="user-error"></span>
+            <br>
+            <input name="avatar-file" placeholder="Avatar File"/>
+            <span id="avatar-error"></span>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
+```
+
+## Accessing Form Fields
+Text_here
+
+**Example**
+```javascript
+```
+
+## Showing Validation Errors
+Text_here
+
+**Example**
+```javascript
+```
+
+## Posting from JavaScript
+Text_here
+
+**Example**
+```javascript
+```
+
+## Security and Building for Production
 Text_here
 
 **Example**
