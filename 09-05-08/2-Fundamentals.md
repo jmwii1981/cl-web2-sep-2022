@@ -867,14 +867,7 @@ let element = document.getElementById('elementID');
  - `element.style.color = 'blue';`
 
 
-## Forms
-Text_here
-
-**Example**
-```javascript
-```
-
-## Preventing Form Submission
+## Preventing Form Submissions
 See the below example to learn how to prevent a `submit` event.
 
 **Example**
@@ -909,17 +902,47 @@ The **HTML** code.
 ```
 
 ## Accessing Form Fields
-Text_here
+In the below example, we're leveraging the `submit` event to collect form data. Notice we use the `form` variable to store the form within the HTML document that has the id `user-form`. From there, we're creating our `submit` event listener, and then creating and using the `user` and `avatarFile` variables to store data inputted by the user via the HTML form element Object's `elements` property, stored in the `form` variable. We're selecting the form input element by it's `name` attribute, which you can see has been added within the square brackets `[]`.
+
+To test the code, we're logging out the `user.value` and `avatarFile.value` values to the console, and making sure to use `event.preventDefault()` on the `submit` event so that the form doesn't use the http `POST` method.
 
 **Example**
 ```javascript
+let form = document.getElementById('user-form');
+
+form.addEventListener('submit', event => {
+    let user = form.elements['user'];
+    let avatarFile = form.elements['avatar-file']:
+
+    console.log(user.value, avatarFile.value);
+    event.preventDefault():
+});
 ```
 
 ## Showing Validation Errors
 Text_here
 
 **Example**
+The **JavaScript** code.
 ```javascript
+let form = document.getElementById('user-form');
+
+form.addEventListener('submit', event => {
+    let user = form.elements['user']; // Selects the form input element with the name attribute that has the value 'user'
+    let userError = document.getElementById('user-error'): // Selects the <span id="user-error"> element in the HTML document
+
+    userError.textContent = 'Invalid entry'; // Displays a text error using textContent to inject text into the <span id="user-error"> element in the HTML document
+    userError.style.color = 'red'; // Styles the validation message red
+    user.style.borderColor = 'red'; // Styles the input border red
+    user.focus(); // Moves focus back to the input that is throwing the error
+    event.preventDefault():
+});
+```
+
+The **HTML** code.
+```html
+    <input name="user" placeholder="User Name" />
+    <span id="user-error"></span>
 ```
 
 ## Posting from JavaScript
