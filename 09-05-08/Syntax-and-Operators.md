@@ -13,7 +13,7 @@ Quick overview.
  - Switch statements might replace if / else statements in some cases
 
 **Example**
-```
+```javascript
 // A typical switch statement in pseudo.
 
 switch(<expression value to consider>) {
@@ -77,7 +77,7 @@ A for/in statement ...
  - Returns the values associated with the keys belonging to the properties and methods of an element
 
 **Example**
-```
+```javascript
 // A nimble example of a for/in loop for an array ...
 let product = {
     "productID": 680,
@@ -99,7 +99,7 @@ A for/of statement ...
  - Returns an object for each iteration
 
 **Example**
-```
+```javascript
 // A nimble example of a for/of loop for an array ...
 _products {
     {
@@ -254,7 +254,7 @@ Here's how these booleans work.
     - in the event that an expression on either side of the `||` are false, then as long as one expression is `true`, then the full expression evaluates to `true`
 
 **Example**
-```
+```javascript
 function myFunction() {
     let x = 200;
     if (x > 10 && x < 1600) { // evaluates to true because both sides are true
@@ -371,7 +371,7 @@ Here's what the `throw` statement does ...
      - `message`
 
 **Example**
-```
+```javascript
 function attemptDivision() {
     let result;
 
@@ -397,7 +397,7 @@ throwError(); // the console shows the followiing ... "In the attemptDivsion() m
 Custom errors can also handle errors based on the type of error using a conditional statement.
 
 **Example**
-```
+```javascript
 function handleError(error) {
     switch(error.name) {
         case 'ReferenceError';
@@ -429,6 +429,66 @@ function handleError(error) {
 
 These are built-in Error objects to check for.
 
+## Creating Promises
+Promises are designed to work with asynchronous JS. So if you're working with a timer or if you're working with HTTP calls, you can think of a promise as a temporary holder for a value that you'll retrieve once an asynchronous operation completes. So, a promise is essentially a promise to actually get a value back to you. It may take time because we're waiting on an asynchronous call, but eventually you will get a value back or at least an error.
+
+Promise is a function that accepts two function as parameters called `resolve` and `reject`. The function inside of `Promise()` will execute immediately once we create it (below). `setTimeout()` is used here to call the `resolve` function only after 100 milliseconds have passed. The `resolve` function is then passed 'someValue' as a string. By calling `resolve`, this means that the promise resolved successfully. If there is an error of some kind, then we would use reject `instead` of `resolve`.
+
+**Example**
+
+Calling 'resolve'
+```javascript
+
+let promise = new Promise(
+    function(resolve, reject) {
+        setTimeout(resolve, 100, 'someValue');
+    }
+);
+console.log(promise); // Returns a an object called 'Promise' with properties (see below) ... 'Promise {<pending>}'
+
+/** The above Returns the following ...
+ * ▼ Promise {<pending>}
+ * ▶︎ __proto__:
+ *  [[PromiseStatus]]: "resolved"
+ *  [[PromiseValue]]: "someValue"
+```
+
+**Example**
+
+Calling 'reject'
+```javascript
+let promise = new Promise(
+    function(resolve, reject) {
+        setTimeout(reject, 100, 'someValue');
+    }
+);
+console.log(promise); // Returns a an object called 'Promise' with properties (see below) ... 'Promise {<pending>}'
+
+/** The above Returns the following ...
+ * ▼ Promise {<pending>}
+ * ▶︎ __proto__:
+ *  [[PromiseStatus]]: "rejected"
+ *  [[PromiseValue]]: "someValue"
+ * ▶︎ Uncaught (in promise) someValue
+```
+
+## Settling A Promise
+A promise represents a value that we don't have access to yet. When we **do** get the value of a promise, it's considered _settling a promise_. `Promise.then()` accepts has two parameters that both accept a function as an argument. Below, we're assigning `Promise()` to a variable `promise` and then calling the `then` method and passing two functions as arguments: `value`, and `error`. `value` will execute of the `Promise()` is resolved (`resolve`), and `error` will execute if `Promise()` is rejected (`reject`).
+
+**Example**
+```javascript
+let promise = new Promise(
+    function(resolve, reject) {
+        setTimeout(reject, 100, 'someValue');
+    }
+);
+promise.then(
+    value => console.log(`Fulfilled: ` + value);
+    error => console.log(`Rejected: ` + error);
+); // Since we're calling 'reject' above, the Promise() gets rejected and the following is returned 'Rejected: someValue'
+```
+
+
 ## Primitive Data Types
 Primitive data types are as follows ...
  - **boolean**: either `true`, or `false`
@@ -453,7 +513,7 @@ Objects take up more memory space than primitive data types. Use primitive where
 The `typeof` operator returns an evaluation of an object's type when you pass that object to it.
 
 **Example**
-```
+```javascript
 typeof "Hello"; // evaluates to 'string'
 ```
 
@@ -463,7 +523,7 @@ typeof "Hello"; // evaluates to 'string'
  - The constructor property returns a reference to the object it belongs to ... this allows us to learn a few things about the object itself
 
 **Example**
-```
+```javascript
 // The following is pseudo code
 data_type.constructor.toString(); // will output a string value that tells us what data type 'data_type' is
 
@@ -476,7 +536,7 @@ The `instaceof` Operator ...
  - Tests for a specific type of object, or an object itself
 
 **Example**
-```
+```javascript
 let prod = new Product(680, "Road Frame");
 console.log(prod instanceof Product.toString()); // above returns output of 'true'
 ```
@@ -489,7 +549,7 @@ console.log(prod instanceof Product.toString()); // above returns output of 'tru
 In the following example, `this` is directly inside of the _window global object_ so that is what it is referencing.
 
 **Example**
-```
+```javascript
 <script>
     console.log(this.toString()); // prints [Object window]
 </script>
@@ -498,7 +558,7 @@ In the following example, `this` is directly inside of the _window global object
 In the following example, `this` is the _object literal_ `person`. `this` will have different values based on the context of which your code is excuting. 
 
 **Example**
-```
+```javascript
 person {
     firstName: "John",
     lastName: "Smith",
@@ -518,7 +578,7 @@ In an event (e.g. a click event), `this` refers to the HTML element that receive
 In a call() or apply() function, `this` refers to the object passed in `call(object);` or `apply(object)`.
 
 **Example**
-```
+```javascript
 function callAndApply() {
     let product = {
         "productID": 680,
@@ -562,7 +622,7 @@ Considering `this` and object literals, or instance objects ...
 When `this` is used inside of call() or apply() functions ...
 
 **Example**
-```
+```javascript
 // Continued from example above ...
 function constructorFunction() {
     let prod1 = new Product(680, "Road Frame", 1059.31, 1431.50);
@@ -597,7 +657,7 @@ So, to review, the spread `...` operator ...
 
 ## String to Array
 **Example**
-```
+```javascript
 // String to array
 function stringToArray() {
     let productNumber = "FR-R92B-58";
@@ -610,7 +670,7 @@ stringToArray();
 
 ## Copy An Array of Primitives
 **Example**
-```
+```javascript
 // Copy array (normally you would use the 'slice' method to copy an array, but for purposes of demonstration, we'll use the 'spread' operator for the moment ...)
 function copyArray() {
     let arr1 = [1, 2, 3];
@@ -628,7 +688,7 @@ copyArray();
 
 ## Copy An Array of Objects
 **Example**
-```
+```javascript
 let _products = [{
         productID: 680,
         name: "Road Frame",
@@ -671,7 +731,7 @@ objectArrays();
 
 ## Concatenate Two Arrays Together
 **Example**
-```
+```javascript
 let _products = [{
         productID: 680,
         name: "Road Frame",
@@ -737,7 +797,7 @@ Note the difference between _parameters_ and _arguments_: Function parameters ar
  - Function arguments are the real values passed to the function.
 
 **Example**
-```
+```javascript
 // Parameters are the names listed in the function's definition, such as the one below
 function example(parameter) {
   console.log(parameter); // Output = foo
@@ -751,7 +811,7 @@ example(argument); // Returns 'foo'
 
 ## Using `Spread` To Pass Parameters To A Constructor
 **Example**
-```
+```javascript
 // Use with 'new' constructor instance of an object
 function spreadInConstructors() {
 
@@ -778,7 +838,7 @@ spreadInConstructors();
 One of the benefits of using the spread operator is that it will create a new reference to its primitive values, copying them. As you can see, the spread operator is useful for creating new instances of arrays that do not behave unexpectedly due to old references.
 
 **Example**
-```
+```javascript
 // 'spreadForFunctionArgs()' is declared here and invokes 'multipleParams()' in two ways: the traditional approach, and the spread approach ...
 
     function spreadForFunctionArgs() {
@@ -826,7 +886,7 @@ spreadForFunctionArgs();
 
 ## Shallow Copy on Object Literals
 **Example**
-```
+```javascript
 function objectliterals() {
     // A literal object called product assigned a few different properties
     let product = {
