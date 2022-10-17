@@ -985,7 +985,7 @@ JS code in your project is always visible by anyone with access to your web brow
 
 
 ## Security and the `eval()` Function
-JS's `eval()` function accepts a string and will take that string and parse it, executing the code. This is important because if you use the `eval()` function on user inputted string, and that string is code, then the code will execute and could potentially compromise your application. This is why you should _avoid_ using the `eval()` function.
+JS's `eval()` function evaluates JS code represented as a string and returns its completion value. The source is parsed as a script. In other words, JS's `eval()` function accepts a string and will take that string and parse it, executing the code. This is important because if you use the `eval()` function on user inputted string, and that string is code, then the code will execute and could potentially compromise your application. This is why you should _avoid_ using the `eval()` function.
 
 
 ## Preventing Man-in-the-middle Attacks
