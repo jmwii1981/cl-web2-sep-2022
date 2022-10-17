@@ -54,7 +54,7 @@ Read more in-depth material on [Function, Block, and Lexical Scope](https://www.
 ## Additional Material
 Additional learning material from this lesson has been eliminated to reduce repetition. You can find more information about the below list of topics in either the [JS Fundamentals](../09-05-08/2-Fundamentals.md) or [Syntax and Operators](../09-05-08/3-Syntax-and-Operators.md) notes files from pervious lessons and series of videos.
 
-Topics from this video series that were dropped since they were already covered in [JS Fundamentals](../09-05-08/2-Fundamentals.md) and [Syntax and Operators](../09-05-08/3-Syntax-and-Operators.md), include ...
+Topics from this video series that were dropped from these notes since they were already covered in [JS Fundamentals](../09-05-08/2-Fundamentals.md) and [Syntax and Operators](../09-05-08/3-Syntax-and-Operators.md), include ...
  - Immediately Invoked Function Expressions (IIFE)
  - How Closures Work
  - Arrow Functions
@@ -72,51 +72,3 @@ Topics from this video series that were dropped since they were already covered 
 **Example**
 ```
 ```
-
-## TITLE
-**Example**
-```
-```
-
-## TITLE
-**Example**
-```
-```
-
-## TITLE
-**Example**
-```
-```
-
-## TITLE
-**Example**
-```
-```
-
-## TITLE
-**Example**
-```
-```
-
-## TITLE
-**Example**
-```
-```
-
-## TITLE
-**Example**
-```
-```
-
-## TITLE
-**Example**
-```
-```
-
-## TITLE
-**Example**
-```
-```
-
-
-
