@@ -920,9 +920,10 @@ form.addEventListener('submit', event => {
 ```
 
 ## Showing Validation Errors
-Text_here
+See the example below for how to select the necessary form elements, and create a validation message when the user inputs invalid data or no data at all.
 
 **Example**
+
 The **JavaScript** code.
 ```javascript
 let form = document.getElementById('user-form');
@@ -946,36 +947,59 @@ The **HTML** code.
 ```
 
 ## Posting from JavaScript
-Text_here
+**Note** – jQuery is used below to send JSON.
 
 **Example**
+
+The **JavaScript** code.
 ```javascript
+let form = document.getElementById('user-form');
+
+form.addEventListener('submit', event => {
+    let user = form.elements['user'];
+    let avatarFile = form.elements['avatar-file']:
+
+    let posting = {
+        user: user.value,
+        avatarFile: avatarFile.value
+    };
+
+    let promise = $.post { // This is where jQuery comes in, hence the '$'
+        "http://some.url.io/api", posting // Here, the URL is where we're posting our data, and 'posting' serves as our stored posting data (user input), stored in the object above
+    };
+    promise.then(
+        data => console.log('Success: ', data);
+        error => console.log('Error: ', error);
+    );
+    event.preventDefault():
+});
 ```
 
-## Security and Building for Production
-Text_here
+## Developer Tools and Security
+JS code in your project is always visible by anyone with access to your web browser's developer tools. Some important things to keep in mind are ...
+ - Don't store passwords, secrets, or other sensitive information in your code
+ - Don't use global variables
+ - Assume hackers can read your JS code and access all data sent to a browser
 
-**Example**
-```javascript
-```
+**Note** – You may use a [JS Obfuscator](http://javascriptobfuscator.com) to scramble your code, however, there are tools that can reverse this.
 
-## TITLE
-Text_here
 
-**Example**
-```javascript
-```
+## Security and the `eval()` Function
+JS's `eval()` function accepts a string and will take that string and parse it, executing the code. This is important because if you use the `eval()` function on user inputted string, and that string is code, then the code will execute and could potentially compromise your application. This is why you should _avoid_ using the `eval()` function.
 
-## TITLE
-Text_here
 
-**Example**
-```javascript
-```
+## Preventing Man-in-the-middle Attacks
+Man-in-the-middle Attacks happen because files are sometimes passed through multiple servers before reaching the intended client. For that reason, anyone on any of those servers that files are passed through potentially has access to them. When those files are compromised by that interceptor, this is called a Man-in-the-middle Attack.
 
-## TITLE
-Text_here
+You cannot prevent Man-in-the-middle Attacks via written JS code. However, there are a few best practices for preventing these from happening ...
+ - Use SSL
+ - Use HTTP Header: Strict-Transport-Security
+ - Use cookie attributes: Secure and HttpOnly
 
-**Example**
-```javascript
-```
+
+## Cross-site Scripting (XSS)
+Cross-site scripting attacks, also called XSS attacks, are a type of injection attack that injects malicious code into otherwise safe websites. An attacker will use a flaw in a target web application to send some kind of malicious code, most commonly client-side JavaScript, to an end user. Rather than targeting the application’s host itself, XSS attacks generally target the application’s users directly. Organizations and companies running web applications can leave the door open for XSS attacks if they display content from users or untrusted sources without proper escaping or validation.
+
+
+## Building Your Application for Production
+One way to address several of the security issues above, is through the use of [Webpack](https://webpack.js.org/concepts/). Check it out [here](https://webpack.js.org/concepts/).
