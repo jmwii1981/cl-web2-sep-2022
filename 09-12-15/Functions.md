@@ -66,9 +66,3 @@ Topics from this video series that were dropped from these notes since they were
  - Default Parameters
  - Rest Parameters
  - The Spread Operator
-
-
-## TITLE
-**Example**
-```
-```
