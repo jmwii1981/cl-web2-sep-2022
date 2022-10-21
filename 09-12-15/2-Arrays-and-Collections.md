@@ -184,12 +184,12 @@ So what do all of the properties and values of Sets (`Set()`) do?
  - `delete()`: Used to 'delete' an element with a specified value in a `Set()` and return a _boolean value_ depending upon the availability of the element. It will not modify the `Set()` if the element with specified value does not exist in the `Set()` and return a value of `false` instead.
  - `entries()`: Returns a new _Iterator Object_ that contains an array of `[value, value]` for each element in a `Set()`, in the order of their insertion. For `Set()` Objects specifically, _there is no key like in `Map()` Objects_. However, to keep the API similar to the `Map()` Object, each entry has the same value for its key and value, thus an Array with `[value, value]` is returned.
  
-  **Note** – An _Iterator_ is an Object which defines a sequence and potentially a return value upon its termination.
+> **Note** – An _Iterator_ is an Object which defines a sequence and potentially a return value upon its termination.
  - `forEach()`: Executes a specified function once for each value in a specified `Set()` Object. It maintains an insertion order. Unlike `Map()`, the `Set()` Object doesn't use keys externally.
  - `has()`: Returns `true` or `false` indicating whether or not an element with a specified value exists in a `Set()` Object.
  - `values()`: Returns a new Iterator Object  containing the values for each element in a specified `Set()` in insertion order.
  
-  **Note** – The `keys()` method _is an alias for the `values()` method_ (giving it similarity to `Map()` Objects). The `keys()` method therefore, behaves exactly the same as the `values()` method and returns values of `Set()` elements.
+> **Note** – The `keys()` method _is an alias for the `values()` method_ (giving it similarity to `Map()` Objects). The `keys()` method therefore, behaves exactly the same as the `values()` method and returns values of `Set()` elements.
   - `keys()`: Returns a new Iterator Object containing the values for each element in a specified `Set()` in insertion order.
 
 
