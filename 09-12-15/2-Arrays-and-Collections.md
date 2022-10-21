@@ -159,8 +159,8 @@ There are eight different data types that we can work with when it comes to usin
 Seven of the data types above are Primitives and then the final one is an Object. In the case of Data Collections, Primitives really can't be changed. However, Objects are data types that can be referenced by an identifier.
 
  
-## Introducing Sets
-Sets enable us to store _unique_ values of any type, whether primitive values or object references. This means that values that are duplicates are ignored.
+## Introducing `Set()`
+`Set()` enables us to store _unique_ values of any type, whether primitive values or object references. This means that _values that are duplicates are ignored_.
 
 | Properties | Methods  |
 | :---       | :---     |
@@ -173,12 +173,47 @@ Sets enable us to store _unique_ values of any type, whether primitive values or
 |            | Keys     |
 |            | Values   |
 
+So what do all of the properties and values of Sets (`Set()`) do?
+**Property**
+ - Size: Returns the number of elements in a `Set()`. If the `Set()` is empty the size of the `Set()` will be returned as `0`.
+
+**Method**
+ - `add()`: Used to append an element with a specified value in a `Set()`. It modifies the existing `Set()` by appending the new element _but does not return a new_ `Set()`. The `add()` method _does not modify the `Set()` if the element with a specified value already exists_ in the `Set()`.
+ - `clear()`: Used for the removal of _all elements_ from a `Set()` and makes it empty. No arguments are required to be sent as parameters to the `Set().clear()` method and it returns with the value of `undefined`.
+ - `delete()`: Used to 'delete' an element with a specified value in a `Set()` and return a _boolean value_ depending upon the availability of the element. It will not modify the `Set()` if the element with specified value does not exist in the `Set()` and return a value of `false` instead.
+ - `entries()`: Returns a new _Iterator Object_ that contains an array of `[value, value]` for each element in a `Set()`, in the order of their insertion. For `Set()` Objects specifically, _there is no key like in `Map()` Objects_. However, to keep the API similar to the `Map()` Object, each entry has the same value for its key and value, thus an Array with `[value, value]` is returned.
+ 
+  **Note** – An _Iterator_ is an Object which defines a sequence and potentially a return value upon its termination.
+ - `forEach()`: Executes a specified function once for each value in a specified `Set()` Object. It maintains an insertion order. Unlike `Map()`, the `Set()` Object doesn't use keys externally.
+ - `has()`: Returns `true` or `false` indicating whether or not an element with a specified value exists in a `Set()` Object.
+ - `values()`: Returns a new Iterator Object  containing the values for each element in a specified `Set()` in insertion order.
+ 
+  **Note** – The `keys()` method _is an alias for the `values()` method_ (giving it similarity to `Map()` Objects). The `keys()` method therefore, behaves exactly the same as the `values()` method and returns values of `Set()` elements.
+  - `keys()`: Returns a new Iterator Object containing the values for each element in a specified `Set()` in insertion order.
+
+
 
 ## Adding and Removing Values To A Set
-Text
+
 
 **Example**
 ```javascript
+// Values from the form
+let newAmount = document.getElementById('itemAmount');
+let newMonth = document.getElementById('monthId');
+
+let yearlyTotal = 0;
+
+const monthlySales = new Set();
+const monthlyLabels = new Set();
+
+function addSale() {
+    monthlySales.add(newAmount.value);
+    monthlySales.add(newMonth.value);
+
+    return = `You have entered ${monthlySales.size} sales.`;
+}
+
 
 ```
 
