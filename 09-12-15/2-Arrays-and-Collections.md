@@ -175,10 +175,10 @@ Seven of the data types above are Primitives and then the final one is an Object
 
 So what do all of the properties and values of Sets (`Set()`) do?
 
-**'Set().size' Property**
+'Set().size' **Property**
  - `size()`: Returns the number of elements in a `Set()`. If the `Set()` is empty the size of the `Set()` will be returned as `0`.
 
-**'Set().size' Methods**
+'Set()' **Methods**
  - `add()`: Used to append an element with a specified value in a `Set()`. It modifies the existing `Set()` by appending the new element _but does not return a new_ `Set()`. The `add()` method _does not modify the `Set()` if the element with a specified value already exists_ in the `Set()`.
  - `clear()`: Used for the removal of _all elements_ from a `Set()` and makes it empty. No arguments are required to be sent as parameters to the `Set().clear()` method and it returns with the value of `undefined`.
  - `delete()`: Used to 'delete' an element with a specified value in a `Set()` and return a _boolean value_ depending upon the availability of the element. It will not modify the `Set()` if the element with specified value does not exist in the `Set()` and return a value of `false` instead.
