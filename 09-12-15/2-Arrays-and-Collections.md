@@ -162,16 +162,16 @@ Seven of the data types above are Primitives and then the final one is an Object
 ## Introducing `Set()`
 `Set()` enables us to store _unique_ values of any type, whether primitive values or object references. This means that _values that are duplicates are ignored_.
 
-| Properties | Methods  |
-| :---       | :---     |
-| Size       | Add      |
-|            | Clear    |
-|            | Delete   |
-|            | Entries  |
-|            | forEach  |
-|            | Has      |
-|            | Keys     |
-|            | Values   |
+| Properties | Methods     |
+| :---       | :---        |
+| `size()`   | `add()`     |
+|            | `clear()`   |
+|            | `delete()`  |
+|            | `entries()` |
+|            | `forEach()` |
+|            | `has()`     |
+|            | `keys()`    |
+|            | `values()`  |
 
 So what do all of the properties and values of Sets (`Set()`) do?
 
@@ -194,8 +194,8 @@ So what do all of the properties and values of Sets (`Set()`) do?
 
 
 
-## Adding and Removing Values To A Set
-
+## Adding and Deleting Values To A Set
+adfasdf
 
 **Example**
 ```javascript
