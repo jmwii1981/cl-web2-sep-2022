@@ -173,7 +173,8 @@ Sets enable us to store _unique_ values of any type, whether primitive values or
 |            | Keys     |
 |            | Values   |
 
-## Adding and Removing Values to a Set
+
+## Adding and Removing Values To A Set
 Text
 
 **Example**
@@ -182,34 +183,7 @@ Text
 ```
 
 
-## Iterating a Set
-Text
-
-**Example**
-```javascript
-
-```
-
- 
-## Updating the Graphs
-Text
-
-**Example**
-```javascript
-
-```
-
-
-## Difference Between a Set and WeakSet
-Text
-
-**Example**
-```javascript
-
-```
-
-
-## Working with WeakSets
+## Iterating A Set
 Text
 
 **Example**
@@ -218,7 +192,34 @@ Text
 ```
 
  
-## Creating and Using Maps
+## Updating The Graphs
+Text
+
+**Example**
+```javascript
+
+```
+
+
+## Difference Between A Set And WeakSet
+Text
+
+**Example**
+```javascript
+
+```
+
+
+## Working With WeakSets
+Text
+
+**Example**
+```javascript
+
+```
+
+ 
+## Creating And Using Maps
 Text
 
 **Example**
@@ -236,7 +237,7 @@ Text
 ```
 
  
-## Adding and Removing Values in ...
+## Adding And Removing Values In ...
 Text
 
 **Example**
@@ -245,7 +246,7 @@ Text
 ```
 
  
-## Iterating Through a Map
+## Iterating Through A Map
 Text
 
 **Example**
@@ -254,7 +255,7 @@ Text
 ```
 
  
-## Difference Between Maps and O...
+## Difference Between Maps And O...
 Text
 
 **Example**
@@ -263,7 +264,7 @@ Text
 ```
 
  
-## Understanding the Difference of
+## Understanding The Difference Of
 Text
 
 **Example**
@@ -308,7 +309,7 @@ Text
 ```
 
  
-## Accessing Typed Arrays with View
+## Accessing Typed Arrays With View
 Text
 
 **Example**
