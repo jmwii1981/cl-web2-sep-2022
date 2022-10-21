@@ -159,7 +159,7 @@ There are eight different data types that we can work with when it comes to usin
 Seven of the data types above are Primitives and then the final one is an Object. In the case of Data Collections, Primitives really can't be changed. However, Objects are data types that can be referenced by an identifier.
 
  
-## Introducing `Set()`
+## Introducing `Set()`, Its Properties And Methods
 `Set()` enables us to store _unique_ values of any type, whether primitive values or object references. This means that _values that are duplicates are ignored_.
 
 | Properties | Methods     |
