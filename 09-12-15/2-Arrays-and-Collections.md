@@ -192,7 +192,6 @@ So what do all of the properties and values of Sets (`Set()`) do?
 > **Note** – The `keys()` method _is an alias for the `values()` method_ (giving it similarity to `Map()` Objects). The `keys()` method therefore, behaves exactly the same as the `values()` method and returns values of `Set()` elements.
   - `keys()`: Returns a new Iterator Object containing the values for each element in a specified `Set()` in insertion order.
 
-
 ## Adding To and Deleting Values From A `Set()`
 Below, see an example of how to use the `add()` and `delete()` methods for `Set()`.
 
@@ -243,32 +242,37 @@ function deleteSaleAmount() {
 
 
 ## Iterating A `Set()`
-Text????????
-
-Below, see an example of how to use the `forEach()` and ... methods for `Set()`????????????????
+Below, see an example of how to use a `for (let foo of bar)` (for of) loop to iterate through a `Set()`. We'll also use the `forEach()` and ... methods to iterate the `Set()` as well.
 
 **Example**
 ```javascript
+// Using a 'for of' loop to iterate ...
+function addTotal() {
+    for (let amount of monthlySalesAmounts) {
+        return amount; // Loops through each of the values in our last example (above) and returns '1200' and '1500' as it steps through each value in the 'Set()' as specified by the for of loop
+    }
+}
 
-```
-
- 
-## Updating The Graphs
-Text
-
-**Example**
-```javascript
-
+// Using a 'forEach()' method to iterate ...
+function deleteVal() {
+    monthlySalesAmounts.forEach((value1, value2, monthlySalesAmounts) => {
+        alert(value1);
+    });
+}
 ```
 
 
 ## Difference Between A `Set()` And `WeakSet()`
-Text
+`Set()`s can store any value while `WeakSet()`s can only hold objects within its collection. `WeakSet()`s cannot store primitive values. In other words, integers, booleans, and strings are not allowed.
 
-**Example**
-```javascript
+The nice thing about a `WeakSet()` is that unless it is used, it is not stored in memory. This means that an Object in a `WeakSet()` can be "garbage collected" if there is no other reference to it in the program.
 
-```
+Other differences are ...
+ - `Set()`s can store any value. `WeakSet()`s are collections of Objects only.
+ - `WeakSet()` does not have `size()` property.
+ - `WeakSet()` does not have `clear()`, `keys()`, `values()`, `entries()`, `forEach()` methods.
+ - `WeakSet()` is not iterable.
+
 
 
 ## Working With `WeakSet()` Objects
