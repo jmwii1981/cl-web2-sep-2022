@@ -322,20 +322,100 @@ Text
 
 **Example**
 ```javascript
+const monthlySales = new Map();
 
+// Adds adds a user inputted value relative to a defined key "newSale"
+function addSale() {
+    monthlySales.set('newSale', newAmount.value);
+    console.log(monthlySales); // Returns a 'Map()' Object with a key of "newSale" and a value of the users' 'newAmount.value' entry, we'll pretend it's "1200" as a string.
+}
+
+// Finds a key and returns the key's value
+function findSale() {
+    console.log(monthlySales.get('newSale')); // Returns the value of the key "newSale", which is "1200".
+    
+}
+
+// Deleting a value by deleting it's key
+function addSale() {
+    monthlySales.delete('newSale');
+    console.log(monthlySales); // Returns  'No Entries' because we have deleted the value and key together (as they're tied together).
+}
+
+// Ask the Map() Object if it has a value for a given key
+function doesSaleHave() {
+    console.log(monthlySales.has('newSale')); // Returns a boolean value of 'true' or 'false' depending on whether the specified key exists.
+}
 ```
 
- 
-## Iterating Through A `Map()` Object
-Text
+## Iterating Through `Map()`s
+> **Come back to this and take notes later.**
+
+
+## Differences Between `Map()`s and Objects
+One of the benefits of using a `Map()` over an Object or `Array[]`, is that `Map()`s are faster to iterate through. Another benefit is the kind of data types that a `Map()` can hold vs. an Object. In Objects, _keys must be simple data types_. In `Map()`s, _keys can be any data type_ you need them to be.
+
+| Object   | Map      |
+| :---     | :---     |
+| Integers | Object   |
+| Strings  | Array    |
+| Symbols  | Function |
+
+As we've discussed before, `Map()`s guarantee a specific order based on the order of insertion while Objects do not.
+
+A `Map()` is inherited from an Object which means that a `Map()` can get the different methods and properties of an Object. However, an Object cannot inherit different methods and properties of a `Map()`.
+
+A functional benefit of a `Map()` over an Object is the way we create `Map()`s. `Map()`s are actually much simpler to create because there's only one way to create them. See the example below.
 
 **Example**
 ```javascript
+// Creating an Object
+var obj = {};
+var obj = new Object();
+var obj = Object.create(null);
 
+// Creating a 'Map()'
+var map = new Map();
 ```
 
- 
-## Difference Between `Map()` Objects And O...
+The same simplicity applies to _getting_, _checking_, _adding_, and getting the _size_ of Objects vs. `Map()`s. `Map()`s are _just easier to use_. See the examples below.
+
+**Example**
+```javascript
+// Getting
+    // Getting with an Object
+    obj.id;
+    obj['id'];
+
+    // Getting with a 'Map()'
+    map.get(1);
+
+// Checking
+    // Checking with an Object
+    Object - var isExist = obj.id === undefined;
+    isExist = 'id' in obj;
+
+    // Checking with a 'Map()'
+    map.has(1);
+
+// Adding
+    // Adding with an Object
+    obj['gender] = 'female';
+    obj.gender = male;
+
+    // Adding with a 'Map()'
+    map.set('gender', 'female');
+
+// Size
+    // Sizing with an Object
+    console.log(Object.keys(obj).length);
+
+    // Sizing with a 'Map()'
+    console.log(map.size);
+```
+
+
+## Difference `Map()`s 
 Text
 
 **Example**
