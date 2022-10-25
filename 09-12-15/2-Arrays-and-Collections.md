@@ -193,33 +193,59 @@ So what do all of the properties and values of Sets (`Set()`) do?
   - `keys()`: Returns a new Iterator Object containing the values for each element in a specified `Set()` in insertion order.
 
 
-## Adding and Deleting Values To A Set
-adfasdf
+## Adding To and Deleting Values From A `Set()`
+Below, see an example of how to use the `add()` and `delete()` methods for `Set()`.
 
 **Example**
 ```javascript
-// Values from the form
-let newAmount = document.getElementById('itemAmount');
-let newMonth = document.getElementById('monthId');
+// Values are entered from the form and stored in these variables
+let newAmount = document.getElementById('newAmount');
+let newMonth = document.getElementById('newMonth');
+let deleteAmount = document.getElementById('deleteAmount');
 
-let yearlyTotal = 0;
+// Here we create a new 'Set()' Object which can be used to store values that are passed to it. In this case, we're passing values from form fields in an HTML document assigned to vars 'newAmount' and 'newMonth'
+const monthlySalesAmounts = new Set();
+const specifiedMonths = new Set();
 
-const monthlySales = new Set();
-const monthlyLabels = new Set();
-
+// Here we have a function that then adds values from the user's input (one at a time) into a 'Set()' object ... so, let's pretend the user adds two 'sets' of values and those entered values are ...
+// 1 - newMonth = 'Oct' and newAmount = '1200'
+// 2 - newMonth = 'Nov' and newAmount = '1500'
 function addSale() {
-    monthlySales.add(newAmount.value);
-    monthlySales.add(newMonth.value);
+    monthlySalesAmounts.add(newAmount.value); // Equivalent to [1200, 1500]
+    specifiedMonths.add(newMonth.value); // Equivalent to [Oct, Nov]
 
-    return = `You have entered ${monthlySales.size} sales.`;
+    // Here, we return the number of sales the user has added.
+    return `You have entered ${monthlySalesAmounts.size} sales.`; // Returns 'You have entered 2 sales.'
+    // Here, we log out the values from the monthlySales 'Set()' that we created.
+    console.log(monthlySalesAmounts); // Returns '[1200, 1500]'
 }
 
+// Here we create a function to allow the user to specify a value to delete
+function deleteSaleAmount() {
+    monthlySalesAmounts.delete(deleteAmount.value); // Deletes the amount that the user enters, if it's available
+}
 
+// Other handy things to note ...
+    // You may "chain" 'add()' methods together
+    someSet.add(5).add(6) // Adds [5, 6] to the set 'someSet'
+    // You may also create a 'Set()' with values directly inside of it to start
+    const someSet = new Set([7, 8, 9, 10]);
+    // Note – You may also pass strings, and objects
+        // Strings
+        const someSetWithString = new Set(["I'm a string!", "So am I"]);
+        // Objects
+        const someSetWithObjects = new Set([{
+                                            key1: "value1",
+                                            key2: "value2",
+                                            key3: "and so forth",
+                                        }]);
 ```
 
 
-## Iterating A Set
-Text
+## Iterating A `Set()`
+Text????????
+
+Below, see an example of how to use the `forEach()` and ... methods for `Set()`????????????????
 
 **Example**
 ```javascript
@@ -236,7 +262,7 @@ Text
 ```
 
 
-## Difference Between A Set And WeakSet
+## Difference Between A `Set()` And `WeakSet()`
 Text
 
 **Example**
@@ -245,25 +271,7 @@ Text
 ```
 
 
-## Working With WeakSets
-Text
-
-**Example**
-```javascript
-
-```
-
- 
-## Creating And Using Maps
-Text
-
-**Example**
-```javascript
-
-```
-
-
-## Introducing Maps
+## Working With `WeakSet()` Objects
 Text
 
 **Example**
@@ -272,7 +280,16 @@ Text
 ```
 
  
-## Adding And Removing Values In ...
+## Creating And Using `Map()` Objects
+Text
+
+**Example**
+```javascript
+
+```
+
+
+## Introducing `Map()` Objects
 Text
 
 **Example**
@@ -281,7 +298,7 @@ Text
 ```
 
  
-## Iterating Through A Map
+## Adding And Removing Values In `Map()` Objects
 Text
 
 **Example**
@@ -290,7 +307,7 @@ Text
 ```
 
  
-## Difference Between Maps And O...
+## Iterating Through A `Map()` Object
 Text
 
 **Example**
@@ -299,7 +316,16 @@ Text
 ```
 
  
-## Understanding The Difference Of
+## Difference Between `Map()` Objects And O...
+Text
+
+**Example**
+```javascript
+
+```
+
+ 
+## Understanding The Difference Of `Map()` Objects
 Text
 
 **Example**
