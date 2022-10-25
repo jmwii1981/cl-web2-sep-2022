@@ -424,7 +424,7 @@ Text
 ```
 
  
-## Understanding The Difference Of `Map()` Objects
+## Understanding The Difference Of `Map()`s and `WeakMap()`s
 Text
 
 **Example**
