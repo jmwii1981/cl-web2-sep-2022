@@ -274,35 +274,50 @@ Other differences are ...
  - `WeakSet()` is not iterable.
 
 
+## Introducing `Map()` Objects ... What Are They?
+Unlike `Array[]`s, `Map()`s are a collection of data that uses key-value pairs and _keeps the original insertion order of the keys_. As you iterate through an `Array[]`, for example, you aren't guaranteed that the iteration won't bounce around, whereas with a `Map()` you are. Any value (objects _and_ primitives) may be used as either a key or a value.
 
-## Working With `WeakSet()` Objects
-Text
-
-**Example**
-```javascript
-
-```
-
- 
-## Creating And Using `Map()` Objects
-Text
+Thus, when using a `Map()`, you must pass it both a key and a value using the `set()` method.
 
 **Example**
 ```javascript
+// 'Set()'s vs 'Map()'s
+someSet.add(value); // In sets, we only have to set a value
+someMap.set(key, value); // Here we set a 'key value pair' using the 'set()' method.
+
+// Examples of what can be passed to a 'Map()' as a key (this can also apply to values)
+    // Strings as keys
+    someMap.set('sale', 200);
+
+    // Numbers as keys
+    someMap.set(100, 'label');
+
+    // Functions as keys
+    someMap.set(myFunc(), 300);
+
+    // Objects as keys
+    someMap.set({sale: 100}, 200);
 
 ```
 
+Some properties and methods that come with `Map()`s are ...
 
-## Introducing `Map()` Objects
-Text
+| Properties | Methods |
+| :---       | :---    |
+| Size       | Clear   |
+|            | Delete  |
+|            | Entries |
+|            | forEach |
+|            | Get     |
+|            | Set     |
+|            | Has     |
+|            | Keys    |
+|            | Values  |
 
-**Example**
-```javascript
 
-```
+> **NOTE TO SELF** -- add more here later about what props and methods do ..
 
- 
-## Adding And Removing Values In `Map()` Objects
+## Creating `Map()` Objects, and Adding And Removing Values In Them
 Text
 
 **Example**
