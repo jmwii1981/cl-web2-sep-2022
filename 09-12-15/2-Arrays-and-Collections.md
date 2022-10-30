@@ -388,7 +388,7 @@ addSale();
 ```
 
 
-## Differences Between `Map()`s and Objects
+## Understanding The Differences Between `Map()`s and Objects
 One of the benefits of using a `Map()` over an Object or `Array[]`, is that `Map()`s are faster to iterate through. Another benefit is the kind of data types that a `Map()` can hold vs. an Object. In Objects, _keys must be simple data types_. In `Map()`s, _keys can be any data type_ you need them to be.
 
 | Object   | Map      |
@@ -451,35 +451,50 @@ The same simplicity applies to _getting_, _checking_, _adding_, and getting the 
 ```
 
 
-## Difference `Map()`s 
-Text
+## Understanding The Differences Between `Map()`s and `WeakMap()`s
+Many of the differences between `Map()`s and `WeakMap()`s are very similar to the differences between `Set()`s and `WeakSet()`s.
 
-**Example**
-```javascript
-
-```
-
- 
-## Understanding The Difference Of `Map()`s and `WeakMap()`s
-Text
-
-**Example**
-```javascript
-
-```
+A quick overview of the differences between `Map()`s and `WeakMap()`s ..
+ - _Keys_ must be _Objects_.
+ - Objects are held "weakly".
+ - Not iterable.
+ - Garbage collected (i.e. if not used, then not stored in memory).
+ - Not enumerable (or cannot be fully counted).
+ - `WeakMap()`s _only_ have the methods `delete()`, `get()`, `set()`, or `has()`.
+ - `WeakMap()`s _do not_ have the methods `keys()`, `values()`, `clear()`, `entries()`, or `forEach()`.
 
 
-## Exploring Typed Arrays
-Text
-
-**Example**
-```javascript
-
-```
-
- 
 ## Defining Typed Arrays
-Text
+Typed Arrays are a specific kind of Array that handle direct memory allocation. This means you may actually store items in memory and work with them that way in order to help your software application run faster. In essence, Typed Arrays are Array-like Objects that provide a mechanism for accessing raw binary data which allows you to work with it quicker and easier. Typed Arrays are known for strictly controlling the data it stores by disallowing just any type of data stored. A wide variety of APIs support the usage of Typed Arrays so that you may take advantage of their faster performance.
+
+Some of the Native APIs that Typed Arrays may interact with are .. 
+ - WebGL
+ - Canvas
+ - Web Audio
+ - XMLHttpRequests
+ - Fetch
+ - Web Sockets
+ - Web Workers
+ - Media Source
+ - File
+
+To get started with Typed Arrays, you will need to know how to use an Array Buffer. In Array Buffers you define how many bites you actually want to work with inside of your Typed Array. However, code within JS documents cannot communicate directly with Array Buffers. So, you are required to create what is called a View. Each View will contain a certain number and type of structures and bites. Some View types and a short overview of general details about them are as follows..
+ - UInt8Array (1 bite each); 16 structures (0-15) to work with; allows use of certain low-value numbers.
+ - UInt16Array (2 bites each); 8 structures (0-7) to work with; allows use of certain lower-value numbers, but higher value than UInt8Arrays.
+ - UInt32Array (4 bites each); 4 structures to work with; allows work with higher value numbers.
+ - UInt64Array (8 bites each); 2 structures to work with; allows work with much higher value numbers.
+
+Below is a table of the Array Types in more detail ..
+| Type             | Value Range               | Size in Bytes | Description                                                              |
+| :---             | :---                      | :---          | :---                                                                     |
+|Int8Array         | -128 to 127               | 1             | 8-bit two's complement signed integer.                                   |
+|UInt8Array        | 0 to 255                  | 1             | 8-bit unsigned integer.                                                  |
+|UInt8ClampedArray | 0 to 255                  | 1             | 8-bit unsigned integer (clamped).                                        |
+|Int16Array        | -32768 to 32767           | 2             | 16-bit two's complement signed integer.                                  |
+|UInt16Array       | 0 to 65535                | 2             | 16-bit unsigned integer.                                                 |
+|Int32Array        | -2147483648 to 2147483647 | 4             | 32-bit two's complement signed integer.                                  |
+|UInt32Array       | 0 to 4294967295           | 4             | 32-bit unsigned integer.                                                 |
+|Float32Array      | 1.2x10-38 to 3.4x1038     | 4             | 32-bit IEEE floating point number (7 significant digits e.g. 1.1234567). |
 
 **Example**
 ```javascript
