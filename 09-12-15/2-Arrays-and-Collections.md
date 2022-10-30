@@ -495,11 +495,9 @@ Below is a table of the Array Types in more detail ..
 |Int32Array        | -2147483648 to 2147483647 | 4             | 32-bit two's complement signed integer.                                  |
 |UInt32Array       | 0 to 4294967295           | 4             | 32-bit unsigned integer.                                                 |
 |Float32Array      | 1.2x10-38 to 3.4x1038     | 4             | 32-bit IEEE floating point number (7 significant digits e.g. 1.1234567). |
-
-**Example**
-```javascript
-
-```
+|Float64Array      | 5.0x10-324 to 1.8x10308   | 8             | 64-bit IEEE floating point number (16 significant digits).               |
+|BigInt64Array     | -263 to 263-1             | 8             | 64-bit two's complement signed integer.                                  |
+|BigUInt64Array    | 0 to 264-1                | 8             | 64-bit unsigned integer.                                                 |
 
  
 ## Typed Arrays vs. Standard Arrays
