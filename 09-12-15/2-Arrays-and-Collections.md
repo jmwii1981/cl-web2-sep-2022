@@ -190,7 +190,7 @@ So what do all of the properties and values of Sets (`Set()`) do?
  - `values()`: Returns a new Iterator Object  containing the values for each element in a specified `Set()` in insertion order.
  
 > **Note** – The `keys()` method _is an alias for the `values()` method_ (giving it similarity to `Map()` Objects). The `keys()` method therefore, behaves exactly the same as the `values()` method and returns values of `Set()` elements.
-  - `keys()`: Returns a new Iterator Object containing the values for each element in a specified `Set()` in insertion order.
+ - `keys()`: Returns a new Iterator Object containing the values for each element in a specified `Set()` in insertion order.
 
 ## Adding To and Deleting Values From A `Set()`
 Below, see an example of how to use the `add()` and `delete()` methods for `Set()`.
@@ -302,20 +302,32 @@ someMap.set(key, value); // Here we set a 'key value pair' using the 'set()' met
 
 Some properties and methods that come with `Map()`s are ...
 
-| Properties | Methods |
-| :---       | :---    |
-| Size       | Clear   |
-|            | Delete  |
-|            | Entries |
-|            | forEach |
-|            | Get     |
-|            | Set     |
-|            | Has     |
-|            | Keys    |
-|            | Values  |
+| Properties | Methods     |
+| :---       | :---        |
+| `size()`   | `clear()`   |
+|            | `delete()`  |
+|            | `entries()` |
+|            | `forEach()` |
+|            | `get()`     |
+|            | `set()`     |
+|            | `has()`     |
+|            | `values()`  |
+|            | `keys()`    |
 
+**The** `Map().size` **Property**
+ - `size()`: Returns the number of elements in a `Map()`. If the `Map()` is empty the size of the `Map()` will be returned as `0`.
 
-> **NOTE TO SELF** -- add more here later about what props and methods do ..
+**All of** `Map()`**'s Methods**
+ - `clear()`: Used for the removal of _all elements_ from a `Map()` and makes it empty. No arguments are required to be sent as parameters to the `Map().clear()` method and it returns with the value of `undefined`.
+ - `delete()`: Used to 'delete' an element with a specified value in a `Map()` and return a _boolean value_ depending upon the availability of the element. It will not modify the `Map()` if the element with specified value does not exist in the `Map()` and return a value of `false` instead.
+ - `entries()`: Returns a new _Iterator Object_ that contains an array of `[key, value]` (key-value pairs) for each element in a `Map()`, in the order of their insertion. For `Set()` Objects specifically, _there is no key like in `Map()` Objects_. However, to keep the API similar to the `Map()` Object, each entry has the same value for its key and value, thus an Array with `[value, value]` is returned.
+ - `forEach()`: Executes a specified function once for each key-value pair in a specified `Map()` Object. It maintains an insertion order. Unlike `Map()`, the `Set()` Object doesn't use keys externally.
+ - `get()`: Returns a specified element from a `Map()` object. If the value that is associated to the provided key is an Object, then you will get a reference to that Object and any change made to that Object will effectively modify it inside the `Map()` object.
+ - `set()`: Adds or updates an entry in a `Map()` Object with a specified key and a value.
+ - `has()`: Returns `true` or `false` indicating whether or not an element with a specified value exists in a `Map()` Object.
+ - `values()`: Returns a new Iterator Object containing the _values_ for each element in a specified `Map()` in insertion order.
+  - `keys()`: Returns a new Iterator Object containing the _keys_ for each element in a specified `Map()` in insertion order.
+
 
 ## Creating `Map()` Objects, and Adding And Removing Values In Them
 Text
@@ -349,7 +361,31 @@ function doesSaleHave() {
 ```
 
 ## Iterating Through `Map()`s
-> **Come back to this and take notes later.**
+Iterating through a `Map()` is similar to the way we would iterate through a `Set()` in that we can use the `forEach` method and the `for (let foo of bar)` (for of) loop. 
+
+**Note** – In the example below, we use the `Array.from` method. The `Array.from()` static method creates a new, shallow-copied Array instance from an iterable or array-like object. To read more about `Array.from` visit the [MDN Article, "Array.from()"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
+
+**Example**
+```javascript
+var yearlyTotal = 0;
+
+let newMonth = {
+    value: 'Oct',
+}
+
+let newAmount = {
+    value: '1200',
+}
+
+const monthlySales = new Map();
+
+function addSale() {
+    monthlySales.set(newMonth.value, newAmount.value);
+    
+    console.log(Array.from(monthlySales.keys()));
+}
+addSale();
+```
 
 
 ## Differences Between `Map()`s and Objects
