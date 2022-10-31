@@ -583,5 +583,10 @@ let someArrayBuffer = new ArrayBuffer(16);
     //      slice(startIndex, [endIndex=byteLength])
     //      Symbol(Symbol.toStringTag): "ArrayBuffer"
     //      Object Prototype
-    // _(etc. ...)_
+    // (etc. ...)
+
+// If you'd like to retrieve the value of a View ...
+let someValue = someView.getInt8(2);
+// Returns '43'
+console.log(someValue);
 ```
