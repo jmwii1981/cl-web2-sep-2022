@@ -501,20 +501,29 @@ Below is a table of the Array Types in more detail ..
 
  
 ## Typed Arrays vs. Standard Arrays
-Text
-
-**Example**
-```javascript
-
-```
+| Standard Arrays                | Typed Arrays                                                                |
+| :---                           | :---                                                                        |
+| Accepts most data types.       | Restricted types of data (numbers).                                         |
+| Has standard variable storage. | Quick access to binary data.                                                |
+| Uses standard processing       | Capable of faster processing.                                               |
+|                                | Once in a view acts, like standard Array with same properties and methods.  |
+|                                | Native API support.                                                         |
 
  
 ## Creating Typed Array Buffers
-Text
+Typed Array Buffers need to be created before the Views can be created on top of said Buffers and before adding our chosen data.
+
+See the examples below for how to create Typed Array Buffers.
 
 **Example**
 ```javascript
+// Create an Array Buffer with 16 bytes to work with, and store it in a variable.
+let someArrayBuffer = new ArrayBuffer(16);
 
+// Check for above defined Array Buffer's length.
+if (someArrayBuffer.byteLength == 16) {
+    return TRUE;
+}
 ```
 
  
@@ -523,5 +532,56 @@ Text
 
 **Example**
 ```javascript
+// Create a couple of Array Buffers with 16 bytes to work with each, and then store them in variables.
+let someArrayBuffer = new ArrayBuffer(16);
 
+// Create a View with Int16Array criteria, and passing in the Array Buffer that we created in the previous example.
+ let someView = new Int16Array(someArrayBuffer);
+
+ // In addition to the View we've already created above 'someView1' we can also create another 'Data View' over top of it.
+ let someOtherView = new DataView(someArrayBuffer);
+
+// Remember that with the Int8Array, you get 16 slots ..
+    // So, here's how you can access the first one and update it with the integer value of 32.
+    someView[0] = 32;
+
+// If you were to use console.log() to display our Views, here's how that would look.
+    // This returns the whole View with the value you've added ...
+    console.log(someView);
+        // Int16Array (8)
+        // 0 32
+        // 1
+        // 2
+        // 3
+        // 4
+        // 5
+        // 6
+        // 7
+
+// And in our Data View, we can set it to Int8 with the 'setInt8' method.
+    // Here's how we can access and update our new Data View by passing it two parameters, the first being the position, and the second being the value we wish to update that position with.
+    someView.setInt8(2, 43);
+
+    console.log(someView);
+    // This returns the whole View with the value you've now just added after using console.log to return someView as it was defined prior ...
+
+    // Int16Array (8)
+    // 0 32
+    // 1
+    // 2 43
+    // 3
+    // 4
+    // 5
+    // 6
+    // 7
+    // DataView
+    //  Buffer: ArrayBuffer
+    //      byteLength 16
+    //      ArrayBuffer Prototype
+    //      byteLength
+    //      constructor: function()
+    //      slice(startIndex, [endIndex=byteLength])
+    //      Symbol(Symbol.toStringTag): "ArrayBuffer"
+    //      Object Prototype
+    // _(etc. ...)_
 ```
